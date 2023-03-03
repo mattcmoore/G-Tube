@@ -17,7 +17,7 @@ code {
   display: flex;
   align-items: baseline;
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 11px;
 }
 
 .comments-count {
@@ -75,11 +75,68 @@ code {
 
 .addComment{
   display: flex;
+  padding: 10px;
 }
 
 #theComment{
-  margin-left: 10px;
   border-bottom: 1px solid black;
-  width: 600px;
+  width: 900px;
   white-space: nowrap;
 }
+
+.viewerComments{
+  margin-top: 30px;
+  display: flex;
+}
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.comment-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.comment-author {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.comment-time {
+  color: #aaa;
+}
+
+.comment-text {
+  margin-bottom: 10px;
+}
+
+.comment-actions button {
+  margin-right: 10px;
+}
+
+.comment-like{
+  border: none;
+  background: none;
+}
+
+.comment-dislike{
+  border: none;
+  background: none;
+}
+
+.comment-reply{
+  border: none;
+  background: none;
+}
+
