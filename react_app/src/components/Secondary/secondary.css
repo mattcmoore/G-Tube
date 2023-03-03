@@ -1,0 +1,10 @@
+.secondary{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 33%;
+    min-height: 348px;
+    margin-right: 20px;
+    margin-top: 20px;
+    background-color: orange;
+}
