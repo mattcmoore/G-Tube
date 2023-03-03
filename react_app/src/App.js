@@ -1,8 +1,11 @@
+import Navbar from "./components/navbar/Navbar";
+import {MetubeProvider} from './context/MetubeContext';
+
 function App() {
   return (
-    <div className="App">
-      <p>Hello</p>
-    </div>
+      <MetubeProvider>
+        <Navbar/>
+      </MetubeProvider>
   );
 }
 
