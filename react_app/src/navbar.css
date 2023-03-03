@@ -5,12 +5,18 @@ body {
   .logo-container{
     display: flex;
     justify-content: space-evenly;
+    padding-left: 15px;
+    width: 150px;
   }
   
   .tutuge{
     padding-top: 13px;
     width: 80px;
     height: 25px;
+  }
+
+  .tutuge :hover {
+    cursor: pointer;
   }
 
   .navbar{

@@ -13,11 +13,11 @@ function Banner() {
   return (
     <div>
         <div className='logo-container'>
-            <div className="rounded-button" style={{'margin-left': '20px'}} onClick={toggleNavbar}>
-                <FontAwesomeIcon className='icon' icon={faBars}/>
+                <div className="rounded-button" onClick={toggleNavbar}>
+                    <FontAwesomeIcon className='icon' icon={faBars}/>
+                </div>
+                <img src={tutuge} className='tutuge'></img>
             </div>
-            <img src={tutuge} className='tutuge'></img>
-        </div>
         <div className={`navbar-menu ${isOpen ? 'open' : ''}`}>
             <div className='logo-container'>
                 <div className="rounded-button" onClick={toggleNavbar}>
