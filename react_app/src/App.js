@@ -1,3 +1,4 @@
+
 import Comments from "./components/comments/Comments";
 
 function App() {
@@ -5,7 +6,8 @@ function App() {
     <div>
       < Comments />
     </div>
-  );
-}
+  )
+  }  
+
 
 export default App;
