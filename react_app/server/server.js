@@ -3,6 +3,11 @@ const cors = require("cors");
 const { Pool } = require("pg");
 const app = express();
 
+
+//starting this don't not to forget to migrate your table.sql
+//node server.js
+//dont forget to change your username
+
 // Middleware to parse JSON data
 app.use(express.json());
 
@@ -11,11 +16,11 @@ app.use(cors());
 
 // Create a connection pool to the database
 const pool = new Pool({
-  user: "",
+  user: `${YOURNAMEHERE}`,
   password: "",
   port: 5432,
   host: "localhost",
-  database: "METUBE",
+  database: "metube",
 });
 
 const PORT = process.env.PORT || 3001;
