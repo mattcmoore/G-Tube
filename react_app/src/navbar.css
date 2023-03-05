@@ -69,24 +69,28 @@ body {
     background-color: #1c1c1c;
     color: rgb(0, 0, 0);
     transition: transform 0.2s ease-out;
-    transform: translateX(-95%);
+    transform: translateX(-100%);
     z-index: 998;
   }
   
   .scrollable{
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 100%;
   }
 
   ::-webkit-scrollbar{
     background-color: #1c1c1c;
+    height: 10px;
+    width: 10px;
+
   }
-  ::-webkit-scrollbar-thumb:hover{
-    background-color: rgba(255, 255, 255, 0.1);
+  .scrollable:hover::-webkit-scrollbar-thumb{
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 25px;
     width: 5px;
     height: 100px;
   }
+
 
   .navbar-menu ul {
     list-style: none;
@@ -126,55 +130,71 @@ body {
     transform: translateX(0);
   }
 
-
+  .mic-container {
+    display: flex;
+    flex-direction: row;
+  }
 
   .search-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    max-width: 500px;
   }
   
   .search-bar {
     margin-top: 6px;
     display: flex;
-    border-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
     background-color: #1c1c1c;
-    width: 300px;
+    width: 325px;
     padding-left: 6px;
     border: .1px solid gray;
     border-color: gray;
     height: 40px;
+    color: white;
+    padding-left: 10px;
+  }
+
+  .search-bar:focus {
+    opacity: 1;
+    display: block;
+    
   }
   
+  #no-show-search{
+    opacity: 0;
+    display: none;
+  }
+  
+  #show-search{
+    color: white;
+    margin-top: 16px;
+    height: 25px;
+  }
   
   .search-bar-icon {
     height: 20px;
     padding-top: 9px;
     color: white;
   }
-  .search-bar-input {
-    border: none;
-    background-color: #1c1c1c;
-    padding: 10px;
-    flex-grow: 1;
-  }
+
   
   .search-bar-button {
+    margin-top: 6px;
     border: .1px solid gray;
-    background-color: #1c1c1c;
+    background-color: rgba(128, 128, 128, 0.25);
     color: #fff;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px;
-    height: 20px;
+    border-left: none;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 22px;
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.2s;
+    outline: none;
   }
   
-  .search-bar-button {
-    background-color: rgba(128, 128, 128, 0.25);
-    cursor: pointer;
-  }
 
   .icon{
     color: white;
@@ -229,7 +249,6 @@ body {
     background-color: #6bb7f1;
     opacity: 90%;
     fill-opacity: 100%;
-    border: none;
     cursor: pointer;
   }
   
