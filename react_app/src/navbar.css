@@ -71,18 +71,42 @@ body {
     transition: transform 0.2s ease-out;
     transform: translateX(-95%);
     z-index: 998;
-    overflow-y: scroll;
   }
   
+  .scrollable{
+    overflow-y: scroll;
+    height: 100%;
+  }
+
+  ::-webkit-scrollbar{
+    background-color: #1c1c1c;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    width: 5px;
+    height: 100px;
+  }
+
   .navbar-menu ul {
     list-style: none;
-    margin: 0;
+    margin-top: 20px;
     padding: 0;
+    margin-bottom: 45px;
+    
   }
   
   .navbar-menu li {
-    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+    border-radius: 8px;
+    margin-right: 20px;
+    margin-left: 20px;
   }
+
+  
   
   .navbar-menu a {
     color: #fff;
@@ -90,10 +114,12 @@ body {
     display: block;
     padding: 10px;
     transition: background-color 0.2s ease-out;
+    margin-left: 15px;
   }
   
-  .navbar-menu a:hover {
+  .navbar-menu li:hover {
     background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
   }
   
   .navbar-menu.open {
@@ -153,6 +179,8 @@ body {
   .icon{
     color: white;
     font-size: 20px;
+    height: 20px;
+    width: 20px;
   }
 
   .rounded-button {
@@ -198,8 +226,9 @@ body {
   }
   
   .oval-button:hover {
-    background-color: #4169e1;
-    fill-opacity: 50%;
+    background-color: #6bb7f1;
+    opacity: 90%;
+    fill-opacity: 100%;
     border: none;
     cursor: pointer;
   }
@@ -211,46 +240,44 @@ body {
     z-index: 1;
     display: flex;
     flex-direction: column;
-    background-color: #f1f1f1;
+    background-color: rgba(128, 128, 128, 0.25);
     min-width: 300px;
-    border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
   }
-  
-  .dropdown-menu a {
-    display: block;
-    padding: 12px 16px;
-    text-decoration: none;
-    color: #333;
+
+  .dropdown-menu ul {
+    list-style: none;
+    margin-top: 10px;
+    padding-left: 0;
   }
   
-  .dropdown-menu a:hover {
-    background-color: #ddd;
+  .dropdown-menu li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding-left: 20px;
+  }
+
+  
+  
+  .dropdown-menu a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+    margin-right: 20px;
+    transition: background-color 0.2s ease-out;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
   }
   
   .dropdown-divider {
     margin: 0.5rem 0;
     border: none;
     border-top: 1px solid #ccc;
-  }
-
-  .settings {
-
-  }
-
-  .settings :hover{
-    animation: pulse 2s;
-  }
-  
-  @keyframes pulse {
-    0% {
-      background-color: #ff0000; /* initial background color */
-    }
-    50% {
-      background-color: #ff9999; /* mid-point background color */
-    }
-    100% {
-      background-color: #ff0000; /* back to initial background color */
-    }
   }

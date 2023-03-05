@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Banner from './Banner'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisV, faSearch, faMicrophone, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisV, faSearch, faMicrophone, faUser, faShield, faMoon, faLanguage, faShieldAlt, faGlobe, faKeyboard, faGear, faQuestionCircle, faMessage, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -34,18 +34,20 @@ function Navbar() {
           </div>
             {isDropdown && (
               <div className="dropdown-menu">
-                <a href="#">Your data in Tutuge</a>
-                <hr className="dropdown-divider" />
-                <a href="#">Appearance: Dark</a>
-                <a href="#">Language: English</a>
-                <a href="#">Restricted Mode: Off</a>
-                <a href="#">Location: United States</a>
-                <a href="#">Keyboard shortcuts</a>
-                <hr className="dropdown-divider" />
-                <a href="#">Settings</a>
-                <hr className="dropdown-divider" />
-                <a href="#">Help</a>
-                <a href="#">Send feddback</a>
+                <ul>
+                  <li><FontAwesomeIcon className='icon' icon={faShield}/><a href="#">Your data in Tutuge</a></li>
+                  <hr className="dropdown-divider" />
+                  <li><FontAwesomeIcon className='icon' icon={faMoon}/><a href="#">Appearance: Dark Theme</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"7px"}}/></li>
+                  <li><FontAwesomeIcon className='icon' icon={faLanguage}/><a href="#">Language: English</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"55px"}} /></li>
+                  <li><FontAwesomeIcon className='icon' icon={faShieldAlt}/><a href="#">Restricted Mode: Off</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"39px"}}/></li>
+                  <li><FontAwesomeIcon className='icon' icon={faGlobe}/><a href="#">Location: United States</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"22px"}}/></li>
+                  <li><FontAwesomeIcon className='icon' icon={faKeyboard}/><a href="#">Keyboard shortcuts</a></li>
+                  <hr className="dropdown-divider" />
+                  <li><FontAwesomeIcon className='icon' icon={faGear}/><a href="#">Settings</a></li>
+                  <hr className="dropdown-divider" />
+                  <li><FontAwesomeIcon className='icon' icon={faQuestionCircle}/><a href="#">Help</a></li>
+                  <li><FontAwesomeIcon className='icon' icon={faMessage}/><a href="#">Send feedback</a></li>
+                </ul>
               </div>
             )}
         <div className="oval-button">
