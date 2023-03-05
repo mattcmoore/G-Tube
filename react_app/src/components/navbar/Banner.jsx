@@ -16,23 +16,23 @@ function Banner() {
                 <div className="rounded-button" onClick={toggleNavbar}>
                     <FontAwesomeIcon className='icon' icon={faBars}/>
                 </div>
-                <a href=""><img src={tutuge} alt='' className='tutuge' ></img></a>
+                <a ><img src={tutuge} alt='' className='tutuge' ></img></a>
             </div>
         <div className={`navbar-menu ${isOpen ? 'open' : ''}`}>
             <div className='logo-container'>
                 <div className="rounded-button" onClick={toggleNavbar}>
                     <FontAwesomeIcon className='icon' icon={faBars}/>
                 </div>
-                <a href="" style={{'padding' : '0'}}><img src={tutuge} alt='' className='tutuge'></img></a>
+                <a  style={{'padding' : '0'}}><img src={tutuge} alt='' className='tutuge'></img></a>
             </div>
             <div className="scrollable">
             <ul>
-                <li><FontAwesomeIcon className='icon' icon={faHome}/><a href="">Home</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faFilm}/><a href="">Shorts</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faPhotoFilm}/><a href="">Subscriptions</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faHome}/><a >Home</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faFilm}/><a >Shorts</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faPhotoFilm}/><a >Subscriptions</a></li>
                 <hr className="dropdown-divider" />
-                <li><FontAwesomeIcon className='icon' icon={faBook}/><a href="">Library</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faHistory}/><a href="">History</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faBook}/><a >Library</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faHistory}/><a >History</a></li>
                 <hr className="dropdown-divider" />
                 <p style={{'margin-left': '30px',
                         'color' : 'white'}}>Sign in to like videos, comment, and subscribe.</p>
@@ -44,31 +44,31 @@ function Banner() {
                 <hr className="dropdown-divider" />
                 <h4 style={{'margin-left': '25px',
                             'color' : 'white'}}>Explore</h4>
-                <li><FontAwesomeIcon className='icon' icon={faFire}/><a href="">Trending</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faBagShopping}/><a href="">Shopping</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faMusic}/><a href="">Music</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faPlay}/><a href="">Movie & TV</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faRadio}/><a href="">Live</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faGamepad}/><a href="">Gaming</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faNewspaper}/><a href="">News</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faTrophy}/><a href="">Sports</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faLightbulb}/><a href="">Learning</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faPersonDress}/><a href="">Fashion & Beauty</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faPodcast}/><a href="">Podcasts</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faFire}/><a >Trending</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faBagShopping}/><a >Shopping</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faMusic}/><a >Music</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faPlay}/><a >Movie & TV</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faRadio}/><a >Live</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faGamepad}/><a >Gaming</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faNewspaper}/><a >News</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faTrophy}/><a >Sports</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faLightbulb}/><a >Learning</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faPersonDress}/><a >Fashion & Beauty</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faPodcast}/><a >Podcasts</a></li>
                 <hr className="dropdown-divider" />
-                <li><FontAwesomeIcon className='icon' icon={faPlusCircle}/><a href="">Browse channels</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faPlusCircle}/><a >Browse channels</a></li>
                 <hr className="dropdown-divider" />
                 <h4 style={{'margin-left': '25px',
                             'color' : 'white'}}>More from Tutuge</h4>
-                <li><FontAwesomeIcon className='icon' icon={faPlus}/><a href="">Tutuge Premium</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faMusic}/><a href="">Tutuge Music</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faBabyCarriage}/><a href="">Tutuge Kids</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faTv}/><a href="">Tutuge TV</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faPlus}/><a >Tutuge Premium</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faMusic}/><a >Tutuge Music</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faBabyCarriage}/><a >Tutuge Kids</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faTv}/><a >Tutuge TV</a></li>
                 <hr className="dropdown-divider" />
-                <li><FontAwesomeIcon className='icon' icon={faGear}/><a href="">Settings</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faFlag}/><a href="">Report history</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faQuestionCircle}/><a href="">Help</a></li>
-                <li><FontAwesomeIcon className='icon' icon={faMessage}/><a href="">Send Feedback</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faGear}/><a >Settings</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faFlag}/><a >Report history</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faQuestionCircle}/><a >Help</a></li>
+                <li><FontAwesomeIcon className='icon' icon={faMessage}/><a >Send Feedback</a></li>
                 <hr className="dropdown-divider" />
 
             </ul>
