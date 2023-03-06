@@ -6,8 +6,8 @@ function App() {
   return (
       <MetubeProvider>
         <Navbar/>
-        <Secondary />
         <Video />
+        <Secondary />
       </MetubeProvider>
   );
 }

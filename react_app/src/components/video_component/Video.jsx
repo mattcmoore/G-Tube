@@ -1,6 +1,5 @@
 import React from "react";
-import PlayerControls from "../PlayerControls";
-
+import ReactPlayer from "react-player";
 const Video = () => {
   return (
     

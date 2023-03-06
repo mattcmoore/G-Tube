@@ -31,11 +31,11 @@ const connectionString = process.env.DATABASE_URL
 
 
 const pool = new Pool({
-  user: "danybriceno",
+  user: "fatbo",
   password: "",
   port: 5432,
   host: "localhost",
-  database: "metube",
+  database: "youtube",
 });
 
 const PORT = process.env.PORT || 3001;
