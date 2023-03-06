@@ -23,5 +23,3 @@ yarn-debug.log*
 yarn-error.log*
 
 #local
-server.js
-table.sql
