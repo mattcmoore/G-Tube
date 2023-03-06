@@ -46,7 +46,7 @@ INSERT INTO videos (title, description, video_link, likes, views, date_published
 VALUES 
 (   'I am a teacher', 
     'Watch me teach these dumb students how to code', 
-    'https://i.ytimg.com/vi/VyZaEcNPmdc/hqdefault.jpg?s…AFwAcABBg==&rs=AOn4CLCe77-mW1rac_U1RZjskxO3yTfvLg', 
+    'https://i.ytimg.com/vi/H-nxt2Uw2-o/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDRmPU3reua1jrRNhJeH9ty_pOkBQ', 
     47, 
     2000, 
     '2020-07-12', 

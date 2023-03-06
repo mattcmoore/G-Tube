@@ -50,10 +50,12 @@
     width: 50%;
     left: 1%;
     color: gray;
+    font-weight: 300;
+    font-size: 15px;
 }
 
 .video-title {
-    font-weight: 700;
+    font-weight: 500;
     color: black;
 }
 
