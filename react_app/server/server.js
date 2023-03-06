@@ -16,11 +16,11 @@ app.use(cors());
 
 // Create a connection pool to the database
 const pool = new Pool({
-  user: `${YOURNAMEHERE}`,
-  password: "",
+  user: "matt",
+  password: "volleyall",
   port: 5432,
   host: "localhost",
-  database: "metube",
+  database: "meTube_db",
 });
 
 const PORT = process.env.PORT || 3001;
@@ -85,6 +85,19 @@ app.get("/Videos/:id", async (req, res) => {
       res.status(500).send(error);
     }
   });
+
+  //API endpoint to retrieve all videos
+  app.get("/Videos", async (req, res) => {
+    const { id } = req.params;
+    try {
+      const { rows } = await pool.query(`SELECT * FROM videos JOIN users ON videos.user_id = users.id`);
+      res.json(rows);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send(error);
+    }
+  });
+
 
 
 // Start the server
