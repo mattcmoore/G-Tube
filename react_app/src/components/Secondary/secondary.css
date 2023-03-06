@@ -1,0 +1,66 @@
+.secondary{
+    position: relative;
+    top: 55px;
+    left: 67%;
+    width: 27%;
+    min-height: 348px;
+    background-color: white;
+}
+
+.dismissible{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.ytd-thumbnail {
+    height: 100%;
+    width: 40%;
+    display: block;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.yt-image {
+    position: relative;
+    height: 100%;
+    width: 100%; 
+}
+
+.ytd-thumbnail img {
+    width: 100%;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+.display-time {
+    position: absolute;
+    display: block;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    bottom: 10px;
+    right: 10px;
+    margin: 2px;
+    padding: 5px;
+}
+
+.details {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    left: 1%;
+    color: gray;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.video-title {
+    font-weight: 500;
+    color: black;
+}
+
+.metadata-line p {
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
