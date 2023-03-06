@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './navbar.css';
-import './index.css'
+import 'tippy.js/dist/tippy.css';
 import App from './App';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
