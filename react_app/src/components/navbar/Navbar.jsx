@@ -1,13 +1,15 @@
 import React, {useState} from 'react'
 import Banner from './Banner'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisV, faSearch, faMicrophone, faUser, faShield, faMoon, faLanguage, faShieldAlt, faGlobe, faKeyboard, faGear, faQuestionCircle, faMessage, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisV, faSearch, faMicrophone, faUser, faShield, faMoon, faLanguage, faShieldAlt, faGlobe, faKeyboard, faGear, faQuestionCircle, faMessage, faArrowAltCircleRight, faSun, faArrowLeft, faCheck } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react'
 
 
 function Navbar() {
   const [isDropdown, setIsDropdown] = useState(false)
   const [search, setSearch] = useState('')
+  const [theme, setTheme] = useState({open: false, apperance: 'Dark Theme'})
+  const [restricted, setRestricted] = useState({open: false, restrict: 'Off'})
 
   const onSearch = (e) => {
     setSearch(e.target.value)
@@ -18,6 +20,23 @@ function Navbar() {
   }
   const toggleDropdown = () => {
     setIsDropdown(!isDropdown)
+    setTheme((theme)=>({...theme, open: false }))
+
+  }
+
+  const openTheme = () => {
+    setIsDropdown(false)
+    setTheme((theme)=>({...theme, open: true }))
+  }
+
+  const setDark = () => {
+    setIsDropdown(true)
+    setTheme((theme)=>({open: false, apperance: 'Dark Theme' }))
+  }
+
+  const setLight = () => {
+    setIsDropdown(true)
+    setTheme((theme)=>({open: false, apperance: 'Light Theme' }))
   }
 
   return (
@@ -50,9 +69,9 @@ function Navbar() {
                 <ul>
                   <li><FontAwesomeIcon className='icon' icon={faShield}/><a >Your data in Tutuge</a></li>
                   <hr className="dropdown-divider" />
-                  <li><FontAwesomeIcon className='icon' icon={faMoon}/><a>Appearance: Dark Theme</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"7px"}}/></li>
+                  <li onClick={openTheme}><FontAwesomeIcon className='icon' icon={theme.apperance === 'Dark Theme' ? faMoon : faSun}/><a>Appearance: {theme.apperance}</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"7px"}}/></li>
                   <li><FontAwesomeIcon className='icon' icon={faLanguage}/><a >Language: English</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"55px"}} /></li>
-                  <li><FontAwesomeIcon className='icon' icon={faShieldAlt}/><a >Restricted Mode: Off</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"39px"}}/></li>
+                  <li><FontAwesomeIcon className='icon' icon={faShieldAlt}/><a >Restricted Mode: {restricted.restrict}</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"39px"}}/></li>
                   <li><FontAwesomeIcon className='icon' icon={faGlobe}/><a >Location: United States</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"22px"}}/></li>
                   <li><FontAwesomeIcon className='icon' icon={faKeyboard}/><a >Keyboard shortcuts</a></li>
                   <hr className="dropdown-divider" />
@@ -61,6 +80,19 @@ function Navbar() {
                   <li><FontAwesomeIcon className='icon' icon={faQuestionCircle}/><a >Help</a></li>
                   <li><FontAwesomeIcon className='icon' icon={faMessage}/><a >Send feedback</a></li>
                 </ul>
+              </div>
+            )}
+            {theme.open && (
+              <div className="dropdown-menu">
+                <div className="mic-container" >
+                 <div onClick={toggleDropdown} className="rounded-button" style={{"margin-top": '11px', 'margin-right': '10px', 'margin-left' : '7px'}}>           
+                <FontAwesomeIcon className='icon' icon={faArrowLeft} />
+                </div>
+                <h3 style={{'color': 'white'}}>Appearance</h3>
+                </div>
+                <hr className="dropdown-divider" style={{'margin-top': '0'}}/>
+                <li onClick={setDark} ><FontAwesomeIcon className='icon' icon={theme.apperance === 'Dark Theme' ? faCheck: faMoon}/><a >Dark Theme</a></li>
+                <li onClick={setLight}><FontAwesomeIcon className='icon' icon={theme.apperance === 'Light Theme' ? faCheck: faSun}/><a >Light Theme</a></li>
               </div>
             )}
         <div className="oval-button">

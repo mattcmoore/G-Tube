@@ -1,11 +1,10 @@
-import React, {useContext} from 'react'
+import React, {useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faUser, faHome, faFilm, faBook, faHistory, faPlay, faPhotoFilm, faFire, faBagShopping, faMusic, faRadio, faNewspaper, faGamepad, faLightbulb, faPersonDress, faPodcast, faPlusCircle, faTrophy, faFlag, faGear, faQuestionCircle, faMessage, faPlus, faTv, faBabyCarriage } from '@fortawesome/free-solid-svg-icons';
 import tutuge from './tutuge.png'
-import MetubeContext from '../../context/MetubeContext';
 
 function Banner() {
-    const {isOpen, setIsOpen} = useContext(MetubeContext);
+    const [isOpen, setIsOpen] = useState(false)
 
     function toggleNavbar() {
       setIsOpen(!isOpen);
@@ -20,10 +19,10 @@ function Banner() {
             </div>
         <div className={`navbar-menu ${isOpen ? 'open' : ''}`}>
             <div className='logo-container'>
-                <div className="rounded-button" onClick={toggleNavbar}>
+                <div style={{'padding' : '0'}} className="rounded-button" onClick={toggleNavbar}>
                     <FontAwesomeIcon className='icon' icon={faBars}/>
                 </div>
-                <a  style={{'padding' : '0'}}><img src={tutuge} alt='' className='tutuge'></img></a>
+                <a  style={{'padding' : '0', 'margin-left' : '0'}}><img src={tutuge} alt='' className='tutuge'></img></a>
             </div>
             <div className="scrollable">
             <ul>
@@ -70,10 +69,12 @@ function Banner() {
                 <li><FontAwesomeIcon className='icon' icon={faQuestionCircle}/><a >Help</a></li>
                 <li><FontAwesomeIcon className='icon' icon={faMessage}/><a >Send Feedback</a></li>
                 <hr className="dropdown-divider" />
+                <p>Garret</p>
 
             </ul>
             </div>
       </div>
+      {isOpen && (<div className="overlay" onClick={toggleNavbar}></div>)}
     </div>
   )
 }

@@ -13,7 +13,7 @@ body {
   .logo-container{
     display: flex;
     justify-content: space-evenly;
-    padding-left: 10px;
+    padding-left: 3px;
     width: 170px;
     position: sticky;
   }
@@ -49,7 +49,7 @@ body {
     color: white;
     display: flex;
     align-items: center;
-    z-index: 999;
+    z-index: 9999;
   }
   
   .navbar-icon {
@@ -68,9 +68,9 @@ body {
     height: 100%;
     background-color: #1c1c1c;
     color: rgb(0, 0, 0);
-    transition: transform 0.2s ease-out;
+    transition: transform 0.15s ease-out;
     transform: translateX(-100%);
-    z-index: 998;
+    z-index: 9999;
   }
   
   .scrollable{
@@ -219,7 +219,7 @@ body {
   }
   
   .rounded-button:hover {
-    background-color: rgba(128, 128, 128, 0.1);
+    background-color: rgba(128, 128, 128, 0.4);
     color: #fff;
     cursor: pointer;
   }
@@ -300,3 +300,14 @@ body {
     border: none;
     border-top: 1px solid #ccc;
   }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 250px;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 9999;
+  }
+  
