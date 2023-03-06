@@ -21,7 +21,7 @@ function Navbar() {
   const toggleDropdown = () => {
     setIsDropdown(!isDropdown)
     setTheme((theme)=>({...theme, open: false }))
-
+    setRestricted((restrict)=>({...restrict, open: false}))
   }
 
   const openTheme = () => {
@@ -39,6 +39,15 @@ function Navbar() {
     setTheme((theme)=>({open: false, apperance: 'Light Theme' }))
   }
 
+  const openRestrict = () => {
+    setIsDropdown(false)
+    setRestricted((restrict)=>({...restrict, open: true }))
+  }
+
+  const toggleRestrict = () =>{
+    setRestricted((restri)=>({...restri, restrict: restri.restrict === 'Off' ? 'On' : 'Off'}))
+  }
+
   return (
     <div className='navbar'>
       <Banner/>
@@ -54,7 +63,7 @@ function Navbar() {
       <div className="rounded-button" style={{'margin-left': '7px',
                                               'background-color' : 'rgba(128, 128, 128, 0.5)',
                                               'margin-top': '7px'}}>
-          <FontAwesomeIcon className='icon' icon={faMicrophone} />
+          <FontAwesomeIcon className='icon' icon={faMicrophone} style={{'margin-top': '3px'}} />
       </div>
         </Tippy>
         </div>
@@ -71,7 +80,7 @@ function Navbar() {
                   <hr className="dropdown-divider" />
                   <li onClick={openTheme}><FontAwesomeIcon className='icon' icon={theme.apperance === 'Dark Theme' ? faMoon : faSun}/><a>Appearance: {theme.apperance}</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"7px"}}/></li>
                   <li><FontAwesomeIcon className='icon' icon={faLanguage}/><a >Language: English</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"55px"}} /></li>
-                  <li><FontAwesomeIcon className='icon' icon={faShieldAlt}/><a >Restricted Mode: {restricted.restrict}</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"39px"}}/></li>
+                  <li onClick={openRestrict}><FontAwesomeIcon className='icon' icon={faShieldAlt}/><a >Restricted Mode: {restricted.restrict}</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"39px"}}/></li>
                   <li><FontAwesomeIcon className='icon' icon={faGlobe}/><a >Location: United States</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"22px"}}/></li>
                   <li><FontAwesomeIcon className='icon' icon={faKeyboard}/><a >Keyboard shortcuts</a></li>
                   <hr className="dropdown-divider" />
@@ -95,9 +104,27 @@ function Navbar() {
                 <li onClick={setLight}><FontAwesomeIcon className='icon' icon={theme.apperance === 'Light Theme' ? faCheck: faSun}/><a >Light Theme</a></li>
               </div>
             )}
+            {restricted.open && (
+              <div className="dropdown-menu">
+              <div className="mic-container" >
+               <div onClick={toggleDropdown} className="rounded-button" style={{"margin-top": '11px', 'margin-right': '10px', 'margin-left' : '7px'}}>           
+              <FontAwesomeIcon className='icon' icon={faArrowLeft} />
+              </div>
+              <h3 style={{'color': 'white'}}>Restricted Mode</h3>
+              </div>
+              <hr className="dropdown-divider" style={{'margin-top': '0'}}/>
+              <p style={{'margin-left': '15px' ,'margin-bottom': '0', 'color' : 'white'}}>This helps hid potentially mature videos.</p>
+              <p style={{'margin-left': '15px' ,'margin-top': '0', 'color' : 'white'}}>No filter is 100% accurate.</p>
+              <p style={{'margin-left': '15px', 'color' : 'white'}}>This setting only applies to this browser.</p>
+              <div className="mic-container">
+              <h3 style={{'margin-left': '15px', 'color': '#F7F7F7', 'font-weight': '600'}}>Activate Restricted Mode</h3>
+              <input type="range" min='0' max='1' step='1' onChange={toggleRestrict} value={restricted.restrict === 'Off' ? '0' : '1'} style={{'width': '30px', 'height' : '20px', 'margin-left': '20px', 'margin-top' : '22px'}}/>
+              </div>
+            </div>
+            )}
         <div className="oval-button">
           <FontAwesomeIcon icon={faUser} style={{'margin-right': '5px',
-                                                  'color' : '#1e90ff'}}/>
+                                                'color' : '#1e90ff'}}/>
           <p style={{'color' : '#1e90ff'}}>Sign In</p>
         </div>
       </div>
