@@ -5,6 +5,7 @@ import 'tippy.js/dist/tippy.css';
 import './index.css'
 import App from './App';
 import {MetubeProvider} from './context/MetubeContext';
+import './components/video_component/video.css'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

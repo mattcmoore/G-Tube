@@ -8,7 +8,8 @@ const PlayerControls = () => {
     return (
         <div className="player-controls">
             <button className="play-button"> </button>
-            <button className="next-button"> </button>
+            <button className="next-button"> next </button>
+            {/* <button className="volume">Volume</button> */}
         </div>
     )
 }
