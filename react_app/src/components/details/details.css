@@ -1,5 +1,20 @@
 .detail {
-    background-color: rgb(59, 119, 119);
-    padding-top: 20%;
-    color: aquamarine;
+    width: 1059px;
+    display: grid;
+    margin-left: 300px;
 }
+
+.title {
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(249, 249, 249);
+    /* border: rgb(223, 187, 187) 1px solid; */
+    justify-content: left;
+    width: 1059px;
+    font-size: 2rem;
+    font-weight: 600;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 2.8rem;
+    margin-top: -20px;
+}
+
