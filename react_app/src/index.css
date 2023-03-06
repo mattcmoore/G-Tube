@@ -1,10 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(19, 19, 19);
 }
 
 code {
@@ -23,6 +19,7 @@ code {
 .comments-count {
   margin-right: 16px;
   font-size: 14px;
+  color: white;
 }
 
 .custom-dropdown-container {
@@ -32,12 +29,13 @@ code {
 
 .custom-dropdown-button {
   padding: 8px 16px;
-  background-color: #fff;
+  background-color: rgb(19, 19, 19);
   border: none;
   border-radius: 4px;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
+  color: white;
 }
 
 .custom-dropdown-menu {
@@ -48,10 +46,10 @@ code {
   padding: 0;
   margin: 0;
   list-style: none;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: rgb(35, 35, 35);
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: white;
 }
 
 .custom-dropdown-item {
@@ -63,7 +61,7 @@ code {
 }
 
 .custom-dropdown-item:hover {
-  background-color: #f2f2f2;
+  background-color: rgb(49, 49, 49);
 }
 
 #commentImg{
@@ -79,9 +77,10 @@ code {
 }
 
 #theComment{
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(84, 83, 83);
   width: 900px;
   white-space: nowrap;
+  color: #aaa;
 }
 
 .viewerComments{
@@ -111,33 +110,68 @@ code {
 .comment-author {
   font-weight: bold;
   margin-right: 10px;
+  color: white;
 }
 
 .comment-time {
   color: #aaa;
+  font-size: 13px;
 }
 
 .comment-text {
   margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
 }
 
 .comment-actions button {
   margin-right: 10px;
 }
 
+.comment-actions{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
 .comment-like{
   border: none;
   background: none;
+  color: white;
+}
+
+.comment-like:hover{
+  background-color: #aaa;
+  border-radius: 50%;
+}
+.comment-dislike:hover{
+  background-color: #aaa;
+  border-radius: 50%;
+}
+.comment-reply:hover{
+  background-color: #aaa;
+  border-radius: 20px;
 }
 
 .comment-dislike{
   border: none;
   background: none;
+  color: white;
+  margin-left: 10px;
 }
 
 .comment-reply{
   border: none;
   background: none;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 
+.likeCount{
+  color: #aaa;
+  font-size: 12px;
+}
