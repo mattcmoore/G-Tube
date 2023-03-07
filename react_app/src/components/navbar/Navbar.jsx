@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Banner from './Banner'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV, faSearch, faMicrophone, faUser, faShield, faMoon, faLanguage, faShieldAlt, faGlobe, faKeyboard, faGear, faQuestionCircle, faMessage, faArrowAltCircleRight, faSun, faArrowLeft, faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +11,22 @@ function Navbar() {
   const [theme, setTheme] = useState({open: false, apperance: 'Dark Theme'})
   const [restricted, setRestricted] = useState({open: false, restrict: 'Off'})
   const [location, setLocation] = useState({open: false, country: 'United States'})
+  const [isMobile, setIsMobile] = useState(false)
+  const [isSearch, setIsSearch] = useState(false)
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth < 700) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const onSearch = (e) => {
     setSearch(e.target.value)
@@ -51,35 +67,83 @@ function Navbar() {
     setRestricted((restri)=>({...restri, restrict: restri.restrict === 'Off' ? 'On' : 'Off'}))
   }
 
-  const openLocation = () => {
-    setIsDropdown(false)
-    setLocation((loc)=>({...loc, open: true }))
+  const toggleSearch = () =>{
+    setIsSearch(!isSearch)
   }
 
-  const updateLocation = (e) => {
-    setLocation({location: e.target.value, open: false})
-    setIsDropdown(true)
-  }
+  if (isSearch){
+    return (
+      <div className="navbar">
+        <Tippy content='Back' arrow={false}>
+        <div className="rounded-button" onClick={toggleSearch} style={{'margin-left': '10px', 'margin-top': '7px'}}>
+          <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
+        </div>
+        </Tippy>
+        <div className='search-container'>
+            <input type="text" className='search-bar' placeholder="Search" value={search} onChange={onSearch} onSelect style={{'width':'300px'}}/>
+            <Tippy content='Search' arrow={false}>
+            <FontAwesomeIcon className='search-bar-button' icon={faSearch} onClick={submitSearch}/>
+            </Tippy>
+        </div>
+        <Tippy content='Search with your voice' arrow={false}>
+          <div className="rounded-button" style={{'margin-left': '7px',
+                                                  'background-color' : 'rgba(128, 128, 128, 0.5)',
+                                                  'margin-top': '7px',
+                                                  "border-radius" : '0px',
+                                                  'margin-right': '20px'}}>
+              <FontAwesomeIcon className='icon' icon={faMicrophone} style={{'margin-top': '3px', 'width': '40px'}} />
+          </div>
+        </Tippy>
 
+      </div>
+    )
+  }
   return (
     <div className='navbar'>
       <Banner/>
-      <div className='mic-container'>
-      <div className='search-container'>
-      <FontAwesomeIcon id='no-show-search' icon={faSearch} onClick={submitSearch}/>
-          <input type="text" className='search-bar' placeholder="Search" value={search} onChange={onSearch} onSelect/>
-          <Tippy content='Search' arrow={false}>
-          <FontAwesomeIcon className='search-bar-button' icon={faSearch} onClick={submitSearch}/>
-          </Tippy>
+      
+      {isMobile ? (
+        
+        <div className="small-container" style={{'width': '200px'}}>
+        <Tippy content='Search' arrow={false}>
+          <div onClick={toggleSearch} className="rounded-button" style={{'margin-left': '50px',
+                                                  'margin-top': '7px', 
+                                                  'margin-right': '8px',
+                                                  }}>
+            <FontAwesomeIcon className='icon' icon={faSearch} />
+          </div>
+        </Tippy>
+        <Tippy content='Search with your voice' arrow={false}>
+          <div className="rounded-button" style={{'margin-left': '7px',
+                                                  'background-color' : 'rgba(128, 128, 128, 0.5)',
+                                                  'margin-top': '7px',
+                                                  "border-radius" : '0px',
+                                                  'margin-right': '20px'}}>
+              <FontAwesomeIcon className='icon' icon={faMicrophone} style={{'margin-top': '3px', 'width': '40px'}} />
+          </div>
+        </Tippy>
       </div>
-      <Tippy content='Search with your voice' arrow={false}>
-      <div className="rounded-button" style={{'margin-left': '7px',
-                                              'background-color' : 'rgba(128, 128, 128, 0.5)',
-                                              'margin-top': '7px'}}>
-          <FontAwesomeIcon className='icon' icon={faMicrophone} style={{'margin-top': '3px'}} />
-      </div>
+      ):(
+        <div className='container-search'>
+        <div className='search-container'>
+            <input type="text" className='search-bar' placeholder="Search" value={search} onChange={onSearch} onSelect/>
+            <Tippy content='Search' arrow={false}>
+            <FontAwesomeIcon className='search-bar-button' icon={faSearch} onClick={submitSearch}/>
+            </Tippy>
+        </div>
+        <Tippy content='Search with your voice' arrow={false}>
+        <div className="rounded-button" style={{'margin-left': '7px',
+                                                'background-color' : 'rgba(128, 128, 128, 0.5)',
+                                                'margin-top': '7px',}}>
+            <FontAwesomeIcon className='icon' icon={faMicrophone} style={{'margin-top': '3px', 'width': '40px'}} />
+        </div>
         </Tippy>
         </div>
+      )}
+      
+
+
+      
       <div className='search-container'>
           <Tippy content='Settings' disabled={isDropdown} arrow={false}>
           <div className="rounded-button" onClick={toggleDropdown}>           
@@ -119,24 +183,6 @@ function Navbar() {
             )}
             {restricted.open && (
               <div className="dropdown-menu">
-              <div className="mic-container" >
-               <div onClick={toggleDropdown} className="rounded-button" style={{"margin-top": '11px', 'margin-right': '10px', 'margin-left' : '7px'}}>           
-              <FontAwesomeIcon className='icon' icon={faArrowLeft} />
-              </div>
-              <h3 style={{'color': 'white'}}>Restricted Mode</h3>
-              </div>
-              <hr className="dropdown-divider" style={{'margin-top': '0'}}/>
-              <p style={{'margin-left': '15px' ,'margin-bottom': '0', 'color' : 'white'}}>This helps hid potentially mature videos.</p>
-              <p style={{'margin-left': '15px' ,'margin-top': '0', 'color' : 'white'}}>No filter is 100% accurate.</p>
-              <p style={{'margin-left': '15px', 'color' : 'white'}}>This setting only applies to this browser.</p>
-              <div className="mic-container">
-              <h3 style={{'margin-left': '15px', 'color': '#F7F7F7', 'font-weight': '600'}}>Activate Restricted Mode</h3>
-              <input type="range" min='0' max='1' step='1' onChange={toggleRestrict} value={restricted.restrict === 'Off' ? '0' : '1'} style={{'width': '30px', 'height' : '20px', 'margin-left': '20px', 'margin-top' : '22px'}}/>
-              </div>
-            </div>
-            )}
-            {location.open && (
-              <div className="dropdown-menu-scroll">
               <div className="mic-container" >
                <div onClick={toggleDropdown} className="rounded-button" style={{"margin-top": '11px', 'margin-right': '10px', 'margin-left' : '7px'}}>           
               <FontAwesomeIcon className='icon' icon={faArrowLeft} />
