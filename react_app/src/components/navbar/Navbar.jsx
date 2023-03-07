@@ -10,6 +10,7 @@ function Navbar() {
   const [search, setSearch] = useState('')
   const [theme, setTheme] = useState({open: false, apperance: 'Dark Theme'})
   const [restricted, setRestricted] = useState({open: false, restrict: 'Off'})
+  const [location, setLocation] = useState({open: false, country: 'United States'})
 
   const onSearch = (e) => {
     setSearch(e.target.value)
@@ -22,6 +23,8 @@ function Navbar() {
     setIsDropdown(!isDropdown)
     setTheme((theme)=>({...theme, open: false }))
     setRestricted((restrict)=>({...restrict, open: false}))
+    setLocation((loc)=>({...loc, open: false }))
+
   }
 
   const openTheme = () => {
@@ -46,6 +49,16 @@ function Navbar() {
 
   const toggleRestrict = () =>{
     setRestricted((restri)=>({...restri, restrict: restri.restrict === 'Off' ? 'On' : 'Off'}))
+  }
+
+  const openLocation = () => {
+    setIsDropdown(false)
+    setLocation((loc)=>({...loc, open: true }))
+  }
+
+  const updateLocation = (e) => {
+    setLocation({location: e.target.value, open: false})
+    setIsDropdown(true)
   }
 
   return (
@@ -81,7 +94,7 @@ function Navbar() {
                   <li onClick={openTheme}><FontAwesomeIcon className='icon' icon={theme.apperance === 'Dark Theme' ? faMoon : faSun}/><a>Appearance: {theme.apperance}</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"7px"}}/></li>
                   <li><FontAwesomeIcon className='icon' icon={faLanguage}/><a >Language: English</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"55px"}} /></li>
                   <li onClick={openRestrict}><FontAwesomeIcon className='icon' icon={faShieldAlt}/><a >Restricted Mode: {restricted.restrict}</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"39px"}}/></li>
-                  <li><FontAwesomeIcon className='icon' icon={faGlobe}/><a >Location: United States</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"22px"}}/></li>
+                  <li><FontAwesomeIcon className='icon' icon={faGlobe}/><a >Location: {location.country}</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"22px"}}/></li>
                   <li><FontAwesomeIcon className='icon' icon={faKeyboard}/><a >Keyboard shortcuts</a></li>
                   <hr className="dropdown-divider" />
                   <li><FontAwesomeIcon className='icon' icon={faGear}/><a >Settings</a></li>
@@ -106,6 +119,24 @@ function Navbar() {
             )}
             {restricted.open && (
               <div className="dropdown-menu">
+              <div className="mic-container" >
+               <div onClick={toggleDropdown} className="rounded-button" style={{"margin-top": '11px', 'margin-right': '10px', 'margin-left' : '7px'}}>           
+              <FontAwesomeIcon className='icon' icon={faArrowLeft} />
+              </div>
+              <h3 style={{'color': 'white'}}>Restricted Mode</h3>
+              </div>
+              <hr className="dropdown-divider" style={{'margin-top': '0'}}/>
+              <p style={{'margin-left': '15px' ,'margin-bottom': '0', 'color' : 'white'}}>This helps hid potentially mature videos.</p>
+              <p style={{'margin-left': '15px' ,'margin-top': '0', 'color' : 'white'}}>No filter is 100% accurate.</p>
+              <p style={{'margin-left': '15px', 'color' : 'white'}}>This setting only applies to this browser.</p>
+              <div className="mic-container">
+              <h3 style={{'margin-left': '15px', 'color': '#F7F7F7', 'font-weight': '600'}}>Activate Restricted Mode</h3>
+              <input type="range" min='0' max='1' step='1' onChange={toggleRestrict} value={restricted.restrict === 'Off' ? '0' : '1'} style={{'width': '30px', 'height' : '20px', 'margin-left': '20px', 'margin-top' : '22px'}}/>
+              </div>
+            </div>
+            )}
+            {location.open && (
+              <div className="dropdown-menu-scroll">
               <div className="mic-container" >
                <div onClick={toggleDropdown} className="rounded-button" style={{"margin-top": '11px', 'margin-right': '10px', 'margin-left' : '7px'}}>           
               <FontAwesomeIcon className='icon' icon={faArrowLeft} />
