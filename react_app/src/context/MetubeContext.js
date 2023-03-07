@@ -1,4 +1,3 @@
-
 import { useState, createContext, useEffect } from "react";
 
 const MetubeContext = createContext()
@@ -18,24 +17,21 @@ export const MetubeProvider =({children}) =>{
         fetch('http://localhost:3001/CommentsAll')
           .then(response => response.json())
           .then(data => {
-            const sortedComments = data.sort((a, b) => new Date(a.date_published) - new Date(b.date_published));
+            const sortedComments = data.sort((a, b) => new Date(b.date_published) - new Date(a.date_published));
             setCommentsOrdered(sortedComments);
-            
           });
       }, []);
 
-
+//fetch for comments liked in ASC
   useEffect(() => {
     fetch('http://localhost:3001/CommentsAll')
       .then(response => response.json())
       .then(data => {
-        // Sort comments by date_published in reverse order
-        const sortedComments = data.sort((a, b) => new Date(b.date_published) - new Date(a.date_published));
-        setCommentsOrdered(sortedComments);
-      })
-      .catch(error => console.error(error));
+        // Sort comments by number of likes in descending order
+        const sortedComments = data.sort((a, b) => b.likes - a.likes);
+        setCommentsLiked(sortedComments);
+      });
   }, []);
-
   useEffect(() => {
     fetch('http://localhost:3001/Videos')
       .then((response) => response.json()) // Add parentheses after .json
@@ -46,11 +42,6 @@ export const MetubeProvider =({children}) =>{
         console.error(error);
       });
   }, []);
-  
-    
-    
-    
-    
     return(
         <MetubeContext.Provider value={{
             users,
