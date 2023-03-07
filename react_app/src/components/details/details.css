@@ -1,24 +1,33 @@
+.primary-container {
+  position: absolute;
+  top: 55px;
+  height: auto;
+  width: 60vw;
+  left: 1vw;
+  /* border: red 1px solid; */
+  padding-right: 24px;
+  margin-left: 24px;
+  z-index: 1;
+  margin-top: 24px;
+}
+
 .detail {
-    width: 1059px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    margin-left: 300px;
-    margin-top: 650px;
+    position: relative;
 }
 
 .title {
     background-color: rgba(255, 255, 255, 0);
     color: rgb(249, 249, 249);
     /* border: rgb(223, 187, 187) 1px solid; */
-    justify-content: left;
     width: 1059px;
     font-size: 2rem;
     font-weight: 700;
-    white-space: normal;
-    word-break: break-word;
     line-height: 2.8rem;
-    margin-top: -20px;
-    margin-bottom: -20px;
+    /* margin-top: -20px;
+    margin-bottom: -20px; */
 }
 /* top row container */
 
