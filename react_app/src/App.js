@@ -9,7 +9,7 @@ function App() {
       <MetubeProvider>
         <Navbar />
         <Video />
-        {/* <Details /> */}
+        <Details />
         <Secondary />
       </MetubeProvider>
     </>

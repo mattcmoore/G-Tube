@@ -13,12 +13,12 @@ function Navbar() {
   const [location, setLocation] = useState({open: false, country: 'United States'})
 
   const onSearch = (e) => {
-    setSearch(e.target.value)
-  }
+    setSearch(e.target.value);
+  };
 
-  const submitSearch = () =>{
-    setSearch('')
-  }
+  const submitSearch = () => {
+    setSearch("");
+  };
   const toggleDropdown = () => {
     setIsDropdown(!isDropdown)
     setTheme((theme)=>({...theme, open: false }))
@@ -62,14 +62,29 @@ function Navbar() {
   }
 
   return (
-    <div className='navbar'>
-      <Banner/>
-      <div className='mic-container'>
-      <div className='search-container'>
-      <FontAwesomeIcon id='no-show-search' icon={faSearch} onClick={submitSearch}/>
-          <input type="text" className='search-bar' placeholder="Search" value={search} onChange={onSearch} onSelect/>
-          <Tippy content='Search' arrow={false}>
-          <FontAwesomeIcon className='search-bar-button' icon={faSearch} onClick={submitSearch}/>
+    <div className="navbar">
+      <Banner />
+      <div className="mic-container">
+        <div className="search-container">
+          <FontAwesomeIcon
+            id="no-show-search"
+            icon={faSearch}
+            onClick={submitSearch}
+          />
+          <input
+            type="text"
+            className="search-bar"
+            placeholder="Search"
+            value={search}
+            onChange={onSearch}
+            onSelect
+          />
+          <Tippy content="Search" arrow={false}>
+            <FontAwesomeIcon
+              className="search-bar-button"
+              icon={faSearch}
+              onClick={submitSearch}
+            />
           </Tippy>
       </div>
       <Tippy content='Search with your voice' arrow={false}>
@@ -79,11 +94,11 @@ function Navbar() {
           <FontAwesomeIcon className='icon' icon={faMicrophone} style={{'margin-top': '3px'}} />
       </div>
         </Tippy>
-        </div>
-      <div className='search-container'>
-          <Tippy content='Settings' disabled={isDropdown} arrow={false}>
-          <div className="rounded-button" onClick={toggleDropdown}>           
-            <FontAwesomeIcon className='icon' icon={faEllipsisV} />
+      </div>
+      <div className="search-container">
+        <Tippy content="Settings" disabled={isDropdown} arrow={false}>
+          <div className="rounded-button" onClick={toggleDropdown}>
+            <FontAwesomeIcon className="icon" icon={faEllipsisV} />
           </div>
           </Tippy>
             {isDropdown && (
@@ -160,7 +175,7 @@ function Navbar() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
