@@ -16,10 +16,6 @@
     color: #030303;
 }
 
-/* .dismissible:not(:first-child) .menu-popup {
-    display: none;
-} */
-
 .dismissible{
     margin-bottom: 10px;
     display: flex;

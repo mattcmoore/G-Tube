@@ -22,9 +22,11 @@ const Dismissible = ({video_link,username,title,views,date_published,runtime}) =
         return menuIsOpen ? true : setMenuBtnIsVisible(false)
     }
 
+    // const buttons = document.querySelectorAll(".dismissible button")
+    // console.log(buttons)
+
     const handleClick = (event) => {
-        const buttons = document.querySelectorAll(".dismissible .button")
-        console.log(buttons)
+   
         setMenuIsOpen(!menuIsOpen)
         setMenuBtnIsVisible(true)
     }
