@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 #local
+.env
+server.js
+table.sql
