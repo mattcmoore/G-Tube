@@ -1,0 +1,142 @@
+.detail {
+    width: 1059px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 300px;
+    margin-top: 650px;
+}
+
+.title {
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(249, 249, 249);
+    /* border: rgb(223, 187, 187) 1px solid; */
+    justify-content: left;
+    width: 1059px;
+    font-size: 2rem;
+    font-weight: 700;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 2.8rem;
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+/* top row container */
+
+.top-row {
+    display: flex;
+}
+.creator {
+    background-color: rgba(55, 58, 58, 0.687);
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#channel-name {
+   margin-left: 10px;
+   color:rgb(249, 249, 249);
+   font-size: 1rem;
+   font-weight: 700;
+}
+
+#channel-name:hover {
+    cursor: pointer;
+}
+
+
+.sub-btn {
+    margin-left: 25px;
+}
+
+/* .dot-btn,
+.like,
+.dislike,
+.download,
+.share {
+    margin-left: auto;
+} */
+
+/* .right-top-row {
+    flex-direction: column;
+    margin-left: auto;
+} */
+.dot-btn,
+.like,
+.dislike,
+.download,
+.share {
+    margin-left: auto;
+    color:rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-btn {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.4rem 1.2rem;
+    border-radius: 2rem;
+    background-color: #fffdfd;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+}
+
+.sub-btn:hover {
+    background-color: #d4d4d4;
+  }
+  
+  .sub-btn:active {
+    transform: scale(0.98);
+  }
+
+  .dot-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(128, 128, 128, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    color:rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: larger;
+  }
+  
+  .dot-btn:hover {
+    background-color: rgba(128, 128, 128, 0.8);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+
+  .text {
+    margin-left: 10px;
+  }
+
+  .download, .share {
+    display: inline-block;
+    background-color: rgba(125,125,125, 0.5);
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .download-btn:hover, .share-btn:hover {
+    background-color: #3e8e41;
+    cursor: pointer;
+  }
+  
+  .text {
+    display: inline-block;
+    margin-left: 5px;
+  }
+  

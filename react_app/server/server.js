@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const { Pool } = require("pg");
 const app = express();
+const dotenv = require("dotenv")
+dotenv.config()
 
 
 //starting this don't not to forget to migrate your table.sql
@@ -15,12 +17,25 @@ app.use(express.json());
 app.use(cors());
 
 // Create a connection pool to the database
+
+// const pool = new Pool({
+//   user: "",
+//   password: "",
+//   port: 5432,
+//   host: "localhost",
+//   database: "",
+// });
+
+const connectionString = process.env.DATABASE_URL
+// const connectionString = 'postgresql://matt:volleyball@localhost:5432/meTube_db'
+
+
 const pool = new Pool({
-  user: `${YOURNAMEHERE}`,
+  user: "fatbo",
   password: "",
   port: 5432,
   host: "localhost",
-  database: "metube",
+  database: "youtube",
 });
 
 const PORT = process.env.PORT || 3001;
@@ -45,6 +60,16 @@ app.get("/Users", async (req, res) => {
 app.get("/Comments", async (req, res) => {
     try {
       const { rows } = await pool.query(`SELECT * FROM comments`);
+      res.json(rows);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send(error);
+    }
+  });
+
+  app.get("/CommentsAll", async (req, res) => {
+    try {
+      const { rows } = await pool.query(`SELECT * FROM comments JOIN users ON comments.user_id = users.id`);
       res.json(rows);
     } catch (error) {
       console.error(error);
@@ -85,6 +110,19 @@ app.get("/Videos/:id", async (req, res) => {
       res.status(500).send(error);
     }
   });
+
+  //API endpoint to retrieve all videos
+  app.get("/Videos", async (req, res) => {
+    
+    try {
+      const { rows } = await pool.query(`SELECT * FROM videos JOIN users ON videos.user_id = users.id`);
+      res.json(rows);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send(error);
+    }
+  });
+
 
 
 // Start the server

@@ -1,11 +1,17 @@
 import Navbar from "./components/navbar/Navbar";
-import MetubeContext from "./context/MetubeContext";
-
+import Secondary from "./components/Secondary/Secondary";
+import { MetubeProvider } from "./context/MetubeContext";
+import Video from "./components/video_component/Video";
+import Details from "./components/details/Details";
 function App() {
   return (
     <>
-      <Navbar/>
-      <div></div>
+      <MetubeProvider>
+        <Navbar />
+        <Video />
+        <Details />
+        {/* <Secondary /> */}
+      </MetubeProvider>
     </>
   );
 }
