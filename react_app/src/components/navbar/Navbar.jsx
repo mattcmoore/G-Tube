@@ -1,13 +1,16 @@
 import React, {useState} from 'react'
 import Banner from './Banner'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisV, faSearch, faMicrophone, faUser, faShield, faMoon, faLanguage, faShieldAlt, faGlobe, faKeyboard, faGear, faQuestionCircle, faMessage, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisV, faSearch, faMicrophone, faUser, faShield, faMoon, faLanguage, faShieldAlt, faGlobe, faKeyboard, faGear, faQuestionCircle, faMessage, faArrowAltCircleRight, faSun, faArrowLeft, faCheck } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react'
 
 
 function Navbar() {
   const [isDropdown, setIsDropdown] = useState(false)
   const [search, setSearch] = useState('')
+  const [theme, setTheme] = useState({open: false, apperance: 'Dark Theme'})
+  const [restricted, setRestricted] = useState({open: false, restrict: 'Off'})
+  const [location, setLocation] = useState({open: false, country: 'United States'})
 
   const onSearch = (e) => {
     setSearch(e.target.value)
@@ -18,6 +21,44 @@ function Navbar() {
   }
   const toggleDropdown = () => {
     setIsDropdown(!isDropdown)
+    setTheme((theme)=>({...theme, open: false }))
+    setRestricted((restrict)=>({...restrict, open: false}))
+    setLocation((loc)=>({...loc, open: false }))
+
+  }
+
+  const openTheme = () => {
+    setIsDropdown(false)
+    setTheme((theme)=>({...theme, open: true }))
+  }
+
+  const setDark = () => {
+    setIsDropdown(true)
+    setTheme((theme)=>({open: false, apperance: 'Dark Theme' }))
+  }
+
+  const setLight = () => {
+    setIsDropdown(true)
+    setTheme((theme)=>({open: false, apperance: 'Light Theme' }))
+  }
+
+  const openRestrict = () => {
+    setIsDropdown(false)
+    setRestricted((restrict)=>({...restrict, open: true }))
+  }
+
+  const toggleRestrict = () =>{
+    setRestricted((restri)=>({...restri, restrict: restri.restrict === 'Off' ? 'On' : 'Off'}))
+  }
+
+  const openLocation = () => {
+    setIsDropdown(false)
+    setLocation((loc)=>({...loc, open: true }))
+  }
+
+  const updateLocation = (e) => {
+    setLocation({location: e.target.value, open: false})
+    setIsDropdown(true)
   }
 
   return (
@@ -35,7 +76,7 @@ function Navbar() {
       <div className="rounded-button" style={{'margin-left': '7px',
                                               'background-color' : 'rgba(128, 128, 128, 0.5)',
                                               'margin-top': '7px'}}>
-          <FontAwesomeIcon className='icon' icon={faMicrophone} />
+          <FontAwesomeIcon className='icon' icon={faMicrophone} style={{'margin-top': '3px'}} />
       </div>
         </Tippy>
         </div>
@@ -50,10 +91,10 @@ function Navbar() {
                 <ul>
                   <li><FontAwesomeIcon className='icon' icon={faShield}/><a >Your data in Tutuge</a></li>
                   <hr className="dropdown-divider" />
-                  <li><FontAwesomeIcon className='icon' icon={faMoon}/><a>Appearance: Dark Theme</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"7px"}}/></li>
+                  <li onClick={openTheme}><FontAwesomeIcon className='icon' icon={theme.apperance === 'Dark Theme' ? faMoon : faSun}/><a>Appearance: {theme.apperance}</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"7px"}}/></li>
                   <li><FontAwesomeIcon className='icon' icon={faLanguage}/><a >Language: English</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"55px"}} /></li>
-                  <li><FontAwesomeIcon className='icon' icon={faShieldAlt}/><a >Restricted Mode: Off</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"39px"}}/></li>
-                  <li><FontAwesomeIcon className='icon' icon={faGlobe}/><a >Location: United States</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"22px"}}/></li>
+                  <li onClick={openRestrict}><FontAwesomeIcon className='icon' icon={faShieldAlt}/><a >Restricted Mode: {restricted.restrict}</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"39px"}}/></li>
+                  <li><FontAwesomeIcon className='icon' icon={faGlobe}/><a >Location: {location.country}</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"22px"}}/></li>
                   <li><FontAwesomeIcon className='icon' icon={faKeyboard}/><a >Keyboard shortcuts</a></li>
                   <hr className="dropdown-divider" />
                   <li><FontAwesomeIcon className='icon' icon={faGear}/><a >Settings</a></li>
@@ -63,9 +104,58 @@ function Navbar() {
                 </ul>
               </div>
             )}
+            {theme.open && (
+              <div className="dropdown-menu">
+                <div className="mic-container" >
+                 <div onClick={toggleDropdown} className="rounded-button" style={{"margin-top": '11px', 'margin-right': '10px', 'margin-left' : '7px'}}>           
+                <FontAwesomeIcon className='icon' icon={faArrowLeft} />
+                </div>
+                <h3 style={{'color': 'white'}}>Appearance</h3>
+                </div>
+                <hr className="dropdown-divider" style={{'margin-top': '0'}}/>
+                <li onClick={setDark} ><FontAwesomeIcon className='icon' icon={theme.apperance === 'Dark Theme' ? faCheck: faMoon}/><a >Dark Theme</a></li>
+                <li onClick={setLight}><FontAwesomeIcon className='icon' icon={theme.apperance === 'Light Theme' ? faCheck: faSun}/><a >Light Theme</a></li>
+              </div>
+            )}
+            {restricted.open && (
+              <div className="dropdown-menu">
+              <div className="mic-container" >
+               <div onClick={toggleDropdown} className="rounded-button" style={{"margin-top": '11px', 'margin-right': '10px', 'margin-left' : '7px'}}>           
+              <FontAwesomeIcon className='icon' icon={faArrowLeft} />
+              </div>
+              <h3 style={{'color': 'white'}}>Restricted Mode</h3>
+              </div>
+              <hr className="dropdown-divider" style={{'margin-top': '0'}}/>
+              <p style={{'margin-left': '15px' ,'margin-bottom': '0', 'color' : 'white'}}>This helps hid potentially mature videos.</p>
+              <p style={{'margin-left': '15px' ,'margin-top': '0', 'color' : 'white'}}>No filter is 100% accurate.</p>
+              <p style={{'margin-left': '15px', 'color' : 'white'}}>This setting only applies to this browser.</p>
+              <div className="mic-container">
+              <h3 style={{'margin-left': '15px', 'color': '#F7F7F7', 'font-weight': '600'}}>Activate Restricted Mode</h3>
+              <input type="range" min='0' max='1' step='1' onChange={toggleRestrict} value={restricted.restrict === 'Off' ? '0' : '1'} style={{'width': '30px', 'height' : '20px', 'margin-left': '20px', 'margin-top' : '22px'}}/>
+              </div>
+            </div>
+            )}
+            {location.open && (
+              <div className="dropdown-menu-scroll">
+              <div className="mic-container" >
+               <div onClick={toggleDropdown} className="rounded-button" style={{"margin-top": '11px', 'margin-right': '10px', 'margin-left' : '7px'}}>           
+              <FontAwesomeIcon className='icon' icon={faArrowLeft} />
+              </div>
+              <h3 style={{'color': 'white'}}>Restricted Mode</h3>
+              </div>
+              <hr className="dropdown-divider" style={{'margin-top': '0'}}/>
+              <p style={{'margin-left': '15px' ,'margin-bottom': '0', 'color' : 'white'}}>This helps hid potentially mature videos.</p>
+              <p style={{'margin-left': '15px' ,'margin-top': '0', 'color' : 'white'}}>No filter is 100% accurate.</p>
+              <p style={{'margin-left': '15px', 'color' : 'white'}}>This setting only applies to this browser.</p>
+              <div className="mic-container">
+              <h3 style={{'margin-left': '15px', 'color': '#F7F7F7', 'font-weight': '600'}}>Activate Restricted Mode</h3>
+              <input type="range" min='0' max='1' step='1' onChange={toggleRestrict} value={restricted.restrict === 'Off' ? '0' : '1'} style={{'width': '30px', 'height' : '20px', 'margin-left': '20px', 'margin-top' : '22px'}}/>
+              </div>
+            </div>
+            )}
         <div className="oval-button">
           <FontAwesomeIcon icon={faUser} style={{'margin-right': '5px',
-                                                  'color' : '#1e90ff'}}/>
+                                                'color' : '#1e90ff'}}/>
           <p style={{'color' : '#1e90ff'}}>Sign In</p>
         </div>
       </div>
