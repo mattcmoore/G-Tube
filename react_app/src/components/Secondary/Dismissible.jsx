@@ -7,22 +7,26 @@ import {DateTime} from 'luxon'
 
 const Dismissible = ({video_link,username,title,views,date_published,runtime}) => {
 
-    const [isVisible, setIsVisible] = useState(false)
+    const [menuBtnIsVisible, setMenuBtnIsVisible] = useState(true)
+    const [menuIsOpen, setMenuIsOpen] = useState(false)
 
     useEffect(() => {
-        setIsVisible(false)
+        setMenuBtnIsVisible(false)
     },[])
 
     const handleMouseEnter = () => {
-        setIsVisible(true)
+        setMenuBtnIsVisible(true)
     }
 
     const handleMouseLeave = () => {
-        setIsVisible(false)
+        return menuIsOpen ? true : setMenuBtnIsVisible(false)
     }
 
-    const handleClick = () => {
-
+    const handleClick = (event) => {
+        const buttons = document.querySelectorAll(".dismissible .button")
+        console.log(buttons)
+        setMenuIsOpen(!menuIsOpen)
+        setMenuBtnIsVisible(true)
     }
    return(
         <div className="dismissible" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
@@ -36,7 +40,7 @@ const Dismissible = ({video_link,username,title,views,date_published,runtime}) =
                     <p>{DateTime.fromISO(date_published).toRelative()}</p>
                 </div>    
             </div>
-            <button className={isVisible ? "menu-popup-btn" : "hidden"}>
+            <button className={menuBtnIsVisible ? "menu-popup-btn" : "hidden"} onClick={(e) =>{handleClick(e)}}>
                 <svg
                     className="three-dots" 
                     viewBox="0 0 24 24" 
@@ -49,7 +53,7 @@ const Dismissible = ({video_link,username,title,views,date_published,runtime}) =
                     </g>
                 </svg>
             </button>
-            <MenuPopup />
+            <MenuPopup isOpen={menuIsOpen} />
         </div>
     )
 }
