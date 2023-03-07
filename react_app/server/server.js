@@ -20,7 +20,7 @@ const pool = new Pool({
   password: "",
   port: 5432,
   host: "localhost",
-  database: "metube",
+  database: "tutage",
 });
 
 const PORT = process.env.PORT || 3001;
@@ -45,6 +45,16 @@ app.get("/Users", async (req, res) => {
 app.get("/Comments", async (req, res) => {
     try {
       const { rows } = await pool.query(`SELECT * FROM comments`);
+      res.json(rows);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send(error);
+    }
+  });
+
+  app.get("/CommentsAll", async (req, res) => {
+    try {
+      const { rows } = await pool.query(`SELECT * FROM comments JOIN users ON comments.user_id = users.id`);
       res.json(rows);
     } catch (error) {
       console.error(error);
@@ -85,6 +95,19 @@ app.get("/Videos/:id", async (req, res) => {
       res.status(500).send(error);
     }
   });
+
+  //API endpoint to retrieve all videos
+  app.get("/Videos", async (req, res) => {
+    
+    try {
+      const { rows } = await pool.query(`SELECT * FROM videos JOIN users ON videos.user_id = users.id`);
+      res.json(rows);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send(error);
+    }
+  });
+
 
 
 // Start the server

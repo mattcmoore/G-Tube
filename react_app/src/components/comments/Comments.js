@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext, useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react'
+import MetubeContext from '../../context/MetubeContext'
 
 const Comments = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [users, setUsers] = useState([]);
-  const [comments, setComments] = useState([]);
-
+  const {commentsOrdered} = useContext(MetubeContext)
+  const {commentsLiked} = useContext(MetubeContext)
+  const [newest, setNewest] = useState(false)
   const handleButtonClick = () => {
     setIsOpen(!isOpen);
   };
@@ -18,17 +19,17 @@ const Comments = () => {
     setIsOpen(false);
   };
 
-  useEffect(() => {
-    fetch('http://localhost:3001/Users')
-      .then(response => response.json())
-      .then(data => setUsers(data));
-  }, []);
+  const handleLikedClick = () => {
+    setNewest(true)
+    setIsOpen(false)
+  }
 
-  useEffect(() => {
-    fetch('http://localhost:3001/Comments')
-      .then(response => response.json())
-      .then(data => setComments(data));
-  }, []);
+  const handleNewClick = () => {
+    setNewest(true)
+    setIsOpen(false)
+  }
+
+ 
 
   function getTimeAgo(timestamp) {
     const currentDate = new Date();
@@ -52,11 +53,11 @@ const Comments = () => {
       return `${seconds} second${seconds === 1 ? '' : 's'} ago`;
     }
   }
-
+ 
   return (
     <>
       <div className="comments-dropdown-container">
-        <p className="comments-count">{comments.length} Comments</p>
+        <p className="comments-count">{commentsOrdered.length} Comments</p>
         <div className="custom-dropdown-container">
           <Tippy content="Sort by" arrow={false}>
             <button className="custom-dropdown-button" onClick={handleButtonClick}>
@@ -66,10 +67,10 @@ const Comments = () => {
           </Tippy>  
           {isOpen && (
             <ul className="custom-dropdown-menu">
-              <li className="custom-dropdown-item" onClick={handleItemClick}>
+              <li className="custom-dropdown-item" onClick={handleLikedClick}>
                 Top comments
               </li>
-              <li className="custom-dropdown-item" onClick={handleItemClick}>
+              <li className="custom-dropdown-item" onClick={handleNewClick}>
                 Newest first
               </li>
             </ul>
@@ -77,16 +78,17 @@ const Comments = () => {
         </div>
       </div>
       <div className="addComment">
-        <img src="..../postgres/g-unit.jpg" alt="Garret Photo" className="comment-avatar" />
+        <img src="https://www.jpl.nasa.gov/edu/images/news/astronaut.jpg"  className="comment-avatar" />
         <p id="theComment">Add a comment...</p>
       </div>
-      {users.map(item =>
-        comments.map(comment => (
+      {
+        
+        commentsOrdered.map(comment => (
           <div class="comment">
-            <img class="comment-avatar" src="../../postgres/avatar1.jpg" />
+            <img class="comment-avatar" src={comment.avatar}/>
             <div class="comment-body">
               <div class="comment-header">
-                <span class="comment-author">{item.username}</span>
+                <span class="comment-author">{comment.username}</span>
                 <span class="comment-time">{getTimeAgo(comment.date_published)}</span>
               </div>
               <div class="comment-text">{comment.comment}</div>
@@ -107,7 +109,7 @@ const Comments = () => {
             </div>
           </div>
         ))
-      )}
+      } 
     </>
   );
 };

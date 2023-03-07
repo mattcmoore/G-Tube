@@ -1,14 +1,20 @@
 
+
 import Comments from "./components/comments/Comments";
+
+import Navbar from "./components/navbar/Navbar";
+import Secondary from "./components/Secondary/Secondary"
+import {MetubeProvider} from './context/MetubeContext';
 
 function App() {
   return (
-    <div>
-      < Comments />
-    </div>
-  )
-  }  
-
+      <MetubeProvider>
+        {/* <Navbar/> */}
+        {/* <Secondary /> */}
+        <Comments />
+      </MetubeProvider>
+  );
+}
 
 
 export default App;
