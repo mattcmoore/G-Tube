@@ -1,20 +1,47 @@
 .secondary{
-    position: relative;
+    position: absolute;
     top: 55px;
     left: 67%;
     width: 27%;
+    margin-top: 24px;
     min-height: 348px;
-    background-color: white;
+}
+
+.secondary.dark{
+    color: white;
+}
+
+.secondary.light{
+    color: #030303;
+}
+
+.dismissible:not(:first-child) .menu-popup {
+    display: none;
+}
+
+.dismissible:first-child .menu-popup {
+    position: fixed;
+    height: 321px;
+    min-width: 253.961px;
+    border-radius: 15px;
+    margin-top: 25px;
+    margin-left: 135px;
+    background-color: #282828;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 8px 0;
+    z-index: 1;
 }
 
 .dismissible{
+    margin-bottom: 10px;
     display: flex;
     justify-content: flex-start;
 }
 
 .ytd-thumbnail {
-    height: 100%;
-    width: 40%;
+    height: 94px;
+    width: 168px;
     display: block;
     border-radius: 25px;
     cursor: pointer;
@@ -28,7 +55,7 @@
 
 .ytd-thumbnail img {
     width: 100%;
-    border-radius: 25px;
+    border-radius: 10px;
     object-fit: cover;
 }
 
@@ -42,33 +69,49 @@
     right: 10px;
     margin: 2px;
     padding: 5px;
+    font-size: 12px;
 }
 
 .details {
     position: relative;
     height: 100%;
     width: 50%;
-    left: 1%;
-
-
+    left: 2%;
 }
 
-.video-title {
-    font-weight: 500;
-    font-size: 15px;
-    color: black;
-    margin-top: 0
+.hidden {
+    display: none;
+}
+
+.menu-popup div {
+    margin-left: 20px;
+}
+
+.menu-popup.dark {
+    background-color: #717171;
+}
+
+.menu-popup-icon {
+    height: 24px;
+    width: 24px;
+    float: left;
+}
+
+.menu-popup-p {
+    display: block;
+    float: left;
 }
 
 .metadata-line p, .user_name {
+    position: relative;
+    top: 5px;
     display: inline-block;
-    margin: 0 5px 0 0;
+    margin: 0;
     font-size: 12px;
-    color: #030303;
-    font-weight: 300;
+    font-weight: 350;
 }
 
-.queue-btn {
+.menu-popup-btn {
     height: 24px;
     width: 24px;
     vertical-align: middle;
@@ -88,8 +131,11 @@
     height: 100%;
     pointer-events: none; 
     display: block; 
+    color: white;
 }
 
-.hidden {
-    display: none;
+.video-title {
+    font-weight: 550;
+    font-size: 14px;
+    margin-top: 0
 }

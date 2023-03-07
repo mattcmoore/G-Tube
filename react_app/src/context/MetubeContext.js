@@ -8,7 +8,12 @@ export const MetubeProvider =({children}) =>{
 
     useEffect(() => {
         const getVideos = async () =>{
-            const res = await fetch('http://localhost:3001/Videos')
+            // headers needed because proxy won't redirect if headers === text
+            const res = await fetch("/Videos",{
+                headers:{
+                    "accepts":"application/json"
+                }
+            })
             const data = await res.json()
             setVideos(data)
         }    

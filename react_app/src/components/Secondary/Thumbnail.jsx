@@ -7,7 +7,7 @@ const Thumbnail = ({video_link,runtime}) => {
         <div className="ytd-thumbnail">
             <a className="thumbnail">
                 <div className="yt-image">
-                    <p className="display-time">{runtime.hours ? Duration.fromObject(runtime).toFormat("hh:mm:ss") : Duration.fromObject(runtime).toFormat("mm:ss")}</p>
+                    <p className="display-time">{runtime.hours ? Duration.fromObject(runtime).toFormat("h:m:ss") : Duration.fromObject(runtime).toFormat("mm:ss")}</p>
                     <img className="core-image" src={video_link}></img>
                 </div>
                 <div className="overlays">
