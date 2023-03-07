@@ -36,11 +36,11 @@ CREATE TABLE comments (
 );
 
 INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Garrett Ross', 'G-unit', null, 'https://yt3.googleusercontent.com/ytc/AL5GRJVQocYM80GnFFHn2_6K8E-bUuTxkoG16s1mjA01Jg=s176-c-k-c0x00ffffff-no-rj', 2500);
-INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Tyler Schlepko', 'TylerSwift', null, '', 1000);
+INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Tyler Schlepko', 'TylerSwift', null, 'https://static.wikia.nocookie.net/trailerpark/images/0/0e/Julian2.gif/revision/latest?cb=20091104025647', 1000);
 INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Matt Moore', 'Mattyboi', null, 'https://avatars.githubusercontent.com/u/5271857?v=4', 500);
-INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Dany', 'Danywamy', null, '', 750);
-INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Dan Morro', 'Danimal', null, '', 800);
-INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Darwin Facelo', 'Dweezy', null, '', 200000);
+INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Dany', 'Danywamy', null, 'https://s3.amazonaws.com/app.growtix.com/media/big/25/4/61/dc8faf54-e3b1-4a1c-ae53-eebafb277484.png', 750);
+INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Dan Morro', 'Danimal', null, 'https://www.looper.com/img/gallery/the-story-behind-ricks-car-on-trailer-park-boys/l-intro-1616866606.jpg', 800);
+INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Darwin Facelo', 'Dweezy', null, 'https://i0.wp.com/mirth-films.com/wp-content/uploads/2022/04/Randy.jpg?fit=1920%2C1080&ssl=1', 200000);
 
 INSERT INTO videos (title, description, video_link, likes, views, date_published, is_watched, keyword, runtime, user_id) 
 VALUES 
