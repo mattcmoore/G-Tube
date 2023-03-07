@@ -9,4 +9,37 @@ code {
     monospace;
 }
 
+.sortDiv{
+  display: flex;
+  align-items: center;
+}
+
+.dropdown{
+  margin-left: 5px;
+  appearance: none;
+  border: none;
+  font-size: 17px;
+}
+
+.dropdown:hover{
+  cursor: pointer;
+}
+
+.dropdownDiv{
+  margin-left: 20px;
+}
+
+.dropdownDiv:hover{
+  cursor: pointer;
+}
+
+.commentNumber{
+  margin-left: 25px;
+}
+
+#sortOption{
+  color: black;
+}
+
+
 
