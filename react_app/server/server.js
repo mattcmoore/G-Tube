@@ -31,7 +31,11 @@ const connectionString = process.env.DATABASE_URL
 
 
 const pool = new Pool({
-    connectionString,
+  user: "danybriceno",
+  password: "",
+  port: 5432,
+  host: "localhost",
+  database: "metube",
 });
 
 const PORT = process.env.PORT || 3001;
@@ -56,6 +60,16 @@ app.get("/Users", async (req, res) => {
 app.get("/Comments", async (req, res) => {
     try {
       const { rows } = await pool.query(`SELECT * FROM comments`);
+      res.json(rows);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send(error);
+    }
+  });
+
+  app.get("/CommentsAll", async (req, res) => {
+    try {
+      const { rows } = await pool.query(`SELECT * FROM comments JOIN users ON comments.user_id = users.id`);
       res.json(rows);
     } catch (error) {
       console.error(error);
@@ -99,7 +113,7 @@ app.get("/Videos/:id", async (req, res) => {
 
   //API endpoint to retrieve all videos
   app.get("/Videos", async (req, res) => {
-    const { id } = req.params;
+    
     try {
       const { rows } = await pool.query(`SELECT * FROM videos JOIN users ON videos.user_id = users.id`);
       res.json(rows);
