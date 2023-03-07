@@ -1,5 +1,3 @@
-const WatchLater = () => {
+const WatchLater = () => {};
 
-}
-
-export default WatchLater
+export default WatchLater;

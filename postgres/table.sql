@@ -98,6 +98,17 @@ VALUES
     'Coding', 
     '00:05:00',
     3
+),
+(   'Teaching Algorithms for dummies', 
+    'Watch me teach these noob students how to code', 
+    'https://i.ytimg.com/vi/H-nxt2Uw2-o/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDRmPU3reua1jrRNhJeH9ty_pOkBQ', 
+    70, 
+    2435, 
+    '2023-02-12', 
+    false, 
+    'Coding',
+    '00:09:21', 
+    1
 );
 
 INSERT INTO comments (comment, likes, date_published, video_id, user_id) VALUES ('Nice!', 10, '2022-04-03', 1, 2);
