@@ -6,20 +6,8 @@ import{useState, useEffect, useContext} from 'react'
 const Secondary = () => {
 
     const {videos} = useContext(MetubeContext)
-    
     return(
-        <div className="secondary">
-            {/* <div className="selector-container">
-                <div className="all-btn">
-                    <p>All</p>
-                </div>    
-                <div className="recently-btn">
-                    <p>Recently Uploaded</p>
-                </div>    
-                <div className="watched-btn">
-                    <p>Watched</p>
-                </div>    
-            </div> */}
+        <div className="secondary dark">
             <div className="contents">
                 {videos.map( (video,index) => (
                     <Dismissible 

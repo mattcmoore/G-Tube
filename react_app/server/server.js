@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const { Pool } = require("pg");
 const app = express();
+const dotenv = require("dotenv")
+dotenv.config()
 
 
 //starting this don't not to forget to migrate your table.sql
@@ -15,6 +17,19 @@ app.use(express.json());
 app.use(cors());
 
 // Create a connection pool to the database
+
+// const pool = new Pool({
+//   user: "",
+//   password: "",
+//   port: 5432,
+//   host: "localhost",
+//   database: "",
+// });
+
+const connectionString = process.env.DATABASE_URL
+// const connectionString = 'postgresql://matt:volleyball@localhost:5432/meTube_db'
+
+
 const pool = new Pool({
   user: "danybriceno",
   password: "",
