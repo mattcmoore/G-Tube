@@ -1,5 +1,3 @@
-const AddToQueueBtn = ()=> {
+const AddToQueueBtn = () => {};
 
-}
-
-export default AddToQueueBtn
+export default AddToQueueBtn;
