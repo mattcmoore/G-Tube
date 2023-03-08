@@ -15,6 +15,16 @@ export const MetubeProvider =({children}) =>{
     //   setIsVisible(true);
     // }, []);
 
+    const [user, setUser] = useState(null)
+
+    //fetch video 1 from database
+
+    useEffect(()=> {
+      fetch('http://localhost:3001/Videos/1')
+        .then((response) => response.json())
+        .then((data) => setUser(data))
+    }, [])
+
     useEffect(()=>{
         fetch('http://localhost:3001/Users')
         .then((response)=> response.json())
@@ -61,11 +71,9 @@ export const MetubeProvider =({children}) =>{
             video,
             setVideo,
             videos,
-            setVideos
-            // menuPopupIsOpen, 
-            // setMenuPopupIsOpen,
-            // isVisible, 
-            // setIsVisible
+            setVideos,
+            user,
+            setUser
         }}>
             {children}
         </MetubeContext.Provider>

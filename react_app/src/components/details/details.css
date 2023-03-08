@@ -22,7 +22,7 @@
     background-color: rgba(255, 255, 255, 0);
     color: rgb(249, 249, 249);
     /* border: rgb(223, 187, 187) 1px solid; */
-    width: 1060px;
+    width: 100%;
     font-size: 2rem;
     font-weight: 700;
     padding-top: 10px;
@@ -33,6 +33,8 @@
 
 .top-row {
     display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
 }
 .creator {
     background-color: rgba(55, 58, 58, 0.687);
@@ -81,6 +83,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    
 }
 
 
@@ -127,9 +130,10 @@
   cursor: pointer;
 }
 
-.download:hover, .share:hover, .dot-btn:hover, .like:hover, .dislike:hover {
+.download:hover, .share:hover, .dot-btn:hover, .like:hover, .dislike:hover, .description:hover {
   background-color: rgba(128, 128, 128, 0.8);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 .sub-btn {
     font-size: 1rem;
@@ -174,7 +178,8 @@
 
   .description {
     width: 100%;
-    height: 20vmin; 
+    height: 25vmin;
+    max-height: auto; 
     /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
@@ -203,3 +208,4 @@
   #desc-date {
     padding-left: 5px;
   }
+
