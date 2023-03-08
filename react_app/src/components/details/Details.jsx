@@ -5,6 +5,7 @@ import {
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Tippy from "@tippyjs/react";
 
 const Details = () => {
   return (
@@ -22,21 +23,39 @@ const Details = () => {
           <div id="subscribers">2.5K Subscribers</div>
         </div>
         <button className="sub-btn">Subscribe</button>
-        <div className="like">
-          <FontAwesomeIcon icon={faThumbsUp} />
+        <div className="right-buttons">
+          <Tippy content="I like this" arrow={false} placement="bottom">
+            <div className="like">
+              <FontAwesomeIcon icon={faThumbsUp} />
+              {/*Need to fetch likes from database for */}
+              <span className="text">15K</span>
+            </div>
+          </Tippy>
+          <Tippy content="I dislike this" arrow={false} placement="bottom">
+            <div className="dislike">
+              <FontAwesomeIcon icon={faThumbsDown} />
+            </div>
+          </Tippy>
+          <Tippy content="Share" arrow={false} placement="bottom">
+            <div className="share">
+              <FontAwesomeIcon icon={faShare} />
+              <span className="text">Share</span>
+            </div>
+          </Tippy>
+          <Tippy content="Download" arrow={false} placement="bottom">
+            <div className="download">
+              <FontAwesomeIcon icon={faDownload} />
+              <span className="text">Download</span>
+            </div>
+          </Tippy>
+          <div className="dot-btn">...</div>
         </div>
-        <div className="dislike">
-          <FontAwesomeIcon icon={faThumbsDown} />
+      </div>
+      <div className="description">
+        <div className="description-meta">
+          13,225 views <span id="desc-date">Jan 24, 2023</span>
         </div>
-        <div className="share">
-          <FontAwesomeIcon icon={faShare} />
-          <span className="text">Share</span>
-        </div>
-        <div className="download">
-          <FontAwesomeIcon icon={faDownload} />
-          <span className="text">Download</span>
-        </div>
-        <div className="dot-btn">...</div>
+        <div className="description-text">This is a text example of a description. I will get descriptions from the database tomorrow</div>
       </div>
     </div>
   );
