@@ -1,7 +1,8 @@
 import Thumbnail from "./Thumbnail.jsx";
 import MenuPopup from "./MenuPopup.jsx";
-import { useState, useEffect,useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { DateTime } from "luxon";
+import MetubeContext from "../../context/MetubeContext.js";
 
 const Dismissible = ({
   thumbnail,
@@ -9,31 +10,41 @@ const Dismissible = ({
   title,
   views,
   date_published,
-  runtime
+  runtime,
+  isPopup,
+  setIsPopup
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
+
   const [menuPopupIsOpen, setMenuPopupIsOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
 
-  useEffect(() => {
-    setIsVisible(false);
-    setMenuPopupIsOpen(false)
-  }, []);
-
-  const handleMouseEnter = () => {
-    setIsVisible(true);
-  };
+  window.addEventListener("click",(event)=>{
+    if(event.target.className !== "menu-popup-btn"){
+      setMenuPopupIsOpen(false)
+      setIsPopup(false)
+      setIsVisible(false)
+    }
+  })
+  
+  // const {menuPopupIsOpen, setMenuPopupIsOpen, isVisible, setIsVisible} = useContext(MetubeContext)
 
   const handleMouseLeave = () => {
-    setIsVisible(false);
-  };
+    menuPopupIsOpen ? setIsVisible(true) : setIsVisible(false);
+
+  }
+
+  const handleMouseEnter = () => {
+    if(isPopup === false){
+      setIsVisible(true)
+    }
+  }
 
   const handleClick = (event) => {
-    setMenuPopupIsOpen(true)
+    setMenuPopupIsOpen(!menuPopupIsOpen)
+    setIsPopup(!isPopup)
+    // setIsPopup(true)
   };
-  const body = document.body
-  body.addEventListener("click", ()=>{
-    setMenuPopupIsOpen(false)
-  })    
+ 
   return (
     <div
       className="dismissible"

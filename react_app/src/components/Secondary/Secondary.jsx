@@ -5,6 +5,11 @@ import { useState, useEffect, useContext } from "react";
 
 const Secondary = () => {
   const { videos } = useContext(MetubeContext);
+  const [isPopup, setIsPopup] = useState(false)
+
+  useEffect(()=>{
+    setIsPopup(false)
+  },[])
   return (
     <div className="secondary dark">
       <div className="contents">
@@ -22,6 +27,8 @@ const Secondary = () => {
             runtime={video.runtime}
             thumbnail={video.thumbnail}
             views={video.views}
+            isPopup={isPopup}
+            setIsPopup={setIsPopup}
           />
         ))}
       </div>

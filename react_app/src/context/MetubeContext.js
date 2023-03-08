@@ -8,6 +8,12 @@ export const MetubeProvider =({children}) =>{
     const [video, setVideo] = useState(null)
     const [commentsLiked, setCommentsLiked] = useState(null)
     const [videos, setVideos] = useState([])
+   
+
+    // useEffect(() => {
+    //   setMenuPopupIsOpen(false)
+    //   setIsVisible(true);
+    // }, []);
 
     useEffect(()=>{
         fetch('http://localhost:3001/Users')
@@ -56,6 +62,10 @@ export const MetubeProvider =({children}) =>{
             setVideo,
             videos,
             setVideos
+            // menuPopupIsOpen, 
+            // setMenuPopupIsOpen,
+            // isVisible, 
+            // setIsVisible
         }}>
             {children}
         </MetubeContext.Provider>
