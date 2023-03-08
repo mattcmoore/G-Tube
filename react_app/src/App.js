@@ -9,12 +9,12 @@ function App() {
     <>
       <MetubeProvider>
         <Navbar />
-        <div className="primary-container">
+        <div className="primary-container"> 
           <Video />
           <Details />
           <Comments />
         </div>
-        {/* <Secondary /> */}
+        <Secondary />
       </MetubeProvider>
     </>
   );

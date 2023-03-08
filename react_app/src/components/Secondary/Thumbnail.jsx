@@ -1,8 +1,12 @@
 import AddToQueueBtn from "./AddToQueueBtn.jsx";
 import WatchLaterBtn from "./WatchLaterBtn.jsx";
 import { Duration } from "luxon";
+import {useEffect} from 'react'
 
-const Thumbnail = ({ video_link, runtime }) => {
+const Thumbnail = ({ thumbnail, runtime }) => {
+  useEffect(()=>{
+    console.log(thumbnail)
+  })
   return (
     <div className="ytd-thumbnail">
       <a className="thumbnail">
@@ -12,7 +16,7 @@ const Thumbnail = ({ video_link, runtime }) => {
               ? Duration.fromObject(runtime).toFormat("h:m:ss")
               : Duration.fromObject(runtime).toFormat("mm:ss")}
           </p>
-          <img className="core-image" src={video_link}></img>
+          <img className="core-image" src={thumbnail}/>
         </div>
         <div className="overlays">
           <AddToQueueBtn />

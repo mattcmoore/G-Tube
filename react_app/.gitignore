@@ -26,3 +26,4 @@ yarn-error.log*
 .env
 server.js
 table.sql
+App.js

@@ -54,7 +54,7 @@ VALUES
     false, 
     'Coding',
     '00:08:24',
-     'https://youtu.be/nMZmbhq3hbU.jpg',
+     'https://i3.ytimg.com/vi/nMZmbhq3hbU/maxresdefault.jpg',
     1
 ),
 (   'Teaching Java next year (vlog)', 
@@ -66,7 +66,7 @@ VALUES
     false, 
     'Coding', 
     '00:24:07',
-    'https://youtu.be/5i9tQjFXUO4.jpg',
+    'https://i.ytimg.com/vi/Bj1OCeld7WE/maxresdefault.jpg',
     1
 ),
 (   'Rapping vanilla JS', 
@@ -78,7 +78,7 @@ VALUES
     false, 
     'Coding', 
     '00:06:09',
-    'https://www.youtube.com/watch?v=5i9tQjFXUO4.jpg',
+    'https://i.ytimg.com/vi/5i9tQjFXUO4/maxresdefault.jpg',
     1
 ),
 (   'Driving in my Tesla', 
@@ -90,7 +90,7 @@ VALUES
     false, 
     'Coding', 
     '00:04:20',
-    'https://youtu.be/Bj1OCeld7WE.jpg',
+    'https://i.ytimg.com/vi/Bj1OCeld7WE/maxresdefault.jpg',
     1
 ),
 (   'MCSP-18 is my best class', 
@@ -102,7 +102,7 @@ VALUES
     false, 
     'Coding', 
     '00:05:00',
-    'https://youtu.be/f2bflgavlJY.jpg',
+    'https://i.ytimg.com/vi/f2bflgavlJY/maxresdefault.jpg',
     1
 );
 

@@ -27,16 +27,18 @@ app.use(cors());
 // });
 
 const connectionString = process.env.DATABASE_URL
-// const connectionString = 'postgresql://matt:volleyball@localhost:5432/meTube_db'
 
+// const pool = new Pool({
+//   user: "fatbo",
+//   password: "",
+//   port: 5432,
+//   host: "localhost",
+//   database: "youtube",
+// });
 
 const pool = new Pool({
-  user: "fatbo",
-  password: "",
-  port: 5432,
-  host: "localhost",
-  database: "youtube",
-});
+  connectionString,
+})
 
 const PORT = process.env.PORT || 3001;
 

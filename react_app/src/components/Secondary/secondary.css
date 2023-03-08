@@ -22,23 +22,6 @@
     justify-content: flex-start;
 }
 
-/* .dismissible:first-child .menu-popup {
-    position: fixed;
-    min-height: 321px;
-    min-width: 253.961px;
-    border-radius: 15px;
-    margin-top: 25px;
-    margin-left: 135px;
-    background-color: #282828;
-    font-weight: 300;
-    font-size: 14px;
-    padding: 8px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 1;
-} */
-
 .menu-popup {
     position: fixed;
     min-height: 321px;
@@ -149,19 +132,22 @@
 }
 
 .menu-popup-btn {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    float: right;
     height: 24px;
     width: 24px;
-    vertical-align: middle;
     outline: none;
     background: none;
     margin: 0;
-    border: none;
     padding: 0;
-    width: 24px;
-    height: 24px;
+    border: none;
     line-height: 0;
     cursor: pointer;
 }
+
 
 .three-dots {
     width: 100%; 

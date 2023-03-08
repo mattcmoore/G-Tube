@@ -1,20 +1,22 @@
 import Thumbnail from "./Thumbnail.jsx";
 import MenuPopup from "./MenuPopup.jsx";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
 import { DateTime } from "luxon";
 
 const Dismissible = ({
-  video_link,
+  thumbnail,
   username,
   title,
   views,
   date_published,
-  runtime,
+  runtime
 }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [menuPopupIsOpen, setMenuPopupIsOpen] = useState(false)
 
   useEffect(() => {
     setIsVisible(false);
+    setMenuPopupIsOpen(false)
   }, []);
 
   const handleMouseEnter = () => {
@@ -25,14 +27,20 @@ const Dismissible = ({
     setIsVisible(false);
   };
 
-  const handleClick = () => {};
+  const handleClick = (event) => {
+    setMenuPopupIsOpen(true)
+  };
+  const body = document.body
+  body.addEventListener("click", ()=>{
+    setMenuPopupIsOpen(false)
+  })    
   return (
     <div
       className="dismissible"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Thumbnail video_link={video_link} runtime={runtime} />
+      <Thumbnail thumbnail={thumbnail} runtime={runtime} />
       <div className="details">
         <p className="video-title">{title}</p>
         <div className="user_name">{username}</div>
@@ -42,7 +50,7 @@ const Dismissible = ({
           <p>{DateTime.fromISO(date_published).toRelative()}</p>
         </div>
       </div>
-      <button className={isVisible ? "menu-popup-btn" : "hidden"}>
+      <button className={isVisible ? "menu-popup-btn" : "hidden"} onClick={(e)=>{handleClick(e)}} >
         <svg
           className="three-dots"
           viewBox="0 0 24 24"
@@ -55,7 +63,7 @@ const Dismissible = ({
           </g>
         </svg>
       </button>
-      <MenuPopup />
+      <MenuPopup isOpen={menuPopupIsOpen} />
     </div>
   );
 };
