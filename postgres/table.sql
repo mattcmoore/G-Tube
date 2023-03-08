@@ -36,7 +36,7 @@ CREATE TABLE comments (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Garrett Ross', 'G-unit', null, 'https://yt3.googleusercontent.com/ytc/AL5GRJVQocYM80GnFFHn2_6K8E-bUuTxkoG16s1mjA01Jg=s176-c-k-c0x00ffffff-no-rj', 2500);
+INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Garrett Ross', 'Adam Coder', null, 'https://yt3.googleusercontent.com/ytc/AL5GRJVQocYM80GnFFHn2_6K8E-bUuTxkoG16s1mjA01Jg=s176-c-k-c0x00ffffff-no-rj', 2500);
 INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Tyler Schlepko', 'TylerSwift', null, 'https://static.wikia.nocookie.net/trailerpark/images/0/0e/Julian2.gif/revision/latest?cb=20091104025647', 1000);
 INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Matt Moore', 'Mattyboi', null, 'https://avatars.githubusercontent.com/u/5271857?v=4', 500);
 INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Dany', 'Danywamy', null, 'https://s3.amazonaws.com/app.growtix.com/media/big/25/4/61/dc8faf54-e3b1-4a1c-ae53-eebafb277484.png', 750);
@@ -45,12 +45,12 @@ INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Darwi
 
 INSERT INTO videos (title, description, video_link, likes, views, date_published, is_watched, keyword, runtime, thumbnail, user_id) 
 VALUES 
-(   'I am a teacher', 
-    'Watch me teach these students how to code', 
-    'https://youtu.be/nMZmbhq3hbU', 
-    47, 
-    2000, 
-    '2020-07-12', 
+(   'Calculating the fibonacci sequence in Javascript', 
+    'Not bad. Grab bag. Function composition. Fibonacci sequence. Higher order array helper methods. Bit of everything. Enjoi.', 
+    'https://www.youtube.com/watch?v=_0XUN8NXOCY', 
+    46, 
+    2800, 
+    '2020-10-20', 
     false, 
     'Coding',
     '00:08:24',
