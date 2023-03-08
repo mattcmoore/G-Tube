@@ -2,9 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const { Pool } = require("pg");
 const app = express();
-const dotenv = require("dotenv")
-dotenv.config()
-
+const dotenv = require("dotenv");
+dotenv.config();
 
 //starting this don't not to forget to migrate your table.sql
 //node server.js
@@ -27,14 +26,8 @@ app.use(cors());
 // });
 
 const connectionString = process.env.DATABASE_URL
+// const connectionString = 'postgresql://matt:volleyball@localhost:5432/meTube_db'
 
-// const pool = new Pool({
-//   user: "fatbo",
-//   password: "",
-//   port: 5432,
-//   host: "localhost",
-//   database: "youtube",
-// });
 
 const pool = new Pool({
   connectionString,
@@ -60,24 +53,26 @@ app.get("/Users", async (req, res) => {
 });
 //API endpoint to retrieve all comments
 app.get("/Comments", async (req, res) => {
-    try {
-      const { rows } = await pool.query(`SELECT * FROM comments`);
-      res.json(rows);
-    } catch (error) {
-      console.error(error);
-      res.status(500).send(error);
-    }
-  });
+  try {
+    const { rows } = await pool.query(`SELECT * FROM comments`);
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error);
+  }
+});
 
-  app.get("/CommentsAll", async (req, res) => {
-    try {
-      const { rows } = await pool.query(`SELECT * FROM comments JOIN users ON comments.user_id = users.id`);
-      res.json(rows);
-    } catch (error) {
-      console.error(error);
-      res.status(500).send(error);
-    }
-  });
+app.get("/CommentsAll", async (req, res) => {
+  try {
+    const { rows } = await pool.query(
+      `SELECT * FROM comments JOIN users ON comments.user_id = users.id`
+    );
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error);
+  }
+});
 
 // API endpoint to retrieve a single User by ID
 app.get("/Users/:id", async (req, res) => {
@@ -92,40 +87,41 @@ app.get("/Users/:id", async (req, res) => {
 });
 //API endpoint to retreieve single comment
 app.get("/Comments/:id", async (req, res) => {
-    const { id } = req.params;
-    try {
-      const { rows } = await pool.query(`SELECT * FROM comments WHERE id = ${id}`);
-      res.json(rows);
-    } catch (error) {
-      console.error(error);
-      res.status(500).send(error);
-    }
-  });
+  const { id } = req.params;
+  try {
+    const { rows } = await pool.query(
+      `SELECT * FROM comments WHERE id = ${id}`
+    );
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error);
+  }
+});
 //API endpoint to retrieve single video
 app.get("/Videos/:id", async (req, res) => {
-    const { id } = req.params;
-    try {
-      const { rows } = await pool.query(`SELECT * FROM videos WHERE id = ${id}`);
-      res.json(rows);
-    } catch (error) {
-      console.error(error);
-      res.status(500).send(error);
-    }
-  });
+  const { id } = req.params;
+  try {
+    const { rows } = await pool.query(`SELECT * FROM videos JOIN users ON videos.user_id = users.id WHERE videos.id = ${id};`);
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error);
+  }
+});
 
-  //API endpoint to retrieve all videos
-  app.get("/Videos", async (req, res) => {
-    
-    try {
-      const { rows } = await pool.query(`SELECT * FROM videos JOIN users ON videos.user_id = users.id`);
-      res.json(rows);
-    } catch (error) {
-      console.error(error);
-      res.status(500).send(error);
-    }
-  });
-
-
+//API endpoint to retrieve all videos
+app.get("/Videos", async (req, res) => {
+  try {
+    const { rows } = await pool.query(
+      `SELECT * FROM videos JOIN users ON videos.user_id = users.id`
+    );
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error);
+  }
+});
 
 // Start the server
 app.listen(PORT, () => {
