@@ -47,7 +47,7 @@ function Banner() {
         </a>
       </div>
       <div className={`navbar-menu ${isOpen ? "open" : ""}`}>
-        <div className="logo-container" style={{'margin-top': '5px', 'padding-bottom': '5px'}}>
+        <div className="logo-container" style={{'margin-top': '5px', 'padding-bottom': '0px'}}>
           <div
             style={{ padding: "0" }}
             className="rounded-button"
