@@ -66,7 +66,7 @@ VALUES
     false, 
     'Coding', 
     '00:24:07',
-    'https://i.ytimg.com/vi/Bj1OCeld7WE/maxresdefault.jpg',
+    'https://i.ytimg.com/vi/PIFCQV9rQVE/maxresdefault.jpg',
     1
 ),
 (   'Rapping vanilla JS', 
