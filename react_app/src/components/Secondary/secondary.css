@@ -17,6 +17,7 @@
 }
 
 .dismissible{
+    position: relative;
     margin-bottom: 10px;
     display: flex;
     justify-content: flex-start;
@@ -147,7 +148,6 @@
     line-height: 0;
     cursor: pointer;
 }
-
 
 .three-dots {
     width: 100%; 

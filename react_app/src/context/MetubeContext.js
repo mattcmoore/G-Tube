@@ -8,6 +8,12 @@ export const MetubeProvider =({children}) =>{
     const [video, setVideo] = useState(null)
     const [commentsLiked, setCommentsLiked] = useState(null)
     const [videos, setVideos] = useState([])
+   
+
+    // useEffect(() => {
+    //   setMenuPopupIsOpen(false)
+    //   setIsVisible(true);
+    // }, []);
 
     const [user, setUser] = useState(null)
 
