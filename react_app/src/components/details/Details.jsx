@@ -24,14 +24,18 @@ const Details = () => {
         </div>
         <button className="sub-btn">Subscribe</button>
         <div className="right-buttons">
-          <div className="like">
-            <FontAwesomeIcon icon={faThumbsUp} />
-            {/*Need to fetch likes from database for */}
-            <span className="text">15K</span>
-          </div>
+          <Tippy content="I like this" arrow={false} placement="bottom">
+            <div className="like">
+              <FontAwesomeIcon icon={faThumbsUp} />
+              {/*Need to fetch likes from database for */}
+              <span className="text">15K</span>
+            </div>
+          </Tippy>
+          <Tippy content="I dislike this" arrow={false} placement="bottom">
           <div className="dislike">
             <FontAwesomeIcon icon={faThumbsDown} />
           </div>
+          </Tippy>
           <Tippy content="Share" arrow={false} placement="bottom">
             <div className="share">
               <FontAwesomeIcon icon={faShare} />
