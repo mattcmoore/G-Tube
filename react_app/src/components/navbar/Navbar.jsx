@@ -20,6 +20,7 @@ function Navbar() {
         setIsMobile(true);
       } else {
         setIsMobile(false);
+        setIsSearch(false)
       }
     }
     handleResize();
@@ -104,11 +105,14 @@ function Navbar() {
       
       {isMobile ? (
         
-        <div className="small-container" style={{'width': '200px'}}>
+        <div className="small-container" style={{}}>
         <Tippy content='Search' arrow={false}>
-          <div onClick={toggleSearch} className="rounded-button" style={{'margin-left': '60px',
-                                                  'margin-top': '7px', 
-                                                  'margin-right': '8px',
+          <div onClick={toggleSearch} className="rounded-button" style={{'margin-left': '40px',
+                                                  'margin-top': '5px', 
+                                                  'margin-right': '3px',
+                                                  'padding-right': '10px',
+                                                  'padding-left': '10px',
+                                                  "width": '100px'
                                                   }}>
             <FontAwesomeIcon className='icon' icon={faSearch} />
           </div>
@@ -116,7 +120,7 @@ function Navbar() {
         <Tippy content='Search with your voice' arrow={false}>
           <div className="rounded-button" style={{'margin-left': '7px',
                                                   'background-color' : 'rgba(128, 128, 128, 0.5)',
-                                                  'margin-top': '7px',
+                                                  'margin-top': '4px',
                                                   "border-radius" : '0px',
                                                   'margin-right': '20px'}}>
               <FontAwesomeIcon className='icon' icon={faMicrophone} style={{'margin-top': '3px', 'width': '40px'}} />
