@@ -9,7 +9,7 @@ export const MetubeProvider =({children}) =>{
     const [commentsLiked, setCommentsLiked] = useState(null)
     const [videos, setVideos] = useState([])
 
-    const [user, setUser] = useState([])
+    const [user, setUser] = useState(null)
 
     //fetch video 1 from database
 
@@ -17,7 +17,7 @@ export const MetubeProvider =({children}) =>{
       fetch('http://localhost:3001/Videos/1')
         .then((response) => response.json())
         .then((data) => setUser(data))
-    })
+    }, [])
 
     useEffect(()=>{
         fetch('http://localhost:3001/Users')

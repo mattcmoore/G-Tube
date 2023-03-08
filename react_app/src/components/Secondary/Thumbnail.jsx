@@ -4,9 +4,7 @@ import { Duration } from "luxon";
 import {useEffect} from 'react'
 
 const Thumbnail = ({ thumbnail, runtime }) => {
-  useEffect(()=>{
-    console.log(thumbnail)
-  })
+
   return (
     <div className="ytd-thumbnail">
       <a className="thumbnail">
