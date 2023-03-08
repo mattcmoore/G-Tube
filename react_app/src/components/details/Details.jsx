@@ -32,9 +32,9 @@ const Details = () => {
             </div>
           </Tippy>
           <Tippy content="I dislike this" arrow={false} placement="bottom">
-          <div className="dislike">
-            <FontAwesomeIcon icon={faThumbsDown} />
-          </div>
+            <div className="dislike">
+              <FontAwesomeIcon icon={faThumbsDown} />
+            </div>
           </Tippy>
           <Tippy content="Share" arrow={false} placement="bottom">
             <div className="share">
@@ -51,7 +51,12 @@ const Details = () => {
           <div className="dot-btn">...</div>
         </div>
       </div>
-      <div className="description"></div>
+      <div className="description">
+        <div className="description-meta">
+          13,225 views <span id="desc-date">Jan 24, 2023</span>
+        </div>
+        <div className="description-text">This is a text example of a description. I will get descriptions from the database tomorrow</div>
+      </div>
     </div>
   );
 };
