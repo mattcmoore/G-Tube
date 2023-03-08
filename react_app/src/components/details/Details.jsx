@@ -1,3 +1,4 @@
+import { useContext, useEffect } from "react";
 import {
   faDownload,
   faShare,
@@ -6,29 +7,49 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Tippy from "@tippyjs/react";
+import MetubeContext from "../../context/MetubeContext";
+import { DateTime } from "luxon";
 
 const Details = () => {
+  const { user, isLoading } = useContext(MetubeContext);
+  
+  // Render loading state if user data is not yet available
+  if (isLoading || !user) {
+    return <div>Loading...</div>;
+  }
+  
+  const title = user[0].title;
+  const avatar = user[0].avatar;
+  const channel = user[0].username;
+  const subscribers = user[0].subscribers;
+  const likes = user[0].likes;
+  const views = user[0].views;
+  const date = user[0].date_published;
+  const description = user[0].description;
+
   return (
     <div className="detail">
       <div className="title">
-        <p>Calculating the fibonacci sequence in Javascript</p>
+        <p>{title}</p>
       </div>
       <div className="top-row">
-        {/*Need to fetch avatar from database for single user*/}
-        <img className="creator" />
-        {/*Need to fetch name from database for single user*/}
+        <img className="creator" src={avatar} />
+
         <div id="channel-name">
-          Adam Coder
-          {/*Fetch subscribers from database for single user*/}
-          <div id="subscribers">2.5K Subscribers</div>
+          {channel}
+
+          <div id="subscribers">
+            {subscribers >= 1000 ? `${subscribers / 1000}K` : subscribers}{" "}
+            Subscribers
+          </div>
         </div>
         <button className="sub-btn">Subscribe</button>
         <div className="right-buttons">
           <Tippy content="I like this" arrow={false} placement="bottom">
             <div className="like">
               <FontAwesomeIcon icon={faThumbsUp} />
-              {/*Need to fetch likes from database for */}
-              <span className="text">15K</span>
+
+              <span className="text">{likes}</span>
             </div>
           </Tippy>
           <Tippy content="I dislike this" arrow={false} placement="bottom">
@@ -53,9 +74,10 @@ const Details = () => {
       </div>
       <div className="description">
         <div className="description-meta">
-          13,225 views <span id="desc-date">Jan 24, 2023</span>
+          {views >= 1000 ? `${views / 1000}K` : views} views
+          <span id="desc-date">{DateTime.fromISO(date).toRelative()}</span>
         </div>
-        <div className="description-text">This is a text example of a description. I will get descriptions from the database tomorrow</div>
+        <div className="description-text">{description}</div>
       </div>
     </div>
   );
