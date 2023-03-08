@@ -1,8 +1,8 @@
 .carousel-container{
     position: absolute;
-    width: 80vw;
     top: 60px;
-    left: 100px;
+    left: 90px;
+    right: 10px;
 }
 
 .carousel-cell {
@@ -13,7 +13,7 @@
     color: white;
     border-radius: 10px;
     width: fit-content;
-    padding: 10px 20px;
+    padding: 5px 15px;
     font-size: 16px;
     white-space: nowrap;
     transition: all 0.3s ease-in-out;
@@ -25,5 +25,40 @@
   .carousel-cell:hover {
     background-color: rgba(141, 141, 141, 0.811);
     color: white;
+  }
+  
+  .side-bar{
+    position: fixed; 
+    font-size: x-small;
+    top: 60px; 
+    left: 7px; 
+    height: 100%; 
+    width: 60px; 
+    background-color: rgb(19, 19, 19);
+  }
+
+  .side-bar-icon { 
+    height: 70px; 
+    width: 60px; 
+    background-color: rgb(19, 19, 19);
+    border-radius: 10px;
+    display: flex;
+    justify-items: center;
+    justify-content: end;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+  }
+
+  .side-bar-icon:hover {
+    background-color: rgba(141, 141, 141, 0.811);
+    color: white;
+  }
+
+  .center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   
