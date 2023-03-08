@@ -9,6 +9,7 @@ import './components/video_component/video.css'
 import './components/details/details.css'
 import './components/Secondary/secondary.css'
 import './comments.css'
+import './components/HomePage/home.css'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

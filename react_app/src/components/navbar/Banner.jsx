@@ -28,6 +28,7 @@ import {
   faTv,
   faBabyCarriage,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 import tutuge from "./tutuge.png";
 
 function Banner() {
@@ -39,32 +40,32 @@ function Banner() {
   return (
     <div>
       <div className="logo-container">
-        <div className="rounded-button" onClick={toggleNavbar}>
+        <div className="rounded-button" onClick={toggleNavbar} style={{'margin-left': '10px'}}>
           <FontAwesomeIcon className="icon" icon={faBars} />
         </div>
-        <a>
+        <Link to='/' style={{'margin-left': '25px'}}><a>
           <img src={tutuge} alt="" className="tutuge" ></img>
-        </a>
+        </a></Link>
       </div>
       <div className={`navbar-menu ${isOpen ? "open" : ""}`}>
-        <div className="logo-container" style={{'margin-top': '5px', 'padding-bottom': '0px'}}>
+        <div className="logo-container" style={{'margin-top': '1px', 'padding-bottom': '0px'}}>
           <div
-            style={{ padding: "0" }}
+            style={{ 'padding': "0", 'margin-left': '14px', 'margin-right': '0' }}
             className="rounded-button"
             onClick={toggleNavbar}
           >
             <FontAwesomeIcon className="icon" icon={faBars} />
           </div>
-          <a style={{ 'padding': "0", "margin-left": "0" }}>
+          <Link to='/' style={{'padding': 0}} ><a style={{ 'padding': "0", "padding-left": "0", 'margin-top': '0', 'padding-left': '0px' }}>
             <img src={tutuge} alt="" className="tutuge"></img>
-          </a>
+          </a></Link>
         </div>
         <div className="scrollable">
           <ul>
-            <li>
+          <Link to='/' style={{'padding': '0'}}><li style={{'margin-left': '6px', 'padding-bottom': '0'}}>
               <FontAwesomeIcon className="icon" icon={faHome} />
               <a>Home</a>
-            </li>
+            </li></Link>
             <li>
               <FontAwesomeIcon className="icon" icon={faFilm} />
               <a>Shorts</a>
