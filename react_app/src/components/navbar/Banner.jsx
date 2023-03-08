@@ -43,11 +43,11 @@ function Banner() {
           <FontAwesomeIcon className="icon" icon={faBars} />
         </div>
         <a>
-          <img src={tutuge} alt="" className="tutuge"></img>
+          <img src={tutuge} alt="" className="tutuge" ></img>
         </a>
       </div>
       <div className={`navbar-menu ${isOpen ? "open" : ""}`}>
-        <div className="logo-container">
+        <div className="logo-container" style={{'margin-top': '5px', 'padding-bottom': '5px'}}>
           <div
             style={{ padding: "0" }}
             className="rounded-button"
@@ -55,7 +55,7 @@ function Banner() {
           >
             <FontAwesomeIcon className="icon" icon={faBars} />
           </div>
-          <a style={{ padding: "0", "margin-left": "0" }}>
+          <a style={{ 'padding': "0", "margin-left": "0" }}>
             <img src={tutuge} alt="" className="tutuge"></img>
           </a>
         </div>
@@ -91,10 +91,10 @@ function Banner() {
                 icon={faUser}
                 style={{ "margin-right": "5px", color: "#1e90ff" }}
               />
-              <p style={{ color: "#1e90ff" }}>Sign In</p>
+              <p style={{ 'color': "#1e90ff", 'margin-top': '15px' }}>Sign In</p>
             </div>
             <hr className="dropdown-divider" />
-            <h4 style={{ "margin-left": "25px", color: "white" }}>Explore</h4>
+            <h4 style={{ "margin-left": "25px", 'color': "white" }}>Explore</h4>
             <li>
               <FontAwesomeIcon className="icon" icon={faFire} />
               <a>Trending</a>
@@ -182,7 +182,7 @@ function Banner() {
               <a>Send Feedback</a>
             </li>
             <hr className="dropdown-divider" />
-            <p>Garret</p>
+            <a style={{'color':'black'}}>Garret</a>
           </ul>
         </div>
       </div>
