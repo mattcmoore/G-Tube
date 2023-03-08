@@ -1,7 +1,7 @@
 const MenuPopup = ({isOpen}) => {
   return (
     <div className={isOpen ? "menu-popup" : "hidden"}>
-      <div>
+      <div className="menu-popup-row">
         <div className="menu-popup-icon">
           <svg
             viewBox="0 0 24 24"
@@ -16,7 +16,7 @@ const MenuPopup = ({isOpen}) => {
         </div>
         <p>Add to queue</p>
       </div>
-      <div>
+      <div className="menu-popup-row">
         <div className="menu-popup-icon">
           <svg
             viewBox="0 0 24 24"
@@ -31,7 +31,7 @@ const MenuPopup = ({isOpen}) => {
         </div>
         <p>Save to Watch later</p>
       </div>
-      <div>
+      <div className="menu-popup-row">
         <div className="menu-popup-icon">
           <svg
             viewBox="0 0 24 24"
@@ -46,7 +46,7 @@ const MenuPopup = ({isOpen}) => {
         </div>
         <p>Save to playlist</p>
       </div>
-      <div>
+      <div className="menu-popup-row">
         <div className="menu-popup-icon">
           <svg
             viewBox="0 0 24 24"
@@ -61,7 +61,7 @@ const MenuPopup = ({isOpen}) => {
         </div>
         <p>Download</p>
       </div>
-      <div>
+      <div className="menu-popup-row">
         <div className="menu-popup-icon">
           <svg
             viewBox="0 0 24 24"
@@ -76,7 +76,7 @@ const MenuPopup = ({isOpen}) => {
         </div>
         <p>Share</p>
       </div>
-      <div>
+      <div className="menu-popup-row">
         <div className="menu-popup-icon">
           <svg
             viewBox="0 0 24 24"
@@ -95,7 +95,7 @@ const MenuPopup = ({isOpen}) => {
         </div>
         <p>Not Interested</p>
       </div>
-      <div>
+      <div className="menu-popup-row">
         <div className="menu-popup-icon">
           <svg
             viewBox="0 0 24 24"
@@ -110,7 +110,7 @@ const MenuPopup = ({isOpen}) => {
         </div>
         <p>Don't recommend channel</p>
       </div>
-      <div>
+      <div className="menu-popup-row">
         <div className="menu-popup-icon">
           <svg
             viewBox="0 0 24 24"
