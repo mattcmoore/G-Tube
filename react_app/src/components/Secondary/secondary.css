@@ -54,7 +54,7 @@
     margin: 2px;
     padding: 2px;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 550;
 }
 
 .details {
@@ -110,7 +110,8 @@
 }
 
 .menu-popup-row:hover {
-    background-color:#717171;
+    /* background-color:#717171; */
+    background-color: rgb(65,65,65)
 }
 
 .menu-popup-row:nth-child(5){
@@ -128,6 +129,12 @@
     border: .25px solid gray;
 }
 
+.metadata-line {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+
+}
 .metadata-line p, .user_name {
     position: relative;
     top: 5px;
@@ -181,7 +188,7 @@
 }
 
 .video-title {
-    font-weight: bold;
+    font-weight: 500;
     font-size: 14px;
     margin-top: 0
 }

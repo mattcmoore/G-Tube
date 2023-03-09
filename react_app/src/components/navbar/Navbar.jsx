@@ -3,12 +3,14 @@ import Banner from './Banner'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV, faSearch, faMicrophone, faUser, faShield, faMoon, faLanguage, faShieldAlt, faGlobe, faKeyboard, faGear, faQuestionCircle, faMessage, faArrowAltCircleRight, faSun, faArrowLeft, faCheck } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react'
+import { useContext } from 'react';
+import MetubeContext from '../../context/MetubeContext';
 
 
 function Navbar() {
+  const {theme, setTheme} = useContext(MetubeContext)
   const [isDropdown, setIsDropdown] = useState(false)
   const [search, setSearch] = useState('')
-  const [theme, setTheme] = useState({open: false, apperance: 'Dark Theme'})
   const [restricted, setRestricted] = useState({open: false, restrict: 'Off'})
   const [location, setLocation] = useState({open: false, country: 'United States'})
   const [isMobile, setIsMobile] = useState(false)
@@ -154,12 +156,12 @@ function Navbar() {
             {isDropdown && (
               <div className="dropdown-menu">
                 <ul style={{'margin-top': '0', 'margin-bottom': '0'}}>
-                  <li ><FontAwesomeIcon className='icon' icon={faShield}/><a >Your data in Tutuge</a></li>
+                  <li ><FontAwesomeIcon className='icon' icon={faShield}/><a >Your data in G-Tube</a></li>
                   <hr className="dropdown-divider" />
-                  <li onClick={openTheme}><FontAwesomeIcon className='icon' icon={theme.apperance === 'Dark Theme' ? faMoon : faSun}/><a>Appearance: {theme.apperance}</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"8px"}}/></li>
-                  <li><FontAwesomeIcon className='icon' icon={faLanguage}/><a >Language: English</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"57px"}} /></li>
-                  <li onClick={openRestrict}><FontAwesomeIcon className='icon' icon={faShieldAlt}/><a >Restricted Mode: {restricted.restrict}</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"41px"}}/></li>
-                  <li><FontAwesomeIcon className='icon' icon={faGlobe}/><a >Location: {location.country}</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"24px"}}/></li>
+                  <li onClick={openTheme}><FontAwesomeIcon className='icon' icon={theme.apperance === 'Dark Theme' ? faMoon : faSun}/><a>Appearance: {theme.apperance}</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"3px"}}/></li>
+                  <li><FontAwesomeIcon className='icon' icon={faLanguage}/><a >Language: English</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"52px"}} /></li>
+                  <li onClick={openRestrict}><FontAwesomeIcon className='icon' icon={faShieldAlt}/><a >Restricted Mode: {restricted.restrict}</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"35px"}}/></li>
+                  <li><FontAwesomeIcon className='icon' icon={faGlobe}/><a >Location: {location.country}</a><FontAwesomeIcon className='icon' icon={faArrowAltCircleRight} style={{'margin-left':"17px"}}/></li>
                   <li><FontAwesomeIcon className='icon' icon={faKeyboard}/><a >Keyboard shortcuts</a></li>
                   <hr className="dropdown-divider" />
                   <li><FontAwesomeIcon className='icon' icon={faGear}/><a >Settings</a></li>
