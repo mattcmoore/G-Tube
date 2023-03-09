@@ -29,10 +29,15 @@ import {
   faBabyCarriage,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import tutuge from "./space_logo_white.png";
+import darkTheme from "./space_logo_white.png";
+import lightTheme from './space_logo_black.png'
+import { useContext } from "react";
+import MetubeContext from "../../context/MetubeContext";
 
 function Banner() {
+  const {theme} = useContext(MetubeContext) 
   const [isOpen, setIsOpen] = useState(false);
+  const currLogo = theme.apperance === 'Dark Theme' ? darkTheme : lightTheme
 
   function toggleNavbar() {
     setIsOpen(!isOpen);
@@ -44,10 +49,10 @@ function Banner() {
           <FontAwesomeIcon className="icon" icon={faBars} />
         </div>
         <Link to='/' style={{'margin-left': '25px'}}><a>
-          <img src={tutuge} alt="" className="tutuge" ></img>
+          <img src={currLogo} alt="" className="tutuge" ></img>
         </a></Link>
       </div>
-      <div className={`navbar-menu ${isOpen ? "open" : ""}`}>
+      <div className={` ${theme.apperance === 'Dark Theme' ? 'navbar-menu' : 'light-navbar-menu'} ${isOpen ? "open" : ""}`}>
         <div className="logo-container" style={{'margin-top': '1px', 'padding-bottom': '0px'}}>
           <div
             style={{ 'padding': "0", 'margin-left': '14px', 'margin-right': '0' }}
@@ -57,7 +62,7 @@ function Banner() {
             <FontAwesomeIcon className="icon" icon={faBars} />
           </div>
           <Link to='/' style={{'padding': 0}} ><a style={{ 'padding': "0", "padding-left": "0", 'margin-top': '0', 'padding-left': '0px' }}>
-            <img src={tutuge} alt="" className="tutuge"></img>
+            <img src={currLogo} alt="" className="tutuge"></img>
           </a></Link>
         </div>
         <div className="scrollable">
