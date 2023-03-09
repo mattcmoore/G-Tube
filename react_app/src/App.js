@@ -1,20 +1,17 @@
-import Navbar from "./components/navbar/Navbar";
-import Secondary from "./components/Secondary/Secondary";
-import Video from "./components/video_component/Video";
-import Details from "./components/details/Details";
-import Comments from "./components/comments/Comments";
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import { MetubeProvider } from "./context/MetubeContext";
+import Home from './pages/Home';
+import VideoPage from './pages/VideoPage';
 function App() {
   return (
     <>
        <MetubeProvider>
-        <Navbar />
-        <div className="primary-container"> 
-          <Video />
-          <Details />
-          <Comments />
-        </div>
-        <Secondary />
+        <Router>
+          <Routes>
+            <Route exact path='/' element={<Home/>}/>
+            <Route path='/videoPage' element={<VideoPage/>}/>
+          </Routes>
+        </Router>
       </MetubeProvider>
     </>
   );
