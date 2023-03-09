@@ -3,6 +3,8 @@ import { Carousel, ScrollingCarousel } from '@trendyol-js/react-carousel';
 
 
 function Carousels() {
+  const arr = [{catagory: 'All', }]
+
   return (
     <div className="carousel-container">
     <ScrollingCarousel infinite={false}>
