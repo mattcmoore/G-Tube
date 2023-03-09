@@ -3,12 +3,14 @@ import Banner from './Banner'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV, faSearch, faMicrophone, faUser, faShield, faMoon, faLanguage, faShieldAlt, faGlobe, faKeyboard, faGear, faQuestionCircle, faMessage, faArrowAltCircleRight, faSun, faArrowLeft, faCheck } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react'
+import { useContext } from 'react';
+import MetubeContext from '../../context/MetubeContext';
 
 
 function Navbar() {
+  const {theme, setTheme} = useContext(MetubeContext)
   const [isDropdown, setIsDropdown] = useState(false)
   const [search, setSearch] = useState('')
-  const [theme, setTheme] = useState({open: false, apperance: 'Dark Theme'})
   const [restricted, setRestricted] = useState({open: false, restrict: 'Off'})
   const [location, setLocation] = useState({open: false, country: 'United States'})
   const [isMobile, setIsMobile] = useState(false)

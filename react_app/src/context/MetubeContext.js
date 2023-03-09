@@ -8,7 +8,7 @@ export const MetubeProvider =({children}) =>{
     const [video, setVideo] = useState(null)
     const [commentsLiked, setCommentsLiked] = useState(null)
     const [videos, setVideos] = useState([])
-   
+    const [theme, setTheme] = useState({open: false, apperance: 'Dark Theme'})
 
     // useEffect(() => {
     //   setMenuPopupIsOpen(false)
@@ -73,7 +73,9 @@ export const MetubeProvider =({children}) =>{
             videos,
             setVideos,
             user,
-            setUser
+            setUser,
+            theme,
+            setTheme
         }}>
             {children}
         </MetubeContext.Provider>
