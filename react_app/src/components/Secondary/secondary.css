@@ -23,23 +23,6 @@
     justify-content: flex-start;
 }
 
-.menu-popup {
-    position: fixed;
-    min-height: 321px;
-    min-width: 253.961px;
-    border-radius: 15px;
-    margin-top: 25px;
-    margin-left: 135px;
-    background-color: #282828;
-    font-weight: 300;
-    font-size: 14px;
-    padding: 8px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 1;
-}
-
 .ytd-thumbnail {
     height: 94px;
     width: 168px;
@@ -66,11 +49,12 @@
     background-color: black;
     color: white;
     border-radius: 5px;
-    bottom: 10px;
-    right: 10px;
+    bottom: 5px;
+    right: 5px;
     margin: 2px;
-    padding: 5px;
+    padding: 2px;
     font-size: 12px;
+    font-weight: bold;
 }
 
 .details {
@@ -82,6 +66,27 @@
 
 .hidden {
     display: none;
+}
+
+.menu-popup {
+    position: fixed;
+    min-height: 321px;
+    min-width: 253.961px;
+    border-radius: 15px;
+    margin-top: 25px;
+    margin-left: 135px;
+    background-color: #282828;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.menu-popup.flip {
+    margin-top: -321px;
 }
 
 .menu-popup.dark {
@@ -179,4 +184,27 @@
     font-weight: bold;
     font-size: 14px;
     margin-top: 0
+}
+
+.queue-btn, .watch-later-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    height: 27px;
+    width: 27px;
+    /* padding: 2px; */
+    border-radius: 20%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.queue-btn svg, .watch-later-btn svg {
+    height: 85%;
+    width: 85%
+}
+
+.queue-btn {
+    top: 35px;
 }

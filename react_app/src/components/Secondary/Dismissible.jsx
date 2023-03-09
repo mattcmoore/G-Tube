@@ -42,7 +42,9 @@ const Dismissible = ({
   const handleClick = (event) => {
     setMenuPopupIsOpen(!menuPopupIsOpen)
     setIsPopup(!isPopup)
-    // setIsPopup(true)
+    
+    const mid = window.innerHeight/2
+    console.log(event )
   };
  
   return (

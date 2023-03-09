@@ -8,12 +8,12 @@ import Comments from "../components/comments/Comments";
 function VideoPage() {
   return (
     <>
-    <Navbar />
+    {/* <Navbar />
     <div className="primary-container"> 
       <Video />
       <Details />
       <Comments />
-    </div>
+    </div> */}
     <Secondary />
     </>
   )
