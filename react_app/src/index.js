@@ -10,6 +10,7 @@ import './components/details/details.css'
 import './components/Secondary/secondary.css'
 import './comments.css'
 import './components/HomePage/home.css'
+import "./components/Homevideos/Homevideos.css"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
