@@ -99,7 +99,7 @@
     height: 36px;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: middle;
     gap: 15px;
     cursor: pointer;
 }
@@ -176,7 +176,7 @@
 }
 
 .video-title {
-    font-weight: 550;
+    font-weight: bold;
     font-size: 14px;
     margin-top: 0
 }
