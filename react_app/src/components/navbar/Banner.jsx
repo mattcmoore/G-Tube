@@ -29,7 +29,7 @@ import {
   faBabyCarriage,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import tutuge from "./tutuge.png";
+import tutuge from "./space_logo_white.png";
 
 function Banner() {
   const [isOpen, setIsOpen] = useState(false);
@@ -147,23 +147,23 @@ function Banner() {
             </li>
             <hr className="dropdown-divider" />
             <h4 style={{ "margin-left": "25px", color: "white" }}>
-              More from Tutuge
+              More from G-Tube
             </h4>
             <li>
               <FontAwesomeIcon className="icon" icon={faPlus} />
-              <a>Tutuge Premium</a>
+              <a>G-Tube Premium</a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faMusic} />
-              <a>Tutuge Music</a>
+              <a>G-Tube Music</a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faBabyCarriage} />
-              <a>Tutuge Kids</a>
+              <a>G-Tube Kids</a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faTv} />
-              <a>Tutuge TV</a>
+              <a>G-Tube TV</a>
             </li>
             <hr className="dropdown-divider" />
             <li>

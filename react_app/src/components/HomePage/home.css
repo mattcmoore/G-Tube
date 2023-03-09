@@ -19,7 +19,7 @@
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     margin: 10px;
-    font-weight: bolder;
+    font-weight: 450;
   }
   
   .carousel-cell:hover {
@@ -62,3 +62,7 @@
     transform: translate(-50%, -50%);
   }
   
+  .selected{
+    background-color: lightgray;
+    color: black;
+  }
