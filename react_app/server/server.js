@@ -78,7 +78,7 @@ app.get("/CommentsAll", async (req, res) => {
 app.get("/Users/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const { rows } = await pool.query(`SELECT * FROM users WHERE id = ${id}`);
+    const { rows } = await pool.query(`SELECT * FROM users WHERE user_id = ${id}`);
     res.json(rows);
   } catch (error) {
     console.error(error);

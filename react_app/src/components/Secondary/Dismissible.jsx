@@ -51,27 +51,27 @@ const Dismissible = ({
   }
 
   const addToQueue = () => {
-    // let video_id = id
-    // if( (queue.filter(obj => obj.id === video_id)).length === 0  ){
-    //   setQueue([
-    //     { id: id,
-    //       thumbnail: thumbnail,
-    //      runtime: runtime,
-    //      title: title,
-    //      username: username
-    //     }, ...queue
-    //   ])
-    // } else{
-    //   console.log(video_id)
-    // } 
-    setQueue([
-      { id: id,
-        thumbnail: thumbnail,
-       runtime: runtime,
-       title: title,
-       username: username
-      }, ...queue
-    ])
+    let video_id = id
+    if( (queue.filter(obj => obj.id === video_id)).length === 0  ){
+      setQueue([
+        { id: id,
+          thumbnail: thumbnail,
+         runtime: runtime,
+         title: title,
+         username: username
+        }, ...queue
+      ])
+    } else{
+      console.log(video_id)
+    } 
+    // setQueue([
+    //   { id: id,
+    //     thumbnail: thumbnail,
+    //    runtime: runtime,
+    //    title: title,
+    //    username: username
+    //   }, ...queue
+    // ])
   }
 
   return (
