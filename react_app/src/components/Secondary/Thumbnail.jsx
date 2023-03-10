@@ -3,7 +3,7 @@ import WatchLaterBtn from "./WatchLaterBtn.jsx";
 import { Duration } from "luxon";
 import {useEffect,useState} from 'react'
 
-const Thumbnail = ({ thumbnail, runtime }) => {
+const Thumbnail = ({ thumbnail, runtime, addToQueue}) => {
 
   const [buttonsAreVisible, setButtonsAreVisible] = useState(false)
 
@@ -23,7 +23,7 @@ const Thumbnail = ({ thumbnail, runtime }) => {
     <div className="ytd-thumbnail" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <a className="thumbnail">
         <div className="yt-image">
-          <div className={buttonsAreVisible ? "queue-btn" : "hidden"}>
+          <div className={buttonsAreVisible ? "queue-btn" : "hidden"} onClick={addToQueue}>
             <svg
               viewBox="0 0 24 24"
               preserveAspectRatio="xMidYMid meet"

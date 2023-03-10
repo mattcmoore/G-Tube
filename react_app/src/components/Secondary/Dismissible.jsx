@@ -19,6 +19,8 @@ const Dismissible = ({
   const [isVisible, setIsVisible] = useState(false)
   const [isFlipped, setIsFlipped] = useState(false)
 
+  const {queue, setQueue} = useContext(MetubeContext)
+
   window.addEventListener("click",(event)=>{
     if(event.target.className !== "menu-popup-btn"){
       setMenuPopupIsOpen(false)
@@ -28,8 +30,6 @@ const Dismissible = ({
     }
   })
   
-  // const {menuPopupIsOpen, setMenuPopupIsOpen, isVisible, setIsVisible} = useContext(MetubeContext)
-
   const handleMouseLeave = () => {
     menuPopupIsOpen ? setIsVisible(true) : setIsVisible(false);
 
@@ -47,20 +47,26 @@ const Dismissible = ({
     const mid = window.innerHeight/2
     // setMid(window.innerHeight/2)
     event.clientY > mid ? setIsFlipped(true) : setIsFlipped(false)
-    // if(event.clientY > mid){
-    //   setIsFlipped(true)
-    // } else{
-    //   setIsFlipped(false)
-    // }
-  };
- 
+  }
+
+  const addToQueue = () => {
+    setQueue([
+      {thumbnail: thumbnail,
+       runtime: runtime,
+       title: title,
+       username: username
+      }, ...queue
+    ])
+
+  }
+
   return (
     <div
       className="dismissible"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Thumbnail thumbnail={thumbnail} runtime={runtime} />
+      <Thumbnail thumbnail={thumbnail} runtime={runtime} addToQueue={addToQueue} />
       <div className="details">
         <p className="video-title">{title}</p>
         <div className="user_name">
@@ -86,7 +92,7 @@ const Dismissible = ({
           </g>
         </svg>
       </button>
-      <MenuPopup isOpen={menuPopupIsOpen} isFlipped={isFlipped} />
+      <MenuPopup isOpen={menuPopupIsOpen} isFlipped={isFlipped} addToQueue={addToQueue} />
     </div>
   );
 };
