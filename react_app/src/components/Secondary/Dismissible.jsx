@@ -17,12 +17,14 @@ const Dismissible = ({
 
   const [menuPopupIsOpen, setMenuPopupIsOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
+  const [isFlipped, setIsFlipped] = useState(false)
 
   window.addEventListener("click",(event)=>{
     if(event.target.className !== "menu-popup-btn"){
       setMenuPopupIsOpen(false)
       setIsPopup(false)
       setIsVisible(false)
+      setIsFlipped(false)
     }
   })
   
@@ -42,7 +44,14 @@ const Dismissible = ({
   const handleClick = (event) => {
     setMenuPopupIsOpen(!menuPopupIsOpen)
     setIsPopup(!isPopup)
-    // setIsPopup(true)
+    const mid = window.innerHeight/2
+    // setMid(window.innerHeight/2)
+    event.clientY > mid ? setIsFlipped(true) : setIsFlipped(false)
+    // if(event.clientY > mid){
+    //   setIsFlipped(true)
+    // } else{
+    //   setIsFlipped(false)
+    // }
   };
  
   return (
@@ -77,7 +86,7 @@ const Dismissible = ({
           </g>
         </svg>
       </button>
-      <MenuPopup isOpen={menuPopupIsOpen} />
+      <MenuPopup isOpen={menuPopupIsOpen} isFlipped={isFlipped} />
     </div>
   );
 };

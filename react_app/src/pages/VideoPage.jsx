@@ -17,7 +17,7 @@ function VideoPage() {
       <Video />
       <Details />
       <Comments />
-    </div>
+    </div> */}
     <Secondary />
     </div>
     </>
