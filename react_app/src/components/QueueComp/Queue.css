@@ -1,0 +1,137 @@
+#queue-container {
+  color: white;
+  float: right;
+  width: 400px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+#queue-header {
+  background-color: #212121;
+  width: 400px;
+  height: 55px;
+  position: relative;
+}
+
+#queue-title {
+  position: relative;
+  top: 10px;
+  left: 15px;
+  color: #f1f1f1;
+}
+
+#queue-test {
+  color: #f1f1f1;
+  position: relative;
+  top: 0;
+  left: 15px;
+}
+
+#queue-close-button {
+  font-weight: bold;
+  color: #f1f1f1;
+  background-color: #212121;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  bottom: 20px;
+  left: 335px;
+}
+
+#queue-clear-button {
+  color: #f1f1f1;
+  background-color: #212121;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 18px;
+  position: relative;
+  top: 0;
+  left: 300px;
+}
+
+#queue-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#queue-time {
+  position: relative;
+  color: #ffffff;
+  display: inline-block;
+  top: 15px;
+  left: 110px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* #queue-time::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  z-index: -1;
+} */
+
+
+
+
+#queue-item:hover {
+  background-color: #272727;
+}
+
+#queue-item:hover #hamburger-icon {
+  color: #333333;
+}
+
+#hamburger-icon {
+  display: inline-block;
+  font-size: 2em;
+  line-height: 0.5em;
+}
+
+#queue-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  transition: all 0.2s;
+}
+
+#queue-item-image {
+  background-color: transparent;
+  height: 60px;
+  width: 110px;
+}
+
+#queue-item-name {
+  margin: 0 20px;
+  font-weight: bold;
+  color: #f1f1f1;
+  flex: 1;
+}
+
+#queue-item-options-button {
+  font-weight: bold;
+  color: #f1f1f1;
+  background-color: #212121;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  bottom: 50px;
+  left: 350px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
