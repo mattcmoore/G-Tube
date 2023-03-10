@@ -10,7 +10,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE videos (
-    id SERIAL PRIMARY KEY,
+    id SERIAL INTEGER UNIQUE PRIMARY KEY,
     title VARCHAR,
     description TEXT,
     video_link TEXT,
@@ -35,6 +35,8 @@ CREATE TABLE comments (
     FOREIGN KEY (video_id) REFERENCES videos(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
+TRUNCATE TABLE users, videos, comments RESTART IDENTITY CASCADE;
 
 INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Garrett Ross', 'Adam Coder', null, 'https://yt3.googleusercontent.com/ytc/AL5GRJVQocYM80GnFFHn2_6K8E-bUuTxkoG16s1mjA01Jg=s176-c-k-c0x00ffffff-no-rj', 2500);
 INSERT INTO users (name, username, password, avatar, subscribers) VALUES ('Tyler Schlepko', 'TylerSwift', null, 'https://static.wikia.nocookie.net/trailerpark/images/0/0e/Julian2.gif/revision/latest?cb=20091104025647', 1000);

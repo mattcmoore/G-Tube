@@ -1,8 +1,8 @@
-const MenuPopup = ({isOpen}) => {
+const MenuPopup = ({isOpen, isFlipped, addToQueue}) => {
   return (
-    <div className={isOpen ? "menu-popup" : "hidden"}>
-      <div className="menu-popup-row">
-        <div className="menu-popup-icon">
+    <div className={isOpen ? isFlipped ? "menu-popup flip" : "menu-popup" : "hidden"}>
+      <div className="menu-popup-row" onClick={addToQueue}>
+        <div className="menu-popup-icon" >
           <svg
             viewBox="0 0 24 24"
             preserveAspectRatio="xMidYMid meet"

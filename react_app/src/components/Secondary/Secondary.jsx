@@ -4,8 +4,9 @@ import MetubeContext from "../../context/MetubeContext.js";
 import { useState, useEffect, useContext } from "react";
 
 const Secondary = () => {
-  const { videos } = useContext(MetubeContext);
   const [isPopup, setIsPopup] = useState(false)
+
+  const { videos } = useContext(MetubeContext)
 
   useEffect(()=>{
     setIsPopup(false)

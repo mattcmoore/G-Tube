@@ -5,6 +5,7 @@ import { DateTime } from "luxon";
 import MetubeContext from "../../context/MetubeContext.js";
 
 const Dismissible = ({
+  id,
   thumbnail,
   username,
   title,
@@ -17,17 +18,19 @@ const Dismissible = ({
 
   const [menuPopupIsOpen, setMenuPopupIsOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
+  const [isFlipped, setIsFlipped] = useState(false)
+
+  const {queue, setQueue} = useContext(MetubeContext)
 
   window.addEventListener("click",(event)=>{
     if(event.target.className !== "menu-popup-btn"){
       setMenuPopupIsOpen(false)
       setIsPopup(false)
       setIsVisible(false)
+      setIsFlipped(false)
     }
   })
   
-  // const {menuPopupIsOpen, setMenuPopupIsOpen, isVisible, setIsVisible} = useContext(MetubeContext)
-
   const handleMouseLeave = () => {
     menuPopupIsOpen ? setIsVisible(true) : setIsVisible(false);
 
@@ -42,20 +45,46 @@ const Dismissible = ({
   const handleClick = (event) => {
     setMenuPopupIsOpen(!menuPopupIsOpen)
     setIsPopup(!isPopup)
-    // setIsPopup(true)
-  };
- 
+    const mid = window.innerHeight/2
+    // setMid(window.innerHeight/2)
+    event.clientY > mid ? setIsFlipped(true) : setIsFlipped(false)
+  }
+
+  const addToQueue = () => {
+    // let video_id = id
+    // if( (queue.filter(obj => obj.id === video_id)).length === 0  ){
+    //   setQueue([
+    //     { id: id,
+    //       thumbnail: thumbnail,
+    //      runtime: runtime,
+    //      title: title,
+    //      username: username
+    //     }, ...queue
+    //   ])
+    // } else{
+    //   console.log(video_id)
+    // } 
+    setQueue([
+      { id: id,
+        thumbnail: thumbnail,
+       runtime: runtime,
+       title: title,
+       username: username
+      }, ...queue
+    ])
+  }
+
   return (
     <div
       className="dismissible"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Thumbnail thumbnail={thumbnail} runtime={runtime} />
+      <Thumbnail thumbnail={thumbnail} runtime={runtime} addToQueue={addToQueue} />
       <div className="details">
         <p className="video-title">{title}</p>
         <div className="user_name">
-            <p>{username}</p>
+            <p>{`${username} ${id}`}</p>
             <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false"><g class="style-scope yt-icon" fill="white"><path d="M12,2C6.5,2,2,6.5,2,12c0,5.5,4.5,10,10,10s10-4.5,10-10C22,6.5,17.5,2,12,2z M9.8,17.3l-4.2-4.1L7,11.8l2.8,2.7L17,7.4 l1.4,1.4L9.8,17.3z"></path></g></svg>
           </div>
         <div className="metadata-line">
@@ -77,7 +106,7 @@ const Dismissible = ({
           </g>
         </svg>
       </button>
-      <MenuPopup isOpen={menuPopupIsOpen} />
+      <MenuPopup isOpen={menuPopupIsOpen} isFlipped={isFlipped} addToQueue={addToQueue} />
     </div>
   );
 };
