@@ -1,6 +1,6 @@
 import { useContext } from "react" 
 import MetubeContext from "../../context/MetubeContext"
-
+import { Link } from 'react-router-dom'
 
 const Homevideos = () => {
  const {videos} = useContext(MetubeContext)
@@ -46,7 +46,7 @@ const Homevideos = () => {
         {videos.map(video => (
            
             <div className="video-card">
-                <img className="home-video-img" src={video.thumbnail} alt={video.title} />
+                <Link to='/videoPage'><img className="home-video-img" src={video.thumbnail} alt={video.title} /></Link>
                 <div className="desc">
                     <div className="home-video-desc-header">
                         <img src={video.avatar} className="home-video-user-image"/>
