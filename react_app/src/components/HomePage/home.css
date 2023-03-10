@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(60, 60, 60);
+    background-color: rgb(39,39,39);
     color: white;
     border-radius: 10px;
     width: fit-content;
@@ -23,7 +23,7 @@
   }
   
   .carousel-cell:hover {
-    background-color: rgba(141, 141, 141, 0.811);
+    background-color: rgb(63, 63, 63);
     color: white;
   }
   
@@ -34,13 +34,13 @@
     left: 7px; 
     height: 100%; 
     width: 60px; 
-    background-color: rgb(19, 19, 19);
+    background-color: rgb(13,13,13);
   }
 
   .side-bar-icon { 
     height: 70px; 
     width: 60px; 
-    background-color: rgb(19, 19, 19);
+    background-color: rgb(13,13,13);
     border-radius: 10px;
     display: flex;
     justify-items: center;
@@ -49,10 +49,25 @@
     align-content: center;
     flex-direction: column;
   }
+  .icon-side{
+    stroke: white;
+    stroke-width: 20px;
+    width: 22px;
+    height: fit-content;
+    color: rgb(13,13,13);
+    padding-bottom: 8px;
+  }
+  .icon-side-selected{
+    width: 22px;
+    height: fit-content;
+    color: white;
+    padding-bottom: 8px;
+  }
 
   .side-bar-icon:hover {
-    background-color: rgba(141, 141, 141, 0.811);
+    background-color: rgb(30 30, 30);
     color: white;
+    cursor: pointer;
   }
 
   .center {
@@ -63,6 +78,12 @@
   }
   
   .selected{
-    background-color: lightgray;
+    background-color: rgb(241,241,241);
     color: black;
+  }
+
+  .selected:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
   }
