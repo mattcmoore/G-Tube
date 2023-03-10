@@ -19,8 +19,8 @@
 }
 
 .title {
-    background-color: rgba(255, 255, 255, 0);
-    color: rgb(249, 249, 249);
+    /* background-color: rgba(255, 255, 255, 0); */
+    color: var(--text);
     /* border: rgb(223, 187, 187) 1px solid; */
     width: 100%;
     font-size: 2rem;
@@ -37,7 +37,7 @@
     overflow: hidden;
 }
 .creator {
-    background-color: rgba(55, 58, 58, 0.687);
+    /* background-color: rgba(55, 58, 58, 0.687); */
     display: block;
     width: 50px;
     height: 50px;
@@ -46,7 +46,7 @@
 
 #channel-name {
    margin-left: 10px;
-   color:rgb(249, 249, 249);
+   color:var(--text);
    font-size: 1rem;
    font-weight: 700;
 }
@@ -58,6 +58,8 @@
 
 .sub-btn {
     margin-left: 25px;
+    background-color: var(--description-box);;
+    color: var(--text);
 }
 
 /* .dot-btn,
@@ -78,7 +80,7 @@
 .download,
 .share {
     margin-left: auto;
-    color:rgb(255, 255, 255);
+    color:var(--text);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,13 +101,13 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: rgba(128, 128, 128, 0.5);
+  background-color: var(--description-box);;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
-  color:rgb(255, 255, 255);
+  color:var(--text);
   font-weight: 700;
   font-size: larger;
 }
@@ -118,9 +120,9 @@
 
 .download, .share {
   /* display: inline-block; */
-  background-color: rgba(125,125,125, 0.5);
+  background-color: var(--description-box);
   border: none;
-  color: white;
+  color: var(--text);
   text-align: center;
   text-decoration: none;
   font-size: 1rem;
@@ -140,8 +142,6 @@
     font-weight: 1000;
     padding: 0.4rem 1.2rem;
     border-radius: 2rem;
-    background-color: #fffdfd;
-    color: #000000;
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
@@ -155,15 +155,15 @@
   
 
   .like {
-    background-color: rgba(125,125,125, 0.5);
+    background-color: var(--description-box);
     border-radius: 25px 0% 0% 25px;
     width: 110px;
     margin-right: -1px;
-    border-right:  1px solid rgba(125,125,125, 0.5);
+    border-right:  2.5px solid rgba(180, 180, 180, .5);
   }
 
   .dislike {
-    background-color: rgba(125,125,125, 0.5);
+    background-color: var(--description-box);
     padding: 15px;
     border-radius: 0% 50% 50% 0%;
     margin-right: 1rem;
@@ -184,13 +184,13 @@
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
-    background-color: rgb(125, 125, 125, 0.5);
+    background-color: var(--description-box);
     border-radius: 25px;
   }
 
   .description-text {
     display: flex;
-    color: white;
+    color: var(--text);
     margin-left: 1rem;
     font-size: medium;
     
@@ -198,7 +198,7 @@
 
   .description-meta {
     display: flex;
-    color: white;
+    color: var(--text);
     font-size: medium;
     font-weight: 800;
     margin-left: .75rem;
