@@ -17,8 +17,9 @@ app.use(cors());
 
 // Create a connection pool to the database
 
+// PUT THIS IN .env ===  DATABASE_URL = 'postgresql://matt:volleyball@localhost:5432/meTube_db'
 const connectionString = process.env.DATABASE_URL
-// const connectionString = 'postgresql://matt:volleyball@localhost:5432/meTube_db'
+
 
 
 const pool = new Pool({
@@ -57,7 +58,7 @@ app.get("/Comments", async (req, res) => {
 app.get("/CommentsAll", async (req, res) => {
   try {
     const { rows } = await pool.query(
-      `SELECT * FROM comments JOIN users ON comments.user_id = users.id`
+      `SELECT * FROM comments JOIN users ON comments.user_id = users.user_id`
     );
     res.json(rows);
   } catch (error) {
@@ -70,7 +71,7 @@ app.get("/CommentsAll", async (req, res) => {
 app.get("/Users/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const { rows } = await pool.query(`SELECT * FROM users WHERE id = ${id}`);
+    const { rows } = await pool.query(`SELECT * FROM users WHERE user_id = ${id}`);
     res.json(rows);
   } catch (error) {
     console.error(error);
@@ -94,7 +95,7 @@ app.get("/Comments/:id", async (req, res) => {
 app.get("/Videos/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const { rows } = await pool.query(`SELECT * FROM videos JOIN users ON videos.user_id = users.id WHERE videos.id = ${id};`);
+    const { rows } = await pool.query(`SELECT * FROM videos JOIN users ON videos.user_id = users.user_id WHERE videos.id = ${id};`);
     res.json(rows);
   } catch (error) {
     console.error(error);
