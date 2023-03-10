@@ -139,8 +139,6 @@ body {
   height: 40px;
 }
 
-
-
 .navbar-menu a {
   color: #fff;
   text-decoration: none;
@@ -183,8 +181,6 @@ body {
   margin-left: 0;
   
 }
-
-
 
 .search-bar {
   margin-top: 4px;
@@ -258,7 +254,6 @@ body {
   color: #fff;
   cursor: pointer;
 }
-
 
 .oval-button {
   margin: 9px;
