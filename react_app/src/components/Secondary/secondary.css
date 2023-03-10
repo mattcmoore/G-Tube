@@ -157,7 +157,7 @@
     display: inline-block;
     top: 0;
     right: 0;
-    float: right;
+    /* float: right; */
     height: 24px;
     width: 24px;
     outline: none;
