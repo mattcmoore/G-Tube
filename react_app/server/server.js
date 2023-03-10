@@ -65,7 +65,7 @@ app.get("/Comments", async (req, res) => {
 app.get("/CommentsAll", async (req, res) => {
   try {
     const { rows } = await pool.query(
-      `SELECT * FROM comments JOIN users ON comments.user_id = users.id`
+      `SELECT * FROM comments JOIN users ON comments.user_id = users.user_id`
     );
     res.json(rows);
   } catch (error) {
@@ -102,7 +102,7 @@ app.get("/Comments/:id", async (req, res) => {
 app.get("/Videos/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const { rows } = await pool.query(`SELECT * FROM videos JOIN users ON videos.user_id = users.id WHERE videos.id = ${id};`);
+    const { rows } = await pool.query(`SELECT * FROM videos JOIN users ON videos.user_id = users.user_id WHERE videos.id = ${id};`);
     res.json(rows);
   } catch (error) {
     console.error(error);
@@ -114,7 +114,7 @@ app.get("/Videos/:id", async (req, res) => {
 app.get("/Videos", async (req, res) => {
   try {
     const { rows } = await pool.query(
-      `SELECT * FROM videos JOIN users ON videos.user_id = users.id`
+      `SELECT * FROM videos JOIN users ON videos.user_id = users.user_id`
     );
     res.json(rows);
   } catch (error) {
