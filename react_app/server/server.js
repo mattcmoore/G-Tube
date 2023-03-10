@@ -17,6 +17,7 @@ app.use(cors());
 
 // Create a connection pool to the database
 
+<<<<<<< react_app/server/server.js
 const pool = new Pool({
   user: "danmorro",
   password: "",
@@ -28,6 +29,9 @@ const pool = new Pool({
 // const connectionString = process.env.DATABASE_URL
 // const connectionString = 'postgresql://matt:volleyball@localhost:5432/meTube_db'
 
+=======
+const connectionString = process.env.DATABASE_URL
+>>>>>>> react_app/server/server.js
 
 // const pool = new Pool({
 //   connectionString,

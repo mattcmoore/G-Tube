@@ -9,12 +9,7 @@ export const MetubeProvider =({children}) =>{
     const [commentsLiked, setCommentsLiked] = useState(null)
     const [videos, setVideos] = useState([])
     const [theme, setTheme] = useState({open: false, apperance: 'Dark Theme'})
-
-    // useEffect(() => {
-    //   setMenuPopupIsOpen(false)
-    //   setIsVisible(true);
-    // }, []);
-
+    const [queue, setQueue] = useState([])
     const [user, setUser] = useState(null)
 
     //fetch video 1 from database
@@ -50,6 +45,7 @@ export const MetubeProvider =({children}) =>{
         setCommentsLiked(sortedComments);
       });
   }, []);
+// fetch for all videos and metadata
   useEffect(() => {
     fetch('http://localhost:3001/Videos')
       .then((response) => response.json()) // Add parentheses after .json
@@ -75,7 +71,9 @@ export const MetubeProvider =({children}) =>{
             user,
             setUser,
             theme,
-            setTheme
+            setTheme,
+            queue,
+            setQueue
         }}>
             {children}
         </MetubeContext.Provider>
