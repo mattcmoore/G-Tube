@@ -26,8 +26,6 @@ app.use(cors());
 // });
 
 const connectionString = process.env.DATABASE_URL
-// const connectionString = 'postgresql://matt:volleyball@localhost:5432/meTube_db'
-
 
 const pool = new Pool({
   connectionString,
