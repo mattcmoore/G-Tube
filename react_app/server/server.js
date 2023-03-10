@@ -18,7 +18,7 @@ app.use(cors());
 // Create a connection pool to the database
 
 const pool = new Pool({
-  user: "fatbo",
+  user: "danmorro",
   password: "",
   port: 5432,
   host: "localhost",
