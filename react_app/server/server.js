@@ -106,7 +106,7 @@ app.get("/Videos/:id", async (req, res) => {
 app.get("/Videos", async (req, res) => {
   try {
     const { rows } = await pool.query(
-      `SELECT * FROM videos JOIN users ON videos.user_id = users.id`
+      `SELECT * FROM videos JOIN users ON videos.user_id = users.user_id`
     );
     res.json(rows);
   } catch (error) {

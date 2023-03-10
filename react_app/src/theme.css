@@ -35,10 +35,6 @@
     --queue-bg-color-top: rgb(33,33,33);
     --queue-bg-color-btm: rgb(15,15,15);
     --queue-focus: rgb(49,49,49);
-
-}
-
-.dark:hover {
     --carousel-unselected-hover: rgb(63,63,63);
     --nav-menu-btn-hover: rgb(39,39,39);
     --nav-menu-row-hover: rgb(40,40,40);
@@ -46,6 +42,10 @@
     --subscribe-btn-hover: rgb(208,208,208);
     --video-btn-hover: rgb(48,48,48);
     --queue-hover: rgb(39,39,39);
+}
+
+.dark:hover {
+
 }
 
 
