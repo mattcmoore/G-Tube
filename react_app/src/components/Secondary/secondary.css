@@ -18,7 +18,7 @@
 
 .dismissible{
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 11px;
     display: flex;
     justify-content: flex-start;
 }
@@ -110,7 +110,6 @@
 }
 
 .menu-popup-row:hover {
-    /* background-color:#717171; */
     background-color: rgb(65,65,65)
 }
 
@@ -137,7 +136,7 @@
 }
 .metadata-line p, .user_name {
     position: relative;
-    top: 5px;
+    top: -3px;
     display: inline-block;
     margin: 0;
     font-size: 12px;
@@ -188,6 +187,7 @@
 }
 
 .video-title {
+    width: 90%;
     font-weight: 500;
     font-size: 14px;
     margin-top: 0

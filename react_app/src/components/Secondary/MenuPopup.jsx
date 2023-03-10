@@ -1,6 +1,6 @@
-const MenuPopup = ({isOpen}) => {
+const MenuPopup = ({isOpen, isFlipped}) => {
   return (
-    <div className={isOpen ? "menu-popup" : "hidden"}>
+    <div className={isOpen ? isFlipped ? "menu-popup flip" : "menu-popup" : "hidden"}>
       <div className="menu-popup-row">
         <div className="menu-popup-icon">
           <svg
