@@ -4,17 +4,22 @@ import Secondary from "../components/Secondary/Secondary";
 import Video from "../components/video_component/Video";
 import Details from "../components/details/Details";
 import Comments from "../components/comments/Comments";
+import { useContext } from 'react'
+import MetubeContext from '../context/MetubeContext'
 
 function VideoPage() {
+  const {theme} = useContext(MetubeContext)
   return (
     <>
-    {/* <Navbar />
+    <div className={theme.apperance === 'Dark Theme' ? 'dark':'light'}>
+    <Navbar />
     <div className="primary-container"> 
       <Video />
       <Details />
       <Comments />
     </div> */}
     <Secondary />
+    </div>
     </>
   )
 }
