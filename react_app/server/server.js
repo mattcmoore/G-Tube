@@ -17,25 +17,13 @@ app.use(cors());
 
 // Create a connection pool to the database
 
-<<<<<<< react_app/server/server.js
-const pool = new Pool({
-  user: "danmorro",
-  password: "",
-  port: 5432,
-  host: "localhost",
-  database: "youtube",
-});
-
-// const connectionString = process.env.DATABASE_URL
+const connectionString = process.env.DATABASE_URL
 // const connectionString = 'postgresql://matt:volleyball@localhost:5432/meTube_db'
 
-=======
-const connectionString = process.env.DATABASE_URL
->>>>>>> react_app/server/server.js
 
-// const pool = new Pool({
-//   connectionString,
-// })
+const pool = new Pool({
+  connectionString,
+})
 
 const PORT = process.env.PORT || 3001;
 

@@ -12,6 +12,10 @@ export const MetubeProvider =({children}) =>{
     const [queue, setQueue] = useState([])
     const [user, setUser] = useState(null)
 
+    useEffect( ()=>{
+      setQueue([])
+    },[])
+
     //fetch video 1 from database
 
     useEffect(()=> {
