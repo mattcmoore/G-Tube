@@ -1,5 +1,5 @@
 # G-Tube
-G-Tube is a YouTube clone that allows users to browse and watch videos without the need for a user login. It is built using Psql, Express.js, Node.js, React, fontawesome, pg, react-router-dom, luxon, flickity, tippyjs, and react-carousel.
+G-Tube is a YouTube clone that allows users to browse and watch videos without the need for a user login. It is built using postgreSQL, Express.js, Node.js, React, fontawesome, pg, react-router-dom, luxon, flickity, tippyjs, and react-carousel.
 ## Installation
 To install G-Tube on your local machine, you will need to have Node.js and Psql installed. Then, follow these steps:
 1. Clone this repository to your local machine.
@@ -10,7 +10,7 @@ To install G-Tube on your local machine, you will need to have Node.js and Psql 
 PORT=<port-number>
 DATABASE_URL=<database-url>
 ```
-5. Run npm run db-init to create the necessary tables in your Psql database.
+5. Run npm run db-init to create the necessary tables in your postgreSQL database.
 6. Run npm run seed to seed the database with sample data.
 7. Run npm start to start the server and launch the application in your browser .
 
@@ -23,7 +23,7 @@ Clicking on a video will take you to the video player page, where you can watch 
 
 G-Tube uses the following dependencies:
 
-- Postgresql
+- postgreSQL
 - Express.js
 - Node.js
 - React
