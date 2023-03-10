@@ -8,7 +8,6 @@ function Home() {
   return (
     <>
     <Navbar/>
-    <Link className='center' to='/videoPage'><button >Go to video</button></Link>
     <Carousel/>
     <SideBar/>
     <Homevideos/>
