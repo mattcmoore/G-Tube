@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS users, comments, videos;
 
 CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
+    user_id SERIAL PRIMARY KEY,
     name TEXT DEFAULT null, 
     username VARCHAR NOT NULL,
     password TEXT DEFAULT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE videos (
-    id SERIAL INTEGER UNIQUE PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     title VARCHAR,
     description TEXT,
     video_link TEXT,
@@ -22,7 +22,7 @@ CREATE TABLE videos (
     runtime INTERVAL,
     thumbnail TEXT,  
     user_id INTEGER NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users (id)
+    FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 
 CREATE TABLE comments (
@@ -33,7 +33,7 @@ CREATE TABLE comments (
     video_id INTEGER NOT NULL,
     user_id INTEGER NOT NULL,
     FOREIGN KEY (video_id) REFERENCES videos(id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
 TRUNCATE TABLE users, videos, comments RESTART IDENTITY CASCADE;
