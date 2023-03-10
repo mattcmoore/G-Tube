@@ -6,14 +6,8 @@
     margin-top: 24px;
     min-height: 348px;
     z-index: -500;
-}
-
-.secondary.dark{
-    color: white;
-}
-
-.secondary.light{
-    color: #030303;
+    background-color: var(--bg);
+    color: var(--text)
 }
 
 .dismissible{
@@ -89,10 +83,6 @@
     margin-top: -321px;
 }
 
-.menu-popup.dark {
-    background-color: #717171;
-}
-
 .menu-popup svg {
     height: 24px;
     width: 24px;
@@ -141,6 +131,7 @@
     margin: 0;
     font-size: 12px;
     font-weight: 350;
+    color: gray;
 }
 
 .user_name {

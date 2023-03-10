@@ -1,5 +1,3 @@
-import AddToQueueBtn from "./AddToQueueBtn.jsx";
-import WatchLaterBtn from "./WatchLaterBtn.jsx";
 import { Duration } from "luxon";
 import {useEffect,useState} from 'react'
 
@@ -53,10 +51,6 @@ const Thumbnail = ({ thumbnail, runtime, addToQueue}) => {
               : Duration.fromObject(runtime).toFormat("mm:ss")}
           </p>
           <img className="core-image" src={thumbnail}/>
-        </div>
-        <div className="overlays">
-          <AddToQueueBtn />
-          <WatchLaterBtn />
         </div>
       </a>
     </div>
