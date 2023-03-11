@@ -48,7 +48,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: var(--text);
+    color: white;
     font-weight: bold;
     padding-left: 10px;
 }
