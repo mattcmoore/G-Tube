@@ -31,13 +31,13 @@ const Details = () => {
     <div className="detail">
       <div className="title">
         <p>{title}</p>
+        
       </div>
       <div className="top-row">
         <img className="creator" src={avatar} />
 
         <div id="channel-name">
           {channel}
-
           <div id="subscribers">
             {subscribers >= 1000 ? `${subscribers / 1000}K` : subscribers}{" "}
             Subscribers

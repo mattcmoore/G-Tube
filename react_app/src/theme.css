@@ -12,7 +12,7 @@
     --subscribe-text: rgb(255,255,255);
     --video-btn: rgb(242,242,242);
     --description-box: rgb(242,242,242);
-    --video-metadata-text: rgb(96,96,96);
+    --video-metadata-text: rgb(40,40,40);
     --queue-bg-color-top: rgb(255,255,255);
     --queue-bg-color-btm: rgb(255,255,255);
     --queue-focus: rgb(236,223,226);
@@ -51,6 +51,10 @@
     --subscribe-btn-hover: rgb(208,208,208);
     --video-btn-hover: rgb(48,48,48);
     --queue-hover: rgb(39,39,39);
+}
+
+.dark:hover {
+
 }
 
 
