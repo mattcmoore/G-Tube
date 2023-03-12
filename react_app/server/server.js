@@ -17,36 +17,34 @@ app.use(express.json());
 app.use(cors());
 
 
-// app.use(express.static(path.join(__dirname, '../build')))
+app.use(express.static(path.join(__dirname, '../build')))
 
 // Create a connection pool to the database
 
-// const pool = new Pool({
-//   user: "fatbo",
-//   password: "",
-//   port: 5432,
-//   host: "localhost",
-//   database: "youtube",
-// });
+const pool = new Pool({
+  host: "gtube.c6dwmdg4r5sc.us-east-2.rds.amazonaws.com",
+  user: 'postgres',
+  password: '1qaz2wsx'
+});
 
-const connectionString = process.env.DATABASE_URL
+// const connectionString = process.env.DATABASE_URL
 // const connectionString = 'postgresql://fatbo@localhost:5432/youtube'
 
 
-const pool = new Pool({
-  connectionString,
-})
+// const pool = new Pool({
+//   connectionString,
+// })
 
 const PORT = process.env.PORT || 3001;
 
-// app.get('/', (req,res)=>{
-//   try {
-//     res.sendFile(path.join(__dirname, '../public/index.html'))
+app.get('/', (req,res)=>{
+  try {
+    res.sendFile(path.join(__dirname, '../public/index.html'))
     
-//   } catch (error) {
-//     console.log(error);
-//   }
-// })
+  } catch (error) {
+    console.log(error);
+  }
+})
 
 // API endpoint to retrieve a simple JSON object
 app.get("/testApi", async (req, res) => {
