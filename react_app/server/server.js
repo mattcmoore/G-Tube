@@ -21,25 +21,27 @@ app.use(express.static(path.join(__dirname, '../build')))
 
 // Create a connection pool to the database
 
-const pool = new Pool({
-  host: "gtube.c6dwmdg4r5sc.us-east-2.rds.amazonaws.com",
-  user: 'postgres',
-  password: '1qaz2wsx'
-});
+// const pool = new Pool({
+//   user: "fatbo",
+//   password: "",
+//   port: 5432,
+//   host: "localhost",
+//   database: "youtube",
+// });
 
-// const connectionString = process.env.DATABASE_URL
+const connectionString = process.env.DATABASE_URL
 // const connectionString = 'postgresql://fatbo@localhost:5432/youtube'
 
 
-// const pool = new Pool({
-//   connectionString,
-// })
+const pool = new Pool({
+  connectionString,
+})
 
 const PORT = process.env.PORT || 3001;
 
 app.get('/', (req,res)=>{
   try {
-    res.sendFile(path.join(__dirname, '../public/index.html'))
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
     
   } catch (error) {
     console.log(error);
