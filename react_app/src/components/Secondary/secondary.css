@@ -1,20 +1,39 @@
 .secondary{
-    position: relative;
+    position: absolute;
     top: 55px;
     left: 67%;
     width: 27%;
+    margin-top: 24px;
     min-height: 348px;
-    background-color: white;
+    z-index: -500;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center
+}
+.contents{
+    width: 100%;
+}
+
+.secondary.dark{
+    color: white;
+}
+
+.secondary.light{
+    color: #030303;
 }
 
 .dismissible{
+    position: relative;
+    top: 100%;
+    margin-bottom: 11px;
     display: flex;
     justify-content: flex-start;
 }
 
 .ytd-thumbnail {
-    height: 100%;
-    width: 40%;
+    height: 94px;
+    width: 168px;
     display: block;
     border-radius: 25px;
     cursor: pointer;
@@ -28,7 +47,7 @@
 
 .ytd-thumbnail img {
     width: 100%;
-    border-radius: 25px;
+    border-radius: 10px;
     object-fit: cover;
 }
 
@@ -38,29 +57,169 @@
     background-color: black;
     color: white;
     border-radius: 5px;
-    bottom: 10px;
-    right: 10px;
+    bottom: 5px;
+    right: 5px;
     margin: 2px;
-    padding: 5px;
+    padding: 2px;
+    font-size: 12px;
+    font-weight: 550;
 }
 
 .details {
     position: relative;
     height: 100%;
     width: 50%;
-    left: 1%;
-    color: gray;
+    left: 2%;
+}
+
+.hidden {
+    display: none;
+}
+
+.menu-popup {
+    position: fixed;
+    min-height: 321px;
+    min-width: 253.961px;
+    border-radius: 15px;
+    margin-top: 25px;
+    margin-left: 135px;
+    background-color: #282828;
     font-weight: 300;
-    font-size: 15px;
+    font-size: 14px;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.menu-popup.flip {
+    margin-top: -321px;
+}
+
+.menu-popup.dark {
+    background-color: #717171;
+}
+
+.menu-popup svg {
+    height: 24px;
+    width: 24px;
+    margin-left: 15px;
+}
+
+.menu-popup-row {
+    width: 100%;
+    height: 36px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: middle;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.menu-popup-row:hover {
+    background-color: rgb(65,65,65)
+}
+
+.menu-popup-row:nth-child(5){
+    margin-bottom: 15px;
+}
+
+.menu-popup-row:nth-child(5)::after{
+    content:"";
+    display: block;
+    position: absolute;
+    height: 0;
+    width: 100%;
+    left: 0;
+    bottom: 130px;
+    border: .25px solid gray;
+}
+
+.metadata-line {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+
+}
+.metadata-line p, .user_name {
+    position: relative;
+    top: -3px;
+    display: inline-block;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 350;
+}
+
+.user_name {
+    display: flex;
+    justify-content: flext-start;
+    align-items: center;
+    gap: 5px;
+}
+
+.user_name p{
+    margin: 0;
+}
+
+.user_name svg {
+    height: 14px;
+    width: 14px;
+    top: 10px;
+    margin: 0;
+}
+
+.menu-popup-btn {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    float: right;
+    height: 24px;
+    width: 24px;
+    outline: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    line-height: 0;
+    cursor: pointer;
+}
+
+.three-dots {
+    width: 100%; 
+    height: 100%;
+    pointer-events: none; 
+    display: block; 
+    color: white;
 }
 
 .video-title {
+    width: 90%;
     font-weight: 500;
-    color: black;
+    font-size: 14px;
+    margin-top: 0
 }
 
-.metadata-line p {
-    display: inline-block;
-    margin: 0 5px 0 0;
+.queue-btn, .watch-later-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    height: 27px;
+    width: 27px;
+    /* padding: 2px; */
+    border-radius: 20%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.queue-btn svg, .watch-later-btn svg {
+    height: 85%;
+    width: 85%
+}
+
+.queue-btn {
+    top: 35px;
+}

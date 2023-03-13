@@ -1,17 +1,24 @@
-import Navbar from "./components/navbar/Navbar";
-import Secondary from "./components/Secondary/Secondary"
-import {MetubeProvider} from './context/MetubeContext';
-import Queue from "./components/QueueComp/Queue";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+
+import { MetubeProvider } from './context/MetubeContext';
+import Home from './pages/Home';
+import VideoPage from './pages/VideoPage';import Queue from "./components/Secondary/QueueComp/Queue";
+
+
 
 function App() {
   return (
-      <MetubeProvider>
-            <Queue />
-        {/* <Navbar/>
-        <Secondary /> */}
+    <>
+       <MetubeProvider>
+        <Router>
+          <Routes>
+            <Route exact path='/' element={<Home/>}/>
+            <Route path='/videoPage' element={<VideoPage/>}/>
+          </Routes>
+        </Router>
+        {/* <Queue/> */}
       </MetubeProvider>
+    </>
   );
 }
 

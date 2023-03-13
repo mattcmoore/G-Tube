@@ -1,0 +1,90 @@
+
+.carousel-container{
+    position: absolute;
+    top: 60px;
+    left: 90px;
+    right: 10px;
+}
+
+.carousel-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(39,39,39);
+    color: white;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 5px 15px;
+    font-size: 16px;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    margin: 10px;
+    font-weight: 450;
+  }
+  
+  .carousel-cell:hover {
+    background-color: rgb(63, 63, 63);
+    color: white;
+  }
+  
+  .side-bar{
+    position: fixed; 
+    font-size: x-small;
+    top: 60px; 
+    left: 7px; 
+    height: 100%; 
+    width: 60px; 
+    background-color: rgb(13,13,13);
+  }
+
+  .side-bar-icon { 
+    height: 70px; 
+    width: 60px; 
+    background-color: rgb(13,13,13);
+    border-radius: 10px;
+    display: flex;
+    justify-items: center;
+    justify-content: end;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+  }
+  .icon-side{
+    stroke: white;
+    stroke-width: 20px;
+    width: 22px;
+    height: fit-content;
+    color: rgb(13,13,13);
+    padding-bottom: 8px;
+  }
+  .icon-side-selected{
+    width: 22px;
+    height: fit-content;
+    color: white;
+    padding-bottom: 8px;
+  }
+
+  .side-bar-icon:hover {
+    background-color: rgb(30 30, 30);
+    color: white;
+    cursor: pointer;
+  }
+
+  .center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .selected{
+    background-color: rgb(241,241,241);
+    color: black;
+  }
+
+  .selected:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+  }
