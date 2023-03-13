@@ -2,6 +2,8 @@ import Dismissible from "./Dismissible.jsx";
 import "./secondary.css";
 import MetubeContext from "../../context/MetubeContext.js";
 import { useState, useEffect, useContext } from "react";
+import Queue from "./QueueComp/Queue.jsx";
+
 
 const Secondary = () => {
   const [isPopup, setIsPopup] = useState(false)
@@ -12,7 +14,8 @@ const Secondary = () => {
     setIsPopup(false)
   },[])
   return (
-    <div className="secondary dark">
+    <div className="secondary">
+
       <div className="contents">
         {videos.map((video, index) => (
           <Dismissible

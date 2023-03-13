@@ -21,6 +21,7 @@ const Dismissible = ({
   const [isFlipped, setIsFlipped] = useState(false)
 
   const {queue, setQueue} = useContext(MetubeContext)
+  const {showQueue, setShowQueue} = useContext(MetubeContext)
 
   window.addEventListener("click",(event)=>{
     if(event.target.className !== "menu-popup-btn"){

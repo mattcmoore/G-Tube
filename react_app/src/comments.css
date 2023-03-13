@@ -8,7 +8,7 @@
 .comments-count {
   margin-right: 16px;
   font-size: 14px;
-  color: white;
+  color: var(--text);
 }
 
 .custom-dropdown-container {
@@ -18,13 +18,13 @@
 
 .custom-dropdown-button {
   padding: 8px 16px;
-  background-color: rgb(19, 19, 19);
+  background-color: var(--bg);
   border: none;
   border-radius: 4px;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
-  color: white;
+  color: var(--text);
 }
 
 .custom-dropdown-menu {
@@ -35,10 +35,10 @@
   padding: 0;
   margin: 0;
   list-style: none;
-  background-color: rgb(35, 35, 35);
+  background-color: var(--bg);
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  color: white;
+  color: var(--text);
 }
 
 .custom-dropdown-item {
@@ -50,7 +50,7 @@
 }
 
 .custom-dropdown-item:hover {
-  background-color: rgb(49, 49, 49);
+  opacity: 20%;
 }
 
 #commentImg{
@@ -99,11 +99,11 @@
 .comment-author {
   font-weight: bold;
   margin-right: 10px;
-  color: white;
+  color: var(--text);
 }
 
 .comment-time {
-  color: #aaa;
+  color: rgb(140,140,140);
   font-size: 13px;
 }
 
@@ -111,8 +111,7 @@
   margin-bottom: 10px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
-  font-weight: bold;
-  color: white;
+  color: var(--text);
 }
 
 .comment-actions button {
@@ -128,7 +127,7 @@
 .comment-like{
   border: none;
   background: none;
-  color: white;
+  color: var(--text);
 }
 
 .comment-like:hover{
@@ -147,20 +146,20 @@
 .comment-dislike{
   border: none;
   background: none;
-  color: white;
+  color: var(--text);
   margin-left: 10px;
 }
 
 .comment-reply{
   border: none;
   background: none;
-  color: white;
+  color: var(--text);
   font-size: 13px;
   font-weight: bold;
 }
 
 
 .likeCount{
-  color: #aaa;
+  color: rgb(140,140,140);
   font-size: 12px;
 }
