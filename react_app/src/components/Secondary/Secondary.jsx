@@ -16,6 +16,7 @@ const Secondary = () => {
   return (
     <div className="secondary" >
       {queue.length > 0 && <Queue/>}
+      
       <div className="contents">
       
         {videos.map((video, index) => (

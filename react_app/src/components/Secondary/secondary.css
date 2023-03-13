@@ -7,12 +7,17 @@
     min-height: 348px;
     z-index: -500;
     background-color: var(--bg);
-    color: var(--text)
+    color: var(--text);
+    display:flex;
+    flex-direction: column;
+}
+
+.contents{    
+    position: relative;
 }
 
 .dismissible{
     position: relative;
-    top: 100px;
     margin-bottom: 11px;
     display: flex;
     justify-content: flex-start;

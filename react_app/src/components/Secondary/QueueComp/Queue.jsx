@@ -42,7 +42,7 @@ const Queue = () => {
         <div id="queue-header">
           <p id="queue-title">Queue</p>
           <span id="queue-test">{items.length}</span>
-          <button id="queue-close-button" onClick={handleX}>Ʌ</button>
+          <button id="queue-close-button" onClick={handleX}></button>
           <button
             id="queue-clear-button"
             onMouseEnter={(e) => { e.target.style.boxShadow = '0px 0px 10px 4px rgba(0, 0, 0, 0.2)'; }}
@@ -67,8 +67,8 @@ const Queue = () => {
                   id="queue-item-image"
                 />
                 <span id="queue-item-name">{item.title}</span>
+                <button id="queue-item-options-button">⋮</button>
               </div>
-              <button id="queue-item-options-button">⋮</button>
             </Reorder.Item>
           ))}
         </Reorder.Group>
