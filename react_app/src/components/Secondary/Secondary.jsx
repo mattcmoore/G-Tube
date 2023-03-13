@@ -7,16 +7,17 @@ import Queue from "./QueueComp/Queue.jsx";
 
 const Secondary = () => {
   const [isPopup, setIsPopup] = useState(false)
-
+  const {queue, setQueue} = useContext(MetubeContext)
   const { videos } = useContext(MetubeContext)
 
   useEffect(()=>{
     setIsPopup(false)
   },[])
   return (
-    <div className="secondary">
-
+    <div className="secondary" >
+      {queue.length > 0 && <Queue/>}
       <div className="contents">
+      
         {videos.map((video, index) => (
           <Dismissible
             key={index}

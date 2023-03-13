@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import Queue from './components/Secondary/QueueComp/Queue';
 import MetubeContext from "./context/MetubeContext";
 import Home from './pages/Home';
 import VideoPage from './pages/VideoPage';

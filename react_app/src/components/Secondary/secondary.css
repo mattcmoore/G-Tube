@@ -12,7 +12,7 @@
 
 .dismissible{
     position: relative;
-    top: 100%;
+    top: 100px;
     margin-bottom: 11px;
     display: flex;
     justify-content: flex-start;
