@@ -18,7 +18,7 @@ function VideoPage() {
       <Details />
       <Comments />
     </div>
-    <Queue/>
+    
     <Secondary />
     
     </>
