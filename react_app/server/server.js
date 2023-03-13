@@ -25,8 +25,8 @@ app.use(cors());
 //   database: "youtube",
 // });
 
-// const connectionString = process.env.DATABASE_URL
-const connectionString = 'postgresql://fatbo@localhost:5432/youtube'
+const connectionString = process.env.DATABASE_URL
+// const connectionString = 'postgresql://fatbo@localhost:5432/youtube'
 
 
 const pool = new Pool({
