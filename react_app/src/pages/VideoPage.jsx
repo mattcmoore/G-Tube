@@ -11,15 +11,13 @@ function VideoPage() {
   const {theme} = useContext(MetubeContext)
   return (
     <>
-    <div className={theme.apperance === 'Dark Theme' ? 'dark':'light'}>
     <Navbar />
     <div className="primary-container"> 
       <Video />
       <Details />
       <Comments />
-    </div> */}
-    <Secondary />
     </div>
+    <Secondary />
     </>
   )
 }

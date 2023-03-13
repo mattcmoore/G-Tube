@@ -1,4 +1,5 @@
 .light {
+    background-color: rgb(255,255,255);
     --carousel-unselected: rgb(242,242,242);
     --carousel-selected: rgb(15,15,15);
     --bg: rgb(255,255,255);  
@@ -11,13 +12,21 @@
     --subscribe-text: rgb(255,255,255);
     --video-btn: rgb(242,242,242);
     --description-box: rgb(242,242,242);
-    --video-metadata-text: rgb(96,96,96);
+    --video-metadata-text: rgb(40,40,40);
     --queue-bg-color-top: rgb(255,255,255);
     --queue-bg-color-btm: rgb(255,255,255);
     --queue-focus: rgb(236,223,226);
     --video-metadata-text: rgb(170,170,170);
+    --carousel-unselected-hover: rgb(229,229,229);
+    --nav-menu-btn-hover: rgb(229,229,229);
+    --nav-menu-row-hover: rgb(242,242,242);
+    --dropdown-row-hover: rgb(242,242,242);
+    --subscribe-btn-hover: rgb(15,15,15);
+    --video-btn-hover: rgb(229,229,229);
+    --queue-hover: rgb(242,242,242);
 }
 .dark {
+    background-color: rgb(15,15,15);
     --carousel-unselected: rgb(40,40,40);
     --carousel-selected: rgb(241,241,241);
     --bg: rgb(15,15,15);
@@ -35,10 +44,6 @@
     --queue-bg-color-top: rgb(33,33,33);
     --queue-bg-color-btm: rgb(15,15,15);
     --queue-focus: rgb(49,49,49);
-
-}
-
-.dark:hover {
     --carousel-unselected-hover: rgb(63,63,63);
     --nav-menu-btn-hover: rgb(39,39,39);
     --nav-menu-row-hover: rgb(40,40,40);
@@ -48,15 +53,8 @@
     --queue-hover: rgb(39,39,39);
 }
 
+.dark:hover {
 
-.light:hover {
-    --carousel-unselected-hover: rgb(229,229,229);
-    --nav-menu-btn-hover: rgb(229,229,229);
-    --nav-menu-row-hover: rgb(242,242,242);
-    --dropdown-row-hover: rgb(242,242,242);
-    --subscribe-btn-hover: rgb(15,15,15);
-    --video-btn-hover: rgb(229,229,229);
-    --queue-hover: rgb(242,242,242);
 }
 
 

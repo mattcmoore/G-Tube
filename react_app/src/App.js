@@ -1,24 +1,25 @@
+import { useContext, useEffect } from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-
-import { MetubeProvider } from './context/MetubeContext';
+import MetubeContext from "./context/MetubeContext";
 import Home from './pages/Home';
-import VideoPage from './pages/VideoPage';import Queue from "./components/Secondary/QueueComp/Queue";
-
-
+import VideoPage from './pages/VideoPage';
 
 function App() {
+  const {theme} = useContext(MetubeContext)
+
+  useEffect(()=>{
+    document.body.className = theme.apperance === 'Dark Theme' ? 'dark':'light'
+  }, [theme])
+  
   return (
-    <>
-       <MetubeProvider>
+    <div className={theme.apperance === 'Dark Theme' ? 'dark':'light'}>
         <Router>
           <Routes>
             <Route exact path='/' element={<Home/>}/>
             <Route path='/videoPage' element={<VideoPage/>}/>
           </Routes>
         </Router>
-        {/* <Queue/> */}
-      </MetubeProvider>
-    </>
+    </div>
   );
 }
 
