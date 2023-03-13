@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
   faDownload,
   faShare,
@@ -12,7 +12,38 @@ import { DateTime } from "luxon";
 
 const Details = () => {
   const { user, isLoading } = useContext(MetubeContext);
-  
+  const [likes, setLikes] = useState(user[0].likes);
+  const [dislikes, setDislikes] = useState(5);
+  const [liked, setLiked] = useState(false);
+  const [disliked, setDisliked] = useState(false);
+
+  const handleLike = () => {
+    if (liked) {
+      setLikes(likes - 1);
+      setLiked(false);
+    } else {
+      setLikes(likes + 1);
+      setLiked(true);
+      if (disliked) {
+        setDislikes(dislikes - 1);
+        setDisliked(false);
+      }
+    }
+  };
+
+  const handleDislike = () => {
+    if (disliked) {
+      setDislikes(dislikes - 1);
+      setDisliked(false);
+    } else {
+      setDislikes(dislikes + 1);
+      setDisliked(true);
+      if (liked) {
+        setLikes(likes - 1);
+        setLiked(false);
+      }
+    }
+  };
   // Render loading state if user data is not yet available
   if (isLoading || !user) {
     return <div>Loading...</div>;
@@ -22,11 +53,10 @@ const Details = () => {
   const avatar = user[0].avatar;
   const channel = user[0].username;
   const subscribers = user[0].subscribers;
-  const likes = user[0].likes;
   const views = user[0].views;
   const date = user[0].date_published;
   const description = user[0].description;
-
+  
   return (
     <div className="detail">
       <div className="title">
@@ -46,15 +76,16 @@ const Details = () => {
         <button className="sub-btn">Subscribe</button>
         <div className="right-buttons">
           <Tippy content="I like this" arrow={false} placement="bottom">
-            <div className="like">
+            <div className="like" onClick={handleLike}>
               <FontAwesomeIcon icon={faThumbsUp} />
 
               <span className="text">{likes}</span>
             </div>
           </Tippy>
           <Tippy content="I dislike this" arrow={false} placement="bottom">
-            <div className="dislike">
+            <div className="dislike" onClick={handleDislike}>
               <FontAwesomeIcon icon={faThumbsDown} />
+              <span className="text">{dislikes}</span>
             </div>
           </Tippy>
           <Tippy content="Share" arrow={false} placement="bottom">
