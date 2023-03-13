@@ -2,6 +2,7 @@ import Dismissible from "./Dismissible.jsx";
 import "./secondary.css";
 import MetubeContext from "../../context/MetubeContext.js";
 import { useState, useEffect, useContext } from "react";
+import Queue from "./QueueComp/Queue.jsx";
 
 
 const Secondary = () => {
