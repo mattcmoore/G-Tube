@@ -17,8 +17,10 @@ app.use(cors());
 
 // Create a connection pool to the database
 
-const connectionString = process.env.DATABASE_URL
+
+// const connectionString = process.env.DATABASE_URL
 // const connectionString = 'postgresql://matt:volleyball@localhost:5432/meTube_db'
+const connectionString = "postgresql://danybriceno@localhost:5432/metube"
 
 
 const pool = new Pool({
