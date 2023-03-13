@@ -9,9 +9,9 @@ export const MetubeProvider =({children}) =>{
     const [commentsLiked, setCommentsLiked] = useState(null)
     const [videos, setVideos] = useState([])
     const [theme, setTheme] = useState({open: false, apperance: 'Dark Theme'})
-    const [queue, setQueue] = useState([])
     const [user, setUser] = useState(null)
-
+    const [queue, setQueue] = useState([])
+    const [showQueue, setShowQueue] = useState(false)
     useEffect( ()=>{
       setQueue([])
     },[])
@@ -77,7 +77,10 @@ export const MetubeProvider =({children}) =>{
             theme,
             setTheme,
             queue,
-            setQueue
+            setQueue,
+            showQueue, 
+            setShowQueue
+
         }}>
             {children}
         </MetubeContext.Provider>
