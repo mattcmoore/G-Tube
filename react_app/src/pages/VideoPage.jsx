@@ -6,20 +6,21 @@ import Details from "../components/details/Details";
 import Comments from "../components/comments/Comments";
 import { useContext } from 'react'
 import MetubeContext from '../context/MetubeContext'
+import Queue from '../components/Secondary/QueueComp/Queue';
 
 function VideoPage() {
   const {theme} = useContext(MetubeContext)
   return (
     <>
-    <div className={theme.apperance === 'Dark Theme' ? 'dark':'light'}>
     <Navbar />
     <div className="primary-container"> 
       <Video />
       <Details />
       <Comments />
-    </div> */}
-    <Secondary />
     </div>
+    <Queue/>
+    <Secondary />
+    
     </>
   )
 }

@@ -52,7 +52,7 @@ function Banner() {
           <img src={currLogo} alt="" className="tutuge" ></img>
         </a></Link>
       </div>
-      <div className={` ${theme.apperance === 'Dark Theme' ? 'navbar-menu' : 'light-navbar-menu'} ${isOpen ? "open" : ""}`}>
+      <div className={` navbar-menu ${isOpen ? "open" : ""}`}>
         <div className="logo-container" style={{'margin-top': '1px', 'padding-bottom': '0px'}}>
           <div
             style={{ 'padding': "0", 'margin-left': '14px', 'margin-right': '0' }}
@@ -89,7 +89,7 @@ function Banner() {
               <a>History</a>
             </li>
             <hr className="dropdown-divider" />
-            <p style={{ "margin-left": "30px", color: "white" }}>
+            <p style={{ "margin-left": "30px", color: "var(--text)" }}>
               Sign in to like videos, comment, and subscribe.
             </p>
             <div className="oval-button" style={{ "margin-left": "30px" }}>
@@ -100,7 +100,7 @@ function Banner() {
               <p style={{ 'color': "#1e90ff", 'margin-top': '15px' }}>Sign In</p>
             </div>
             <hr className="dropdown-divider" />
-            <h4 style={{ "margin-left": "25px", 'color': "white" }}>Explore</h4>
+            <h4 style={{ "margin-left": "25px", 'color': "var(--text)" }}>Explore</h4>
             <li>
               <FontAwesomeIcon className="icon" icon={faFire} />
               <a>Trending</a>
@@ -151,7 +151,7 @@ function Banner() {
               <a>Browse channels</a>
             </li>
             <hr className="dropdown-divider" />
-            <h4 style={{ "margin-left": "25px", color: "white" }}>
+            <h4 style={{ "margin-left": "25px", color: "var(--text)" }}>
               More from G-Tube
             </h4>
             <li>
@@ -188,7 +188,7 @@ function Banner() {
               <a>Send Feedback</a>
             </li>
             <hr className="dropdown-divider" />
-            <a style={{'color':'black'}}>Garret</a>
+            <a style={{'color':'var(--bg)'}}>Garret</a>
           </ul>
         </div>
       </div>

@@ -11,6 +11,7 @@ import './components/Secondary/secondary.css'
 import './comments.css'
 import './components/HomePage/home.css'
 import "./components/Homevideos/Homevideos.css"
+import './theme.css'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
