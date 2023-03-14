@@ -1,5 +1,5 @@
 .light {
-    background-color: rgb(255,255,255);
+    --background-color: rgb(255,255,255);
     --carousel-unselected: rgb(242,242,242);
     --carousel-selected: rgb(15,15,15);
     --bg: rgb(255,255,255);  
@@ -17,6 +17,7 @@
     --queue-bg-color-btm: rgb(255,255,255);
     --queue-focus: rgb(236,223,226);
     --video-metadata-text: rgb(170,170,170);
+    --video-dropdown: rgb(255,255,255);
     --carousel-unselected-hover: rgb(229,229,229);
     --nav-menu-btn-hover: rgb(229,229,229);
     --nav-menu-row-hover: rgb(242,242,242);
@@ -26,7 +27,7 @@
     --queue-hover: rgb(242,242,242);
 }
 .dark {
-    background-color: rgb(15,15,15);
+    --background-color: rgb(15,15,15);
     --carousel-unselected: rgb(40,40,40);
     --carousel-selected: rgb(241,241,241);
     --bg: rgb(15,15,15);
@@ -39,6 +40,7 @@
     --subscribe-text: rgb(255,255,255);
     --video-btn: rgb(29,29,29);
     --description-box: rgb(39,39,39);
+    --video-dropdown: rgb(40,40,40);
     --video-title-text: rgb(255,255,255);
     --video-metadata-text: rgb(170,170,170);
     --queue-bg-color-top: rgb(33,33,33);

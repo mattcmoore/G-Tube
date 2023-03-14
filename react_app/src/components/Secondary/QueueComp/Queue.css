@@ -1,16 +1,16 @@
 #queue-container {
-  color: white;
+  color: var(--text);
   float: right;
-  position: relative;
-  
-  
+  position: relative;  
   width: 400px;
-  border: 1px solid white;
+  border: 1px solid var(--text);
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 #queue-header {
-  background-color: #212121;
+  background-color: var(--queue-bg-color-top);
+  color: var(--text);
   width: 100%;
   height: 55px;
   position: relative;
@@ -20,11 +20,11 @@
   position: relative;
   top: 10%;
   left: 15px;
-  color: #f1f1f1;
+  color: var(--text);
 }
 
 #queue-test {
-  color: #f1f1f1;
+  color: var(--text);
   position: relative;
   bottom: 10%;
   left: 15px;
@@ -39,17 +39,16 @@
   outline: none;
   cursor: pointer;
   border: none;
-  position: relative;
-  
+  position: relative;  
   left: 335px;
 }
 
 #queue-clear-button {
-  color: #f1f1f1;
-  background-color: #212121;
+  color: var(--text);
+  background: inherit;
   outline: none;
   cursor: pointer;
-  border: none;
+  border: 0;
   border-radius: 18px;
   position: relative;
   bottom: 20%;
@@ -89,7 +88,7 @@
 
 
 #queue-item:hover {
-  background-color: #272727;
+  background-color: var(--queue-hover);
 }
 
 #queue-item:hover #hamburger-icon {
@@ -97,6 +96,7 @@
 }
 
 #hamburger-icon {
+  margin-left: 5px;
   display: inline-block;
   font-size: 2em;
   line-height: 0.5em;
@@ -105,8 +105,7 @@
 #queue-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px;
+  justify-content: flex-start;
   transition: all 0.2s;
 }
 
@@ -137,24 +136,22 @@
   z-index: 2; /* set the z-index to a higher value than #queue-item-image */
 }
 
-
 #queue-item-name {
-  margin: 0 20px;
+  font-size: 14px;
   font-weight: bold;
-  color: #f1f1f1;
-  position: relative;
-  right: 12%;
-  
+  color: var(--text);  
 }
 
 #queue-item-options-button {
   font-weight: bold;
-  color: #f1f1f1;
-  background-color: #212121;
+  background: none;
+  color: inherit;
+  border: 0;
+  color: var(--text);
+  display: block;
   outline: none;
   cursor: pointer;
-  border: none;
-  position: relative;
+  /* position: relative; */
   bottom: 70px;
   left: 90%;
   width: 30px;
@@ -162,5 +159,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
 }
