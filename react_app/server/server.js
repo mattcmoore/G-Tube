@@ -45,7 +45,7 @@ const PORT = process.env.PORT || 3001;
 
 app.get('/', (req,res)=>{
   try {
-    res.sendFile(path.join(__dirname, '../build', 'index.html'))
+    res.sendFile(path.join(__dirname, '../build/index.html'))
     
   } catch (error) {
     console.log(error);
