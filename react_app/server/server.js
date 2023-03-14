@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cors());
 
 
-// app.use(express.static(path.join(__dirname, '../build')))
+app.use(express.static(path.join(__dirname, '../build')))
 
 // Create a connection pool to the database
 
@@ -43,14 +43,14 @@ const pool = new Pool({
 
 const PORT = process.env.PORT || 3001;
 
-// app.get('/', (req,res)=>{
-//   try {
-//     res.sendFile(path.join(__dirname, '../public/index.html'))
+app.get('/', (req,res)=>{
+  try {
+    res.sendFile(path.join(__dirname, '../build/index.html'))
     
-//   } catch (error) {
-//     console.log(error);
-//   }
-// })
+  } catch (error) {
+    console.log(error);
+  }
+})
 
 // API endpoint to retrieve a simple JSON object
 app.get("/testApi", async (req, res) => {
