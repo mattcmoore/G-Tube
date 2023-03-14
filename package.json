@@ -1,0 +1,49 @@
+{
+    "name": "metube",
+    "version": "1.0.0",
+    "description": "G-Tube is a YouTube clone that allows users to browse and watch videos without the need for a user login. It is built using postgreSQL, Express.js, Node.js, React, fontawesome, pg, react-router-dom, luxon, flickity, tippyjs, and react-carousel. ## Installation To install G-Tube on your local machine, you will need to have Node.js and Psql installed. Then, follow these steps: 1. Clone this repository to your local machine. 2. Navigate to the root directory of the project in your terminal. 3. Run npm install to install all necessary dependencies. 4. Create a .env file in the root directory of the project with the following environment variables: ``` PORT=<port-number> DATABASE_URL=<database-url> ``` 5. Run npm run db-init to create the necessary tables in your postgreSQL database. 6. Run npm run seed to seed the database with sample data. 7. Run npm start to start the server and launch the application in your browser .",
+    "main": "index.js",
+    "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^6.3.0",
+        "@fortawesome/free-regular-svg-icons": "^6.3.0",
+        "@fortawesome/free-solid-svg-icons": "^6.3.0",
+        "@fortawesome/react-fontawesome": "^0.2.0",
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^13.4.0",
+        "@testing-library/user-event": "^13.5.0",
+        "@tippyjs/react": "^4.2.6",
+        "@trendyol-js/react-carousel": "^3.0.2",
+        "axios": "^1.3.4",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "flickity": "^2.3.0",
+        "framer-motion": "^10.2.5",
+        "luxon": "^3.3.0",
+        "nodemon": "^2.0.21",
+        "pg": "^8.9.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-draggable": "^4.4.5",
+        "react-player": "^2.11.2",
+        "react-router-dom": "^6.8.2",
+        "react-scripts": "5.0.1",
+        "web-vitals": "^2.1.4"
+      },
+    "scripts": {
+      "build": "cd ./react_app && npm run build",
+      "server": "cd ./react_app && npm run server"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://gitlab.com/garrett-s_muskateers/metube.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://gitlab.com/garrett-s_muskateers/metube/issues"
+    },
+    "homepage": "https://gitlab.com/garrett-s_muskateers/metube#readme"
+  }
+  
