@@ -7,7 +7,13 @@
     min-height: 348px;
     z-index: -500;
     background-color: var(--bg);
-    color: var(--text)
+    color: var(--text);
+    display:flex;
+    flex-direction: column;
+}
+
+.contents{    
+    position: relative;
 }
 
 .dismissible{
@@ -69,7 +75,7 @@
     border-radius: 15px;
     margin-top: 25px;
     margin-left: 135px;
-    background-color: #282828;
+    background-color: var(--video-dropdown);
     font-weight: 300;
     font-size: 14px;
     padding: 8px 0;
@@ -77,16 +83,19 @@
     flex-direction: column;
     justify-content: space-between;
     z-index: 1;
+    color: var(--text);
+    box-shadow: 5px 10px 10px rgba(170,170,170,.1);
 }
 
 .menu-popup.flip {
     margin-top: -321px;
 }
 
-.menu-popup svg {
+.menu-popup-icon svg {
     height: 24px;
     width: 24px;
     margin-left: 15px;
+    fill: var(--text);
 }
 
 .menu-popup-row {
@@ -97,16 +106,20 @@
     align-items: middle;
     gap: 15px;
     cursor: pointer;
+
 }
 
+/* variable this */
 .menu-popup-row:hover {
-    background-color: rgb(65,65,65)
+    background-color: var(--dropdown-row-hover);
 }
+
 
 .menu-popup-row:nth-child(5){
     margin-bottom: 15px;
 }
 
+/* variable this */
 .menu-popup-row:nth-child(5)::after{
     content:"";
     display: block;
@@ -150,6 +163,7 @@
     width: 14px;
     top: 10px;
     margin: 0;
+    fill: gray;
 }
 
 .menu-popup-btn {
@@ -157,7 +171,6 @@
     display: inline-block;
     top: 0;
     right: 0;
-    /* float: right; */
     height: 24px;
     width: 24px;
     outline: none;
@@ -174,7 +187,7 @@
     height: 100%;
     pointer-events: none; 
     display: block; 
-    color: white;
+    color: var(--text);
 }
 
 .video-title {

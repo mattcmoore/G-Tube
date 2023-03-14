@@ -1,0 +1,162 @@
+#queue-container {
+  color: var(--text);
+  float: right;
+  position: relative;  
+  width: 400px;
+  border: 1px solid var(--text);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+#queue-header {
+  background-color: var(--queue-bg-color-top);
+  color: var(--text);
+  width: 100%;
+  height: 55px;
+  position: relative;
+}
+
+#queue-title {
+  position: relative;
+  top: 10%;
+  left: 15px;
+  color: var(--text);
+}
+
+#queue-test {
+  color: var(--text);
+  position: relative;
+  bottom: 10%;
+  left: 15px;
+}
+
+#queue-close-button {
+  font-weight: bold;
+  color: #f1f1f1;
+  background-color: #212121;
+  position: relative;
+  bottom: 70%;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  position: relative;  
+  left: 335px;
+}
+
+#queue-clear-button {
+  color: var(--text);
+  background: inherit;
+  outline: none;
+  cursor: pointer;
+  border: 0;
+  border-radius: 18px;
+  position: relative;
+  bottom: 20%;
+  left: 300px;
+}
+
+#queue-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+/* #queue-time {
+  position: relative;
+  color: #ffffff;
+  display: inline-block;
+  top: 15px;
+  left: 60px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+} */
+
+/* #queue-time::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  z-index: -1;
+} */
+
+
+
+
+#queue-item:hover {
+  background-color: var(--queue-hover);
+}
+
+#queue-item:hover #hamburger-icon {
+  color: #333333;
+}
+
+#hamburger-icon {
+  margin-left: 5px;
+  display: inline-block;
+  font-size: 2em;
+  line-height: 0.5em;
+}
+
+#queue-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: all 0.2s;
+}
+
+/* #queue-item-image {
+  background-color: transparent;
+  height: 60px;
+  width: 110px;
+  position: relative;
+  right: 10%;
+} */
+#queue-item-image {
+  background-color: transparent;
+  height: 60px;
+  width: 110px;
+  position: relative;
+  right: 40px;
+}
+
+#queue-time {
+  position: relative;
+  color: #ffffff;
+  display: inline-block;
+  top: 15px;
+  left: 60px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2; /* set the z-index to a higher value than #queue-item-image */
+}
+
+#queue-item-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text);  
+}
+
+#queue-item-options-button {
+  font-weight: bold;
+  background: none;
+  color: inherit;
+  border: 0;
+  color: var(--text);
+  display: block;
+  outline: none;
+  cursor: pointer;
+  /* position: relative; */
+  bottom: 70px;
+  left: 90%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
