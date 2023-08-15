@@ -23,7 +23,7 @@
     color: var(--text);
     /* border: rgb(223, 187, 187) 1px solid; */
     width: 100%;
-    font-size: 2rem;
+    font-size: 20px;
     font-weight: 700;
     padding-top: 10px;
     /* margin-top: -20px;
@@ -36,6 +36,7 @@
     flex-wrap: wrap;
     overflow: hidden;
 }
+
 .creator {
     /* background-color: rgba(55, 58, 58, 0.687); */
     display: block;
@@ -54,7 +55,6 @@
 #channel-name:hover {
     cursor: pointer;
 }
-
 
 .sub-btn {
     margin-left: 25px;
